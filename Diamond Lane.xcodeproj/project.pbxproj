@@ -13,6 +13,8 @@
 		93022CCB1BAD202A0032D284 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 93022CC41BAD202A0032D284 /* Base.lproj */; settings = {ASSET_TAGS = (); }; };
 		93022CCD1BAD202A0032D284 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93022CC61BAD202A0032D284 /* main.m */; settings = {ASSET_TAGS = (); }; };
 		93022CCE1BAD202A0032D284 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93022CC81BAD202A0032D284 /* ViewController.m */; settings = {ASSET_TAGS = (); }; };
+		930687481BAD336100B8F3AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 930687461BAD336100B8F3AC /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		930687491BAD336100B8F3AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 930687471BAD336100B8F3AC /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		935E7D5B1BAD2644008F5451 /* DMLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935E7D5A1BAD2644008F5451 /* DMLHomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		935E7D5F1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 935E7D5E1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m */; settings = {ASSET_TAGS = (); }; };
 		93A3A0B91BAD20A400391C98 /* UIColor+DiamondLane.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A3A0B81BAD20A400391C98 /* UIColor+DiamondLane.m */; settings = {ASSET_TAGS = (); }; };
@@ -31,6 +33,8 @@
 		93022CC61BAD202A0032D284 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93022CC71BAD202A0032D284 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		93022CC81BAD202A0032D284 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		930687461BAD336100B8F3AC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		930687471BAD336100B8F3AC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		935E7D591BAD2644008F5451 /* DMLHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLHomeViewController.h; sourceTree = "<group>"; };
 		935E7D5A1BAD2644008F5451 /* DMLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLHomeViewController.m; sourceTree = "<group>"; };
 		935E7D5D1BAD2739008F5451 /* DMLHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 		93022CC01BAD20010032D284 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				930687451BAD334A00B8F3AC /* Storyboards */,
 				93022CC71BAD202A0032D284 /* ViewController.h */,
 				93022CC81BAD202A0032D284 /* ViewController.m */,
 				93022CC11BAD202A0032D284 /* AppDelegate.h */,
@@ -150,6 +155,16 @@
 				935E7D601BAD27D7008F5451 /* PrefixHeader.pch */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		930687451BAD334A00B8F3AC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				930687461BAD336100B8F3AC /* LaunchScreen.storyboard */,
+				930687471BAD336100B8F3AC /* Main.storyboard */,
+			);
+			name = Storyboards;
+			path = "Storyboards";
 			sourceTree = "<group>";
 		};
 		935E7D581BAD2598008F5451 /* Home View Controller */ = {
@@ -239,8 +254,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				930687481BAD336100B8F3AC /* LaunchScreen.storyboard in Resources */,
 				93022CCB1BAD202A0032D284 /* Base.lproj in Resources */,
 				93022CCA1BAD202A0032D284 /* Assets.xcassets in Resources */,
+				930687491BAD336100B8F3AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
