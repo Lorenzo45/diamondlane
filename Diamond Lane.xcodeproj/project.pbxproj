@@ -19,6 +19,9 @@
 		93022CCD1BAD202A0032D284 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93022CC61BAD202A0032D284 /* main.m */; settings = {ASSET_TAGS = (); }; };
 		93022CCE1BAD202A0032D284 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93022CC81BAD202A0032D284 /* ViewController.m */; settings = {ASSET_TAGS = (); }; };
 		930687481BAD336100B8F3AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 930687461BAD336100B8F3AC /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		934EBEF01BADBE0D00E0B56B /* DMLObjectStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 934EBEEF1BADBE0D00E0B56B /* DMLObjectStore.m */; settings = {ASSET_TAGS = (); }; };
+		934EBEF31BADC03900E0B56B /* DMLModel+Updates.m in Sources */ = {isa = PBXBuildFile; fileRef = 934EBEF21BADC03900E0B56B /* DMLModel+Updates.m */; settings = {ASSET_TAGS = (); }; };
+		934EBEF71BADC3C800E0B56B /* DMLNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 934EBEF61BADC3C800E0B56B /* DMLNotificationManager.m */; settings = {ASSET_TAGS = (); }; };
 		935E7D5B1BAD2644008F5451 /* DMLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935E7D5A1BAD2644008F5451 /* DMLHomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		935E7D5F1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 935E7D5E1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m */; settings = {ASSET_TAGS = (); }; };
 		9367006F1BADAE6A00E7C515 /* DMLHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9367006E1BADAE6A00E7C515 /* DMLHomeViewController.xib */; settings = {ASSET_TAGS = (); }; };
@@ -50,6 +53,13 @@
 		93022CC71BAD202A0032D284 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		93022CC81BAD202A0032D284 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		930687461BAD336100B8F3AC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		934EBEEA1BADBD9700E0B56B /* DMLModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMLModel.h; path = "DMLModel.h"; sourceTree = "<group>"; };
+		934EBEEE1BADBE0D00E0B56B /* DMLObjectStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLObjectStore.h; sourceTree = "<group>"; };
+		934EBEEF1BADBE0D00E0B56B /* DMLObjectStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLObjectStore.m; sourceTree = "<group>"; };
+		934EBEF11BADC03900E0B56B /* DMLModel+Updates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DMLModel+Updates.h"; path = "DMLModel+Updates.h"; sourceTree = "<group>"; };
+		934EBEF21BADC03900E0B56B /* DMLModel+Updates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DMLModel+Updates.m"; path = "DMLModel+Updates.m"; sourceTree = "<group>"; };
+		934EBEF51BADC3C800E0B56B /* DMLNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLNotificationManager.h; sourceTree = "<group>"; };
+		934EBEF61BADC3C800E0B56B /* DMLNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLNotificationManager.m; sourceTree = "<group>"; };
 		935E7D591BAD2644008F5451 /* DMLHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLHomeViewController.h; sourceTree = "<group>"; };
 		935E7D5A1BAD2644008F5451 /* DMLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLHomeViewController.m; sourceTree = "<group>"; };
 		935E7D5D1BAD2739008F5451 /* DMLHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -142,6 +152,9 @@
 		93022CBA1BAD1F920032D284 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				934EBEEA1BADBD9700E0B56B /* DMLModel.h */,
+				934EBEF11BADC03900E0B56B /* DMLModel+Updates.h */,
+				934EBEF21BADC03900E0B56B /* DMLModel+Updates.m */,
 				93A3A0BA1BAD20D600391C98 /* DMLUser.h */,
 				93A3A0BB1BAD20D600391C98 /* DMLUser.m */,
 			);
@@ -161,6 +174,8 @@
 				88276FA51BAD9D0E002886B4 /* Keychain */,
 				88276F9E1BAD5072002886B4 /* Location */,
 				935E7D5C1BAD26CC008F5451 /* Network */,
+				934EBEF41BADC39900E0B56B /* Notifications */,
+				934EBEED1BADBDF700E0B56B /* Object Store */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -206,6 +221,26 @@
 				930687461BAD336100B8F3AC /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		934EBEED1BADBDF700E0B56B /* Object Store */ = {
+			isa = PBXGroup;
+			children = (
+				934EBEEE1BADBE0D00E0B56B /* DMLObjectStore.h */,
+				934EBEEF1BADBE0D00E0B56B /* DMLObjectStore.m */,
+			);
+			name = "Object Store";
+			path = "Object Store";
+			sourceTree = "<group>";
+		};
+		934EBEF41BADC39900E0B56B /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				934EBEF51BADC3C800E0B56B /* DMLNotificationManager.h */,
+				934EBEF61BADC3C800E0B56B /* DMLNotificationManager.m */,
+			);
+			name = Notifications;
+			path = "Notifications";
 			sourceTree = "<group>";
 		};
 		935E7D581BAD2598008F5451 /* Home View Controller */ = {
@@ -386,12 +421,15 @@
 			files = (
 				935E7D5F1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m in Sources */,
 				93A3A0B91BAD20A400391C98 /* UIColor+DiamondLane.m in Sources */,
+				934EBEF71BADC3C800E0B56B /* DMLNotificationManager.m in Sources */,
 				93022CCE1BAD202A0032D284 /* ViewController.m in Sources */,
 				93022CCD1BAD202A0032D284 /* main.m in Sources */,
+				934EBEF31BADC03900E0B56B /* DMLModel+Updates.m in Sources */,
 				9396BA131BAD34D70088AA93 /* DMLOnboardingNameViewController.m in Sources */,
 				93A3A0BC1BAD20D600391C98 /* DMLUser.m in Sources */,
 				93022CC91BAD202A0032D284 /* AppDelegate.m in Sources */,
 				741BEFCF1BADB69000D819FF /* DMLOnboardingEnablerViewController.m in Sources */,
+				934EBEF01BADBE0D00E0B56B /* DMLObjectStore.m in Sources */,
 				9396BA171BAD34F20088AA93 /* DMLSplashViewController.m in Sources */,
 				88276FA81BAD9D35002886B4 /* DMLLocationManager.m in Sources */,
 				88276FAB1BAD9DCD002886B4 /* DMLKeychainWrapper.m in Sources */,
