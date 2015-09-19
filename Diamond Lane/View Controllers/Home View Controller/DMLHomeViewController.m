@@ -36,7 +36,7 @@
 
 -(void)viewDidLayoutSubviews {
     
-    [self viewDidLayoutSubviews];
+    [super viewDidLayoutSubviews];
     
     
     
