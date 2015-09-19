@@ -9,11 +9,14 @@
 #import "DMLModel.h"
 #import "DMLObjectStore.h"
 
+@import CoreLocation;
+
 @interface DMLUser : NSObject <DMLModel, DMLPersistentObject>
 
 @property (nonatomic, readonly, assign) NSInteger identifier;
+@property (nonatomic, readonly, assign) CLLocationCoordinate2D locationCoordinate;
 
-+(DMLUser *)userWithAttributes:(NSDictionary *)attributes;
++(instancetype)userWithAttributes:(NSDictionary *)attributes;
 
 @end
 
