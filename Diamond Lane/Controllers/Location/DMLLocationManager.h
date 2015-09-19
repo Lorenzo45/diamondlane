@@ -7,13 +7,30 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
+@import CoreLocation;
+
+@protocol DMLLocationObserver;
+
+@class CLLocation;
 
 @interface DMLLocationManager : NSObject
 
-+(void)requestLocationPermission;
-+(void)startMonitoringGeofences;
-+(void)stopMonitoringGeofences;
-+(void)addGeofenceforLocation:(CLLocationCoordinate2D)location withIdentifier:(NSString *)identifier;
+@property (nonatomic, readonly, strong) CLLocation *currentLocation;
+
+-(void)addObserver:(id <DMLLocationObserver>)observer;
+-(void)removeObserver:(id <DMLLocationObserver>)observer;
+
++(void)requestAuthorization;
+
++(instancetype)sharedInstance;
+
+@end
+
+@protocol DMLLocationObserver <NSObject>
+
+@optional
+-(void)locationManager:(DMLLocationManager *)locationManager didUpdateLocation:(CLLocation *)location;
+-(void)locationManager:(DMLLocationManager *)locationManager didEnterRegion:(CLRegion *)region;
+-(void)locationManager:(DMLLocationManager *)locationManager didExitRegion:(CLRegion *)region;
 
 @end

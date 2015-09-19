@@ -16,6 +16,9 @@
 
 NSString * const DMLUserAuthenticationTokenKey = @"authentication_token";
 NSString * const DMLUserIdentifierKey = @"id";
+NSString * const DMLUserNameKey = @"name";
+NSString * const DMLUserLongitudeKey = @"longitude";
+NSString * const DMLUserLatitudeKey = @"latitude";
 
 @implementation DMLUser
 
@@ -42,6 +45,25 @@ NSString * const DMLUserIdentifierKey = @"id";
     if ([self attributesKey:DMLUserIdentifierKey canBeUpdatedFromAttributes:attributes]) {
         
         _identifier = [[attributes valueForKeyPath:DMLUserIdentifierKey] integerValue];
+        
+    }
+    
+    if ([self attributesKey:DMLUserNameKey canBeUpdatedFromAttributes:attributes]) {
+        
+        _name = [attributes valueForKeyPath:DMLUserNameKey];
+        
+    }
+    
+    if ([self attributesKey:DMLUserLongitudeKey canBeUpdatedFromAttributes:attributes] &&
+        [self attributesKey:DMLUserLatitudeKey canBeUpdatedFromAttributes:attributes]) {
+        
+        CLLocationDegrees longitude = [[attributes valueForKeyPath:DMLUserLongitudeKey] floatValue];
+        CLLocationDegrees latitude = [[attributes valueForKeyPath:DMLUserLatitudeKey] floatValue];
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude, longitude);
+        
+        [self willChangeValueForKey:@"locationCoordinate"];
+        _locationCoordinate = coordinate;
+        [self didChangeValueForKey:@"locationCoordinate"];
         
     }
     
@@ -184,7 +206,7 @@ NSString * const DMLUserIdentifierKey = @"id";
 
 #pragma mark - Class Methods
 
-+(DMLUser *)userWithAttributes:(NSDictionary *)attributes {
++(instancetype)userWithAttributes:(NSDictionary *)attributes {
     
     id identifier = [DMLUser perstentObjectIdentifierFromIdentifier:[self identifierFromAttributes:attributes]];
     id item = [[DMLObjectStore sharedObjectStore] objectForIdentifier:identifier class:[self class]];

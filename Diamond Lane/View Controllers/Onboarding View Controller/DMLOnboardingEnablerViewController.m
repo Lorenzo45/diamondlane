@@ -40,9 +40,11 @@
         
         // location is enabled, registers for push
         
-        [[DMLNotificationManager sharedInstance] registerForPushNotifications];
-        
+        [self requestPushNotificationsPermission];
         [self requestLocationPermission];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:DMLSplashViewControllerDoneOnboardingNotificationName object:nil];
+        [self dismissViewControllerAnimated:YES completion:nil];
         
     }
 
@@ -63,11 +65,15 @@
     
 }
 
+-(void)requestPushNotificationsPermission {
+    
+    [[DMLNotificationManager sharedInstance] registerForPushNotifications];
+    
+}
+
 -(void)requestLocationPermission {
     
-    [DMLLocationManager requestLocationPermission];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:DMLSplashViewControllerDoneOnboardingNotificationName object:nil];
+    [DMLLocationManager requestAuthorization];
     
 }
 
