@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <Security/Security.h>
 
-@interface DMLKeychainWrapper : NSObject
+@interface DMLKeychainManager : NSObject
 
--(void)mySetObject:(id)inObject forKey:(id)key;
--(id)myObjectForKey:(id)key;
--(void)writeToKeychain;
+-(void)setObject:(id)object forKey:(id)key;
+-(id)objectForKey:(id)key;
+
++(instancetype)sharedInstance;
 
 @end
