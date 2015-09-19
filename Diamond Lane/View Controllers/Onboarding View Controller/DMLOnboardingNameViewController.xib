@@ -8,6 +8,8 @@
             <connections>
                 <outlet property="continueButton" destination="sjK-qT-l5B" id="u5y-1W-C9f"/>
                 <outlet property="nameInputTextView" destination="K3o-Mg-ycm" id="xxj-cd-06N"/>
+                <outlet property="namePromptLabel" destination="yNl-nq-ujN" id="ZZV-5m-TiG"/>
+                <outlet property="shiftView" destination="UXf-xY-YCp" id="hYu-4Y-nUC"/>
                 <outlet property="view" destination="iN0-l3-epB" id="qTt-A0-aaW"/>
             </connections>
         </placeholder>
@@ -16,38 +18,49 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your name?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNl-nq-ujN">
-                    <rect key="frame" x="147.5" y="209.5" width="305" height="43"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K3o-Mg-ycm">
-                    <rect key="frame" x="149" y="260" width="303" height="53"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXf-xY-YCp">
+                    <rect key="frame" x="132" y="217" width="336" height="166"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your name?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNl-nq-ujN">
+                            <rect key="frame" x="16" y="-5" width="305" height="43"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjK-qT-l5B">
+                            <rect key="frame" x="46" y="111" width="244" height="60"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                            <state key="normal" title="Continue &gt;&gt;&gt;"/>
+                            <connections>
+                                <action selector="continueButtonTapped:" destination="-1" eventType="touchUpInside" id="6z3-M0-Hmi"/>
+                            </connections>
+                        </button>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K3o-Mg-ycm">
+                            <rect key="frame" x="17" y="56" width="303" height="53"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="53" id="k80-ju-1vM"/>
+                                <constraint firstAttribute="width" constant="303" id="usP-do-Z0F"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="53" id="k80-ju-1vM"/>
-                        <constraint firstAttribute="width" constant="303" id="usP-do-Z0F"/>
+                        <constraint firstItem="K3o-Mg-ycm" firstAttribute="centerX" secondItem="UXf-xY-YCp" secondAttribute="centerX" id="6Ht-Ib-EbW"/>
+                        <constraint firstAttribute="width" constant="336" id="Ez8-gm-rsl"/>
+                        <constraint firstAttribute="height" constant="166" id="Gnp-Us-23q"/>
+                        <constraint firstItem="yNl-nq-ujN" firstAttribute="centerX" secondItem="UXf-xY-YCp" secondAttribute="centerX" id="Ptu-N2-yKx"/>
+                        <constraint firstItem="sjK-qT-l5B" firstAttribute="centerX" secondItem="UXf-xY-YCp" secondAttribute="centerX" id="Xeb-Nj-NFR"/>
+                        <constraint firstItem="K3o-Mg-ycm" firstAttribute="centerY" secondItem="UXf-xY-YCp" secondAttribute="centerY" id="d9b-YH-YcD"/>
+                        <constraint firstItem="sjK-qT-l5B" firstAttribute="centerY" secondItem="UXf-xY-YCp" secondAttribute="centerY" constant="58" id="xjJ-iV-khN"/>
+                        <constraint firstItem="yNl-nq-ujN" firstAttribute="centerY" secondItem="UXf-xY-YCp" secondAttribute="centerY" constant="-66.5" id="xnE-OS-Evw"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjK-qT-l5B">
-                    <rect key="frame" x="178" y="326" width="244" height="60"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                    <state key="normal" title="Continue &gt;&gt;&gt;"/>
-                    <connections>
-                        <action selector="continueButtonTapped:" destination="-1" eventType="touchUpInside" id="6z3-M0-Hmi"/>
-                    </connections>
-                </button>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="K3o-Mg-ycm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="0.5" id="8Xx-Lk-DRk"/>
-                <constraint firstItem="K3o-Mg-ycm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-13.5" id="I8t-tm-gp6"/>
-                <constraint firstItem="sjK-qT-l5B" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="56" id="SmQ-eu-WlO"/>
-                <constraint firstItem="sjK-qT-l5B" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Wzu-XJ-Ege"/>
-                <constraint firstItem="yNl-nq-ujN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="g0w-5G-a3h"/>
-                <constraint firstItem="yNl-nq-ujN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-69" id="nsQ-Gk-lpV"/>
+                <constraint firstItem="UXf-xY-YCp" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="3jy-Wq-xe8"/>
+                <constraint firstItem="UXf-xY-YCp" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6N6-Qu-hrJ"/>
             </constraints>
             <point key="canvasLocation" x="452" y="367"/>
         </view>
