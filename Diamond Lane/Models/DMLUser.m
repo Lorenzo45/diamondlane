@@ -10,6 +10,12 @@
 
 @implementation DMLUser
 
+#pragma mark - Class Methods
 
++(instancetype)me {
+    
+    return nil;
+    
+}
 
 @end

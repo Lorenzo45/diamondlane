@@ -10,4 +10,6 @@
 
 @interface DMLUser : NSObject
 
++(instancetype)me;
+
 @end
