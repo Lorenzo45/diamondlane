@@ -11,7 +11,6 @@
 		741BEFCF1BADB69000D819FF /* DMLOnboardingEnablerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 741BEFCD1BADB69000D819FF /* DMLOnboardingEnablerViewController.m */; settings = {ASSET_TAGS = (); }; };
 		741BEFD01BADB69000D819FF /* DMLOnboardingEnablerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 741BEFCE1BADB69000D819FF /* DMLOnboardingEnablerViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		88276FA81BAD9D35002886B4 /* DMLLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88276FA71BAD9D35002886B4 /* DMLLocationManager.m */; settings = {ASSET_TAGS = (); }; };
-		88276FAB1BAD9DCD002886B4 /* DMLKeychainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88276FAA1BAD9DCD002886B4 /* DMLKeychainManager.m */; settings = {ASSET_TAGS = (); }; };
 		88276FAE1BADA81C002886B4 /* DMLOnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88276FAD1BADA81C002886B4 /* DMLOnboardingViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		88276FB01BADA831002886B4 /* DMLOnboardingNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88276FAF1BADA831002886B4 /* DMLOnboardingNameViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		88276FB41BADBB2F002886B4 /* DMLNoCarpoolsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88276FB21BADBB2F002886B4 /* DMLNoCarpoolsViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -35,6 +34,7 @@
 		934EBEF31BADC03900E0B56B /* DMLModel+Updates.m in Sources */ = {isa = PBXBuildFile; fileRef = 934EBEF21BADC03900E0B56B /* DMLModel+Updates.m */; settings = {ASSET_TAGS = (); }; };
 		934EBEF71BADC3C800E0B56B /* DMLNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 934EBEF61BADC3C800E0B56B /* DMLNotificationManager.m */; settings = {ASSET_TAGS = (); }; };
 		934EBEFA1BADDE5800E0B56B /* DMLJSONResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 934EBEF91BADDE5800E0B56B /* DMLJSONResponseSerializer.m */; settings = {ASSET_TAGS = (); }; };
+		934EBEFC1BADEEF600E0B56B /* DMLKeychainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88276FAA1BAD9DCD002886B4 /* DMLKeychainManager.m */; };
 		935E7D5B1BAD2644008F5451 /* DMLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935E7D5A1BAD2644008F5451 /* DMLHomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		935E7D5F1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 935E7D5E1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m */; settings = {ASSET_TAGS = (); }; };
 		9396BA101BAD34CA0088AA93 /* DMLOnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9396BA0F1BAD34CA0088AA93 /* DMLOnboardingViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -92,7 +92,7 @@
 		934EBEF61BADC3C800E0B56B /* DMLNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLNotificationManager.m; sourceTree = "<group>"; };
 		934EBEF81BADDE5800E0B56B /* DMLJSONResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLJSONResponseSerializer.h; sourceTree = "<group>"; };
 		934EBEF91BADDE5800E0B56B /* DMLJSONResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLJSONResponseSerializer.m; sourceTree = "<group>"; };
-		934EBEFB1BADE0AF00E0B56B /* DMLDEBUG.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DMLDEBUG.h; path = "DMLDEBUG.h"; sourceTree = "<group>"; };
+		934EBEFB1BADE0AF00E0B56B /* DMLDEBUG.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMLDEBUG.h; sourceTree = "<group>"; };
 		935E7D591BAD2644008F5451 /* DMLHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLHomeViewController.h; sourceTree = "<group>"; };
 		935E7D5A1BAD2644008F5451 /* DMLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLHomeViewController.m; sourceTree = "<group>"; };
 		935E7D5D1BAD2739008F5451 /* DMLHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -467,6 +467,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				934EBEFC1BADEEF600E0B56B /* DMLKeychainManager.m in Sources */,
 				88276FCE1BADD71A002886B4 /* DMLCreateCarpoolViewController.m in Sources */,
 				935E7D5F1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m in Sources */,
 				93A3A0B91BAD20A400391C98 /* UIColor+DiamondLane.m in Sources */,
@@ -484,8 +485,6 @@
 				9396BA171BAD34F20088AA93 /* DMLSplashViewController.m in Sources */,
 				88276FA81BAD9D35002886B4 /* DMLLocationManager.m in Sources */,
 				88276FC91BADD6FF002886B4 /* DMLJoinViewController.m in Sources */,
-				88276FAB1BAD9DCD002886B4 /* DMLKeychainWrapper.m in Sources */,
-				88276FAB1BAD9DCD002886B4 /* DMLKeychainManager.m in Sources */,
 				935E7D5B1BAD2644008F5451 /* DMLHomeViewController.m in Sources */,
 				9396BA101BAD34CA0088AA93 /* DMLOnboardingViewController.m in Sources */,
 				88276FB41BADBB2F002886B4 /* DMLNoCarpoolsViewController.m in Sources */,
