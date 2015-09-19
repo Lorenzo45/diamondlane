@@ -14,6 +14,7 @@
 @interface DMLOnboardingNameViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *nameInputTextView;
+@property (weak, nonatomic) IBOutlet UIButton *continueButton;
 
 @end
 
@@ -52,13 +53,22 @@
     
     NSString *name = [[self nameInputTextView] text];
     if ([name length] != 0) {
+        
+        [[self continueButton] setAlpha:0.5];
+        [[self continueButton] setUserInteractionEnabled:NO];
 
         [DMLUser createUserWithName:name completionBlock:^{
+            
+            [[self continueButton] setAlpha:1.0];
+            [[self continueButton] setUserInteractionEnabled:YES];
             
             DMLOnboardingEnablerViewController *enablerViewController = [[DMLOnboardingEnablerViewController alloc] initWithNibName:@"DMLOnboardingEnablerViewController" bundle:nil];
             [[self navigationController] pushViewController:enablerViewController animated:YES];
             
         } failedBlock:^(NSError *error) {
+            
+            [[self continueButton] setAlpha:1.0];
+            [[self continueButton] setUserInteractionEnabled:YES];
             
             UIAlertController* errorAlert = [UIAlertController alertControllerWithTitle:@"Error" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
             

@@ -75,8 +75,9 @@
 		934EBEF21BADC03900E0B56B /* DMLModel+Updates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DMLModel+Updates.m"; sourceTree = "<group>"; };
 		934EBEF51BADC3C800E0B56B /* DMLNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLNotificationManager.h; sourceTree = "<group>"; };
 		934EBEF61BADC3C800E0B56B /* DMLNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLNotificationManager.m; sourceTree = "<group>"; };
-		934EBEF81BADDE5800E0B56B /* DMLJSONResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMLJSONResponseSerializer.h; path = "DMLJSONResponseSerializer.h"; sourceTree = "<group>"; };
-		934EBEF91BADDE5800E0B56B /* DMLJSONResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMLJSONResponseSerializer.m; path = "DMLJSONResponseSerializer.m"; sourceTree = "<group>"; };
+		934EBEF81BADDE5800E0B56B /* DMLJSONResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLJSONResponseSerializer.h; sourceTree = "<group>"; };
+		934EBEF91BADDE5800E0B56B /* DMLJSONResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLJSONResponseSerializer.m; sourceTree = "<group>"; };
+		934EBEFB1BADE0AF00E0B56B /* DMLDEBUG.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DMLDEBUG.h; path = "DMLDEBUG.h"; sourceTree = "<group>"; };
 		935E7D591BAD2644008F5451 /* DMLHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLHomeViewController.h; sourceTree = "<group>"; };
 		935E7D5A1BAD2644008F5451 /* DMLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLHomeViewController.m; sourceTree = "<group>"; };
 		935E7D5D1BAD2739008F5451 /* DMLHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -227,6 +228,7 @@
 				93022CC51BAD202A0032D284 /* Info.plist */,
 				93022CC61BAD202A0032D284 /* main.m */,
 				935E7D601BAD27D7008F5451 /* PrefixHeader.pch */,
+				934EBEFB1BADE0AF00E0B56B /* DMLDEBUG.h */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";

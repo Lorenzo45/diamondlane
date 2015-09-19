@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DMLOnboardingNameViewController">
             <connections>
+                <outlet property="continueButton" destination="sjK-qT-l5B" id="u5y-1W-C9f"/>
                 <outlet property="nameInputTextView" destination="K3o-Mg-ycm" id="xxj-cd-06N"/>
                 <outlet property="view" destination="iN0-l3-epB" id="qTt-A0-aaW"/>
             </connections>

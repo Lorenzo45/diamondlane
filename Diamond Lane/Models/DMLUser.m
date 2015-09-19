@@ -19,7 +19,15 @@ NSString * const DMLUserIdentifierKey = @"id";
 
 @implementation DMLUser
 
-
++(void)initialize {
+    
+#if DML_NO_PERSIST_SESSION == 1
+    DMLKeychainManager *keychain = [DMLKeychainManager sharedInstance];
+    [keychain removeItemForKey:DMLUserAuthenticationTokenKey];
+    [keychain removeItemForKey:DMLUserIdentifierKey];
+#endif
+    
+}
 
 #pragma mark - Attributes
 
@@ -204,6 +212,7 @@ static DMLUser *_me = nil;
         NSDictionary *attributes = [self attributesFromKeychain:[DMLKeychainManager sharedInstance]];
         if (attributes) {
             
+            NSLog(@"Generated me with attributes: %@",attributes);
             _me = [DMLUser userWithAttributes:attributes];
             
         }
