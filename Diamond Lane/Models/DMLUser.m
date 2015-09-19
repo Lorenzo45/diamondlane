@@ -102,6 +102,23 @@ NSString * const DMLUserIdentifierKey = @"id";
     
 }
 
+#pragma mark - Location
+
++(void)updateLocationWithLongitude:(CGFloat)longitude latitude:(CGFloat)latitude completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock {
+    
+    NSDictionary *attributes = @{ @"longitude" : @(longitude), @"latitude" : @(latitude) };
+    [[DMLHTTPRequestOperationManager manager] GET:@"api/locations/update.php" parameters:attributes success:^(AFHTTPRequestOperation *operation, NSDictionary *attributes) {
+        
+        completionBlock ? completionBlock() : nil;
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        failedBlock ? failedBlock(error) : nil;
+        
+    }];
+    
+}
+
 #pragma mark - Persistent Object
 
 -(id)persistentObjectIdentifier {
