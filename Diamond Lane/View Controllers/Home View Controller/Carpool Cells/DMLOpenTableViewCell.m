@@ -8,6 +8,12 @@
 
 #import "DMLOpenTableViewCell.h"
 
+@interface DMLOpenTableViewCell ()
+
+@property (weak, nonatomic) IBOutlet UISwitch *isOpenSwitch;
+
+@end
+
 @implementation DMLOpenTableViewCell
 
 - (void)awakeFromNib {

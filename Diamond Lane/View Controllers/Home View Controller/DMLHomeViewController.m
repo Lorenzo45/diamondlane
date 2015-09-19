@@ -9,7 +9,7 @@
 #import "DMLHomeViewController.h"
 
 #import "DMLNoCarpoolsViewController.h"
-#import "DMLCarpoolListViewController.h"
+#import "DMLCarpoolDetailViewController.h"
 #import "DMLEnRouteViewController.h"
 
 @interface DMLHomeViewController ()
@@ -27,7 +27,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        self.carpools = [@[] mutableCopy]; // TODO: Fetch from server
+        self.carpools = [@[@""] mutableCopy]; // TODO: Fetch from server
         self.enRoute = NO; // TODO: Fetch from server
         [self updateBaseViewController];
         
@@ -52,13 +52,13 @@
 
 -(void)updateBaseViewController {
     
-    if ((self.carpools == nil || self.carpools.count == 0) && ![self.baseVC isKindOfClass:[DMLNoCarpoolsViewController class]]) {
+    if (self.carpools.count == 0 && ![self.baseVC isKindOfClass:[DMLNoCarpoolsViewController class]]) {
         
         self.baseVC = [[DMLNoCarpoolsViewController alloc] initWithNibName:@"DMLNoCarpoolsViewController" bundle:nil];
     
-    } else if (!self.enRoute && ![self.baseVC isKindOfClass:[DMLCarpoolListViewController class]]) {
+    } else if (!self.enRoute && ![self.baseVC isKindOfClass:[DMLCarpoolDetailViewController class]]) {
         
-        self.baseVC = [[DMLCarpoolListViewController alloc] initWithNibName:@"DMLCarpoolListViewController" bundle:nil];
+        self.baseVC = [[DMLCarpoolDetailViewController alloc] init];
     
     } else if (![self.baseVC isKindOfClass:[DMLEnRouteViewController class]]) {
         

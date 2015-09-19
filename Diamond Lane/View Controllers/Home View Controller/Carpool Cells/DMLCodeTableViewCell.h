@@ -10,4 +10,7 @@
 
 @interface DMLCodeTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *carpoolCodeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
+
 @end

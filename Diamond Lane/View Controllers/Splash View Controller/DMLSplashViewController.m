@@ -60,7 +60,7 @@ NSString * const DMLSplashViewControllerDoneOnboardingNotificationName = @"DMLSp
     
     if (![DMLUser me]) {
         
-        [self showOnboardingViewController];
+        [self showHomeViewController];
         
     }
     

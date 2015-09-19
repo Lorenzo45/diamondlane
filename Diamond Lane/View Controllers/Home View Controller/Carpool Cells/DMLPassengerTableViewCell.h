@@ -10,4 +10,6 @@
 
 @interface DMLPassengerTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
 @end
