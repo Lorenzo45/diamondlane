@@ -83,11 +83,43 @@ NSString * const DMLCarpoolMembersKey = @"members";
     
 }
 
+#pragma mark - Location
+
+-(void)reportLeavingAsDriverWithCompletionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock {
+    
+    NSDictionary *attributes = @{ @"carpool_id" : @([self identifier]) };
+    [[DMLHTTPRequestOperationManager manager] POST:@"api/locations/left_home.php" parameters:attributes success:^(AFHTTPRequestOperation *operation, NSArray *results) {
+        
+        completionBlock ? completionBlock() : nil;
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        failedBlock ? failedBlock(error) : nil;
+        
+    }];
+    
+}
+
+-(void)reportArrivingAt:(DMLUser *)user completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock {
+    
+    NSDictionary *attributes = @{ @"carpool_id" : @([self identifier]), @"arrival_id" : @([user identifier]) };
+    [[DMLHTTPRequestOperationManager manager] POST:@"api/locations/arrived.php" parameters:attributes success:^(AFHTTPRequestOperation *operation, NSArray *results) {
+        
+        completionBlock ? completionBlock() : nil;
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        failedBlock ? failedBlock(error) : nil;
+        
+    }];
+    
+}
+
 #pragma mark - Members
 
 -(void)refreshMembersWithCompletionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock {
     
-    NSDictionary *attributes = @{};
+    NSDictionary *attributes = @{ @"carpool_id" : @([self identifier]) };
     [[DMLHTTPRequestOperationManager manager] POST:@"api/carpools/fetch_members.php" parameters:attributes success:^(AFHTTPRequestOperation *operation, NSArray *results) {
         
         [self updateWithAttributes:@{ DMLCarpoolMembersKey : results }];
