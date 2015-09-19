@@ -12,6 +12,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 #import "DMLLocationManager.h"
+#import "DMLNotificationManager.h"
 
 @interface DMLOnboardingEnablerViewController ()
 
@@ -36,6 +37,10 @@
         [self showDisabledLocationPopup];
         
     } else {
+        
+        // location is enabled, registers for push
+        
+        [[DMLNotificationManager sharedInstance] registerForPushNotifications];
         
         [self requestLocationPermission];
         
