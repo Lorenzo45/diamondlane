@@ -7,6 +7,7 @@
 //
 
 #import "DMLOnboardingViewController.h"
+#import "DMLOnboardingNameViewController.h"
 
 @interface DMLOnboardingViewController ()
 
@@ -44,7 +45,8 @@
 
 - (IBAction)goButtonTapped:(id)sender {
     
-    [self performSegueWithIdentifier:@"NameSegue" sender:sender];
+    DMLOnboardingNameViewController *nameViewController = [[DMLOnboardingNameViewController alloc] initWithNibName:@"DMLOnboardingNameViewController" bundle:nil];
+    [[self navigationController] pushViewController:nameViewController animated:YES];
     
 }
 

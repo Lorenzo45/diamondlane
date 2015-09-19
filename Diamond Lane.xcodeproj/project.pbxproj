@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		493415DF962F52BCBD604F0D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 667724B483AFC2DF1DFCB3D7 /* libPods.a */; };
+		741BEFCF1BADB69000D819FF /* DMLOnboardingEnablerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 741BEFCD1BADB69000D819FF /* DMLOnboardingEnablerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		741BEFD01BADB69000D819FF /* DMLOnboardingEnablerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 741BEFCE1BADB69000D819FF /* DMLOnboardingEnablerViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		88276FA81BAD9D35002886B4 /* DMLLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88276FA71BAD9D35002886B4 /* DMLLocationManager.m */; settings = {ASSET_TAGS = (); }; };
 		88276FAB1BAD9DCD002886B4 /* DMLKeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 88276FAA1BAD9DCD002886B4 /* DMLKeychainWrapper.m */; settings = {ASSET_TAGS = (); }; };
 		88276FAE1BADA81C002886B4 /* DMLOnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88276FAD1BADA81C002886B4 /* DMLOnboardingViewController.xib */; settings = {ASSET_TAGS = (); }; };
@@ -29,6 +31,9 @@
 
 /* Begin PBXFileReference section */
 		667724B483AFC2DF1DFCB3D7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		741BEFCC1BADB69000D819FF /* DMLOnboardingEnablerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLOnboardingEnablerViewController.h; sourceTree = "<group>"; };
+		741BEFCD1BADB69000D819FF /* DMLOnboardingEnablerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLOnboardingEnablerViewController.m; sourceTree = "<group>"; };
+		741BEFCE1BADB69000D819FF /* DMLOnboardingEnablerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMLOnboardingEnablerViewController.xib; sourceTree = "<group>"; };
 		87318828D118BB35F1F08B28 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		88276FA61BAD9D35002886B4 /* DMLLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMLLocationManager.h; path = Location/DMLLocationManager.h; sourceTree = "<group>"; };
 		88276FA71BAD9D35002886B4 /* DMLLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMLLocationManager.m; path = Location/DMLLocationManager.m; sourceTree = "<group>"; };
@@ -50,7 +55,7 @@
 		935E7D5D1BAD2739008F5451 /* DMLHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLHTTPRequestOperationManager.h; sourceTree = "<group>"; };
 		935E7D5E1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		935E7D601BAD27D7008F5451 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		9367006E1BADAE6A00E7C515 /* DMLHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMLHomeViewController.xib; path = "DMLHomeViewController.xib"; sourceTree = "<group>"; };
+		9367006E1BADAE6A00E7C515 /* DMLHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMLHomeViewController.xib; sourceTree = "<group>"; };
 		9396BA0E1BAD34CA0088AA93 /* DMLOnboardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLOnboardingViewController.h; sourceTree = "<group>"; };
 		9396BA0F1BAD34CA0088AA93 /* DMLOnboardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLOnboardingViewController.m; sourceTree = "<group>"; };
 		9396BA111BAD34D70088AA93 /* DMLOnboardingNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLOnboardingNameViewController.h; sourceTree = "<group>"; };
@@ -231,6 +236,9 @@
 				9396BA111BAD34D70088AA93 /* DMLOnboardingNameViewController.h */,
 				9396BA121BAD34D70088AA93 /* DMLOnboardingNameViewController.m */,
 				88276FAF1BADA831002886B4 /* DMLOnboardingNameViewController.xib */,
+				741BEFCC1BADB69000D819FF /* DMLOnboardingEnablerViewController.h */,
+				741BEFCD1BADB69000D819FF /* DMLOnboardingEnablerViewController.m */,
+				741BEFCE1BADB69000D819FF /* DMLOnboardingEnablerViewController.xib */,
 			);
 			path = "Onboarding View Controller";
 			sourceTree = "<group>";
@@ -316,6 +324,7 @@
 				9367006F1BADAE6A00E7C515 /* DMLHomeViewController.xib in Resources */,
 				930687481BAD336100B8F3AC /* LaunchScreen.storyboard in Resources */,
 				88276FAE1BADA81C002886B4 /* DMLOnboardingViewController.xib in Resources */,
+				741BEFD01BADB69000D819FF /* DMLOnboardingEnablerViewController.xib in Resources */,
 				93022CCA1BAD202A0032D284 /* Assets.xcassets in Resources */,
 				88276FB01BADA831002886B4 /* DMLOnboardingNameViewController.xib in Resources */,
 			);
@@ -382,6 +391,7 @@
 				9396BA131BAD34D70088AA93 /* DMLOnboardingNameViewController.m in Sources */,
 				93A3A0BC1BAD20D600391C98 /* DMLUser.m in Sources */,
 				93022CC91BAD202A0032D284 /* AppDelegate.m in Sources */,
+				741BEFCF1BADB69000D819FF /* DMLOnboardingEnablerViewController.m in Sources */,
 				9396BA171BAD34F20088AA93 /* DMLSplashViewController.m in Sources */,
 				88276FA81BAD9D35002886B4 /* DMLLocationManager.m in Sources */,
 				88276FAB1BAD9DCD002886B4 /* DMLKeychainWrapper.m in Sources */,
