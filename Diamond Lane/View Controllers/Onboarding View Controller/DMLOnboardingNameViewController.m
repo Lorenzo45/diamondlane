@@ -55,8 +55,6 @@
 
         [DMLUser createUserWithName:name completionBlock:^{
             
-            NSLog(@"oof");
-            
             DMLOnboardingEnablerViewController *enablerViewController = [[DMLOnboardingEnablerViewController alloc] initWithNibName:@"DMLOnboardingEnablerViewController" bundle:nil];
             [[self navigationController] pushViewController:enablerViewController animated:YES];
             
