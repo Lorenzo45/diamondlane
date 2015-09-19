@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DMLJoinViewController">
             <connections>
                 <outlet property="codeTextField" destination="76H-bM-lIz" id="cC3-4y-Uyb"/>
+                <outlet property="shiftView" destination="mZJ-9r-FLK" id="y0h-gv-KY9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,30 +18,31 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZJ-9r-FLK" userLabel="Container View">
-                    <rect key="frame" x="60" y="120" width="480" height="140"/>
+                    <rect key="frame" x="60" y="230" width="480" height="140"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FbO-IE-QL3">
-                            <rect key="frame" x="209" y="102" width="62" height="30"/>
-                            <state key="normal" title="Continue"/>
-                            <connections>
-                                <action selector="continueButtonPressed" destination="-1" eventType="touchUpInside" id="cUT-Xh-HCq"/>
-                            </connections>
-                        </button>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="76H-bM-lIz">
                             <rect key="frame" x="16" y="55" width="448" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a carpool code below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpM-GM-puq">
-                            <rect key="frame" x="136" y="8" width="208.5" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <rect key="frame" x="83.5" y="8" width="314" height="31.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FbO-IE-QL3">
+                            <rect key="frame" x="188" y="96" width="105" height="44"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                            <state key="normal" title="Continue"/>
+                            <connections>
+                                <action selector="continueButtonPressed" destination="-1" eventType="touchUpInside" id="cUT-Xh-HCq"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="FbO-IE-QL3" secondAttribute="bottom" constant="8" id="2KV-Wy-XWj"/>
+                        <constraint firstAttribute="bottom" secondItem="FbO-IE-QL3" secondAttribute="bottom" id="2KV-Wy-XWj"/>
                         <constraint firstAttribute="height" constant="140" id="6Z5-iQ-VJh"/>
                         <constraint firstItem="FbO-IE-QL3" firstAttribute="centerX" secondItem="mZJ-9r-FLK" secondAttribute="centerX" id="B7K-3q-APT"/>
                         <constraint firstItem="76H-bM-lIz" firstAttribute="centerY" secondItem="mZJ-9r-FLK" secondAttribute="centerY" id="KWh-cV-3Ar"/>
@@ -56,7 +58,7 @@
             <constraints>
                 <constraint firstItem="mZJ-9r-FLK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="71b-kt-1W9"/>
                 <constraint firstItem="mZJ-9r-FLK" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="KqH-Yj-LT5"/>
-                <constraint firstItem="mZJ-9r-FLK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="120" id="XLV-Rh-6RL"/>
+                <constraint firstItem="mZJ-9r-FLK" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="qeE-Am-B9C"/>
             </constraints>
         </view>
     </objects>

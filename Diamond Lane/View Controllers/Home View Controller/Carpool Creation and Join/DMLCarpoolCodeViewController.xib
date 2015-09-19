@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DMLCarpoolCodeViewController">
             <connections>
-                <outlet property="codeTextField" destination="ocM-Sh-fib" id="LvQ-fs-5dp"/>
+                <outlet property="codeTextField" destination="ocM-Sh-fib" id="3QP-kF-L8n"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1K-5F-Cjx" userLabel="Container View">
-                    <rect key="frame" x="60" y="120" width="480" height="140"/>
+                    <rect key="frame" x="60" y="230" width="480" height="140"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbQ-lV-j9Q">
                             <rect key="frame" x="222" y="102" width="36" height="30"/>
@@ -26,37 +26,40 @@
                                 <action selector="copyButtonPressed" destination="-1" eventType="touchUpInside" id="5U1-Z2-h4t"/>
                             </connections>
                         </button>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ocM-Sh-fib">
-                            <rect key="frame" x="16" y="55" width="448" height="30"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here is your carpool code:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8x-eM-1k1">
                             <rect key="frame" x="140" y="8" width="201" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ocM-Sh-fib">
+                            <rect key="frame" x="82" y="36" width="315" height="69"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="315" id="XJ6-ty-d7T"/>
+                                <constraint firstAttribute="height" constant="69" id="xoI-cb-E05"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="qbQ-lV-j9Q" secondAttribute="bottom" constant="8" id="0aE-Sa-yBZ"/>
                         <constraint firstItem="qbQ-lV-j9Q" firstAttribute="centerX" secondItem="f1K-5F-Cjx" secondAttribute="centerX" id="LZj-Ga-ct4"/>
                         <constraint firstAttribute="height" constant="140" id="X7i-yM-ANc"/>
-                        <constraint firstAttribute="trailing" secondItem="ocM-Sh-fib" secondAttribute="trailing" constant="16" id="c4s-M2-0bh"/>
                         <constraint firstItem="c8x-eM-1k1" firstAttribute="top" secondItem="f1K-5F-Cjx" secondAttribute="top" constant="8" id="ctk-Uf-DbE"/>
                         <constraint firstItem="qbQ-lV-j9Q" firstAttribute="centerX" secondItem="f1K-5F-Cjx" secondAttribute="centerX" id="fIb-Lb-Fca"/>
-                        <constraint firstItem="ocM-Sh-fib" firstAttribute="leading" secondItem="f1K-5F-Cjx" secondAttribute="leading" constant="16" id="kg8-qj-Blo"/>
                         <constraint firstItem="c8x-eM-1k1" firstAttribute="centerX" secondItem="f1K-5F-Cjx" secondAttribute="centerX" id="pYv-V6-tTx"/>
-                        <constraint firstItem="ocM-Sh-fib" firstAttribute="centerY" secondItem="f1K-5F-Cjx" secondAttribute="centerY" id="qxw-oO-UVP"/>
+                        <constraint firstItem="ocM-Sh-fib" firstAttribute="centerY" secondItem="f1K-5F-Cjx" secondAttribute="centerY" id="vit-eA-Mhu"/>
+                        <constraint firstItem="ocM-Sh-fib" firstAttribute="centerX" secondItem="f1K-5F-Cjx" secondAttribute="centerX" id="yrW-FK-sck"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="f1K-5F-Cjx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="120" id="3ol-ws-Wy6"/>
                 <constraint firstItem="f1K-5F-Cjx" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="7kn-V2-bnN"/>
                 <constraint firstItem="f1K-5F-Cjx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="REc-zI-6OZ"/>
+                <constraint firstItem="f1K-5F-Cjx" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="cAR-2t-qx5"/>
             </constraints>
         </view>
     </objects>
