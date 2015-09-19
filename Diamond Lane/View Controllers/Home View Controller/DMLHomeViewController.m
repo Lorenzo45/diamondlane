@@ -11,6 +11,7 @@
 #import "DMLNoCarpoolsViewController.h"
 #import "DMLCarpoolDetailViewController.h"
 #import "DMLEnRouteViewController.h"
+#import "DMLCarpool.h"
 
 @interface DMLHomeViewController ()
 
@@ -27,13 +28,23 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        self.carpools = [@[@""] mutableCopy]; // TODO: Fetch from server
+        [DMLCarpool fetchCarpoolsWithCompletionBlock:^(NSArray *carpools) {
+            NSLog(@"DONE");
+            self.carpools = [carpools mutableCopy];
+        } failedBlock:^(NSError *error) {
+            NSLog(@"%@", error);
+        }];
+        
         self.enRoute = NO; // TODO: Fetch from server
-        [self updateBaseViewController];
         
     }
     return self;
     
+}
+
+- (void)setCarpools:(NSMutableArray *)carpools {
+    _carpools = carpools;
+    [self updateBaseViewController];
 }
 
 -(void)viewDidLoad {
