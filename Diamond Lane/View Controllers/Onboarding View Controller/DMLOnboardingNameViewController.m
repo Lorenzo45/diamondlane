@@ -52,6 +52,12 @@
     
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    [self.view endEditing:YES];
+    
+}
+
 -(void)viewDidLayoutSubviews {
     
     [super viewDidLayoutSubviews];
