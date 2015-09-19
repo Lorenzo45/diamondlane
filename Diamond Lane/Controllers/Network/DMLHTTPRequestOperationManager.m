@@ -9,6 +9,7 @@
 #import "DMLUser.h"
 
 #import "DMLHTTPRequestOperationManager.h"
+#import "DMLJSONResponseSerializer.h"
 
 NSString * const DMLRequestOperationManagerBaseURLString = @"http://52.11.211.211/";
 
@@ -19,8 +20,7 @@ NSString * const DMLRequestOperationManagerAuthenticationHeaderName = @"X-dml_au
 +(instancetype)manager {
     
     id manager = [[self alloc] initWithBaseURL:[NSURL URLWithString:DMLRequestOperationManagerBaseURLString]];
-    [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
-    [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
+    [manager setResponseSerializer:[DMLJSONResponseSerializer serializer]];
     
     NSString * const authenticationToken = [[DMLUser me] authenticationToken];
     if (authenticationToken) {
