@@ -17,23 +17,27 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1K-5F-Cjx" userLabel="Container View">
-                    <rect key="frame" x="60" y="230" width="480" height="140"/>
+                    <rect key="frame" x="60" y="218" width="480" height="164"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbQ-lV-j9Q">
-                            <rect key="frame" x="222" y="102" width="36" height="30"/>
+                            <rect key="frame" x="209.5" y="112" width="61" height="44"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
                             <state key="normal" title="Copy"/>
                             <connections>
                                 <action selector="copyButtonPressed" destination="-1" eventType="touchUpInside" id="5U1-Z2-h4t"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here is your carpool code:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8x-eM-1k1">
-                            <rect key="frame" x="140" y="8" width="201" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <rect key="frame" x="89" y="8" width="302" height="31.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ocM-Sh-fib">
-                            <rect key="frame" x="82" y="36" width="315" height="69"/>
+                            <rect key="frame" x="83" y="47" width="315" height="69"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <accessibilityTraits key="traits" notEnabled="YES"/>
+                            </accessibility>
                             <constraints>
                                 <constraint firstAttribute="width" constant="315" id="XJ6-ty-d7T"/>
                                 <constraint firstAttribute="height" constant="69" id="xoI-cb-E05"/>
@@ -46,7 +50,7 @@
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="qbQ-lV-j9Q" secondAttribute="bottom" constant="8" id="0aE-Sa-yBZ"/>
                         <constraint firstItem="qbQ-lV-j9Q" firstAttribute="centerX" secondItem="f1K-5F-Cjx" secondAttribute="centerX" id="LZj-Ga-ct4"/>
-                        <constraint firstAttribute="height" constant="140" id="X7i-yM-ANc"/>
+                        <constraint firstAttribute="height" constant="164" id="X7i-yM-ANc"/>
                         <constraint firstItem="c8x-eM-1k1" firstAttribute="top" secondItem="f1K-5F-Cjx" secondAttribute="top" constant="8" id="ctk-Uf-DbE"/>
                         <constraint firstItem="qbQ-lV-j9Q" firstAttribute="centerX" secondItem="f1K-5F-Cjx" secondAttribute="centerX" id="fIb-Lb-Fca"/>
                         <constraint firstItem="c8x-eM-1k1" firstAttribute="centerX" secondItem="f1K-5F-Cjx" secondAttribute="centerX" id="pYv-V6-tTx"/>

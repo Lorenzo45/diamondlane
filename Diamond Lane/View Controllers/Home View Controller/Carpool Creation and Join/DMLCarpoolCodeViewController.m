@@ -30,6 +30,12 @@
     
 }
 
+-(void)viewDidLoad {
+    
+    self.codeTextField.userInteractionEnabled = NO;
+    
+}
+
 - (IBAction)copyButtonPressed {
     
     [UIPasteboard generalPasteboard].string = self.codeTextField.text;
@@ -39,12 +45,6 @@
 - (void)doneButtonPressed {
     
     [self dismissViewControllerAnimated:YES completion:nil];
-    
-}
-
-- (BOOL)textFieldShould:(UITextField *)textField{
-    
-    return NO;
     
 }
 
