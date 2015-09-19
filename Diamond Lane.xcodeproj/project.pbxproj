@@ -10,14 +10,16 @@
 		493415DF962F52BCBD604F0D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 667724B483AFC2DF1DFCB3D7 /* libPods.a */; };
 		88276FA81BAD9D35002886B4 /* DMLLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88276FA71BAD9D35002886B4 /* DMLLocationManager.m */; settings = {ASSET_TAGS = (); }; };
 		88276FAB1BAD9DCD002886B4 /* DMLKeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 88276FAA1BAD9DCD002886B4 /* DMLKeychainWrapper.m */; settings = {ASSET_TAGS = (); }; };
+		88276FAE1BADA81C002886B4 /* DMLOnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88276FAD1BADA81C002886B4 /* DMLOnboardingViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		88276FB01BADA831002886B4 /* DMLOnboardingNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88276FAF1BADA831002886B4 /* DMLOnboardingNameViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		93022CC91BAD202A0032D284 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93022CC21BAD202A0032D284 /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		93022CCA1BAD202A0032D284 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93022CC31BAD202A0032D284 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		93022CCD1BAD202A0032D284 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93022CC61BAD202A0032D284 /* main.m */; settings = {ASSET_TAGS = (); }; };
 		93022CCE1BAD202A0032D284 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93022CC81BAD202A0032D284 /* ViewController.m */; settings = {ASSET_TAGS = (); }; };
 		930687481BAD336100B8F3AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 930687461BAD336100B8F3AC /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
-		930687491BAD336100B8F3AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 930687471BAD336100B8F3AC /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		935E7D5B1BAD2644008F5451 /* DMLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935E7D5A1BAD2644008F5451 /* DMLHomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		935E7D5F1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 935E7D5E1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m */; settings = {ASSET_TAGS = (); }; };
+		9367006F1BADAE6A00E7C515 /* DMLHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9367006E1BADAE6A00E7C515 /* DMLHomeViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		9396BA101BAD34CA0088AA93 /* DMLOnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9396BA0F1BAD34CA0088AA93 /* DMLOnboardingViewController.m */; settings = {ASSET_TAGS = (); }; };
 		9396BA131BAD34D70088AA93 /* DMLOnboardingNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9396BA121BAD34D70088AA93 /* DMLOnboardingNameViewController.m */; settings = {ASSET_TAGS = (); }; };
 		9396BA171BAD34F20088AA93 /* DMLSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9396BA161BAD34F20088AA93 /* DMLSplashViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -32,6 +34,8 @@
 		88276FA71BAD9D35002886B4 /* DMLLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMLLocationManager.m; path = Location/DMLLocationManager.m; sourceTree = "<group>"; };
 		88276FA91BAD9DCD002886B4 /* DMLKeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMLKeychainWrapper.h; path = Keychain/DMLKeychainWrapper.h; sourceTree = "<group>"; };
 		88276FAA1BAD9DCD002886B4 /* DMLKeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMLKeychainWrapper.m; path = Keychain/DMLKeychainWrapper.m; sourceTree = "<group>"; };
+		88276FAD1BADA81C002886B4 /* DMLOnboardingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMLOnboardingViewController.xib; sourceTree = "<group>"; };
+		88276FAF1BADA831002886B4 /* DMLOnboardingNameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMLOnboardingNameViewController.xib; sourceTree = "<group>"; };
 		93022CA01BAD1E7C0032D284 /* Diamond Lane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Diamond Lane.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93022CC11BAD202A0032D284 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		93022CC21BAD202A0032D284 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -41,12 +45,12 @@
 		93022CC71BAD202A0032D284 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		93022CC81BAD202A0032D284 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		930687461BAD336100B8F3AC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		930687471BAD336100B8F3AC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		935E7D591BAD2644008F5451 /* DMLHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLHomeViewController.h; sourceTree = "<group>"; };
 		935E7D5A1BAD2644008F5451 /* DMLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLHomeViewController.m; sourceTree = "<group>"; };
 		935E7D5D1BAD2739008F5451 /* DMLHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLHTTPRequestOperationManager.h; sourceTree = "<group>"; };
 		935E7D5E1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		935E7D601BAD27D7008F5451 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		9367006E1BADAE6A00E7C515 /* DMLHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMLHomeViewController.xib; path = "DMLHomeViewController.xib"; sourceTree = "<group>"; };
 		9396BA0E1BAD34CA0088AA93 /* DMLOnboardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLOnboardingViewController.h; sourceTree = "<group>"; };
 		9396BA0F1BAD34CA0088AA93 /* DMLOnboardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLOnboardingViewController.m; sourceTree = "<group>"; };
 		9396BA111BAD34D70088AA93 /* DMLOnboardingNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLOnboardingNameViewController.h; sourceTree = "<group>"; };
@@ -195,7 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				930687461BAD336100B8F3AC /* LaunchScreen.storyboard */,
-				930687471BAD336100B8F3AC /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			children = (
 				935E7D591BAD2644008F5451 /* DMLHomeViewController.h */,
 				935E7D5A1BAD2644008F5451 /* DMLHomeViewController.m */,
+				9367006E1BADAE6A00E7C515 /* DMLHomeViewController.xib */,
 			);
 			path = "Home View Controller";
 			sourceTree = "<group>";
@@ -223,8 +227,10 @@
 			children = (
 				9396BA0E1BAD34CA0088AA93 /* DMLOnboardingViewController.h */,
 				9396BA0F1BAD34CA0088AA93 /* DMLOnboardingViewController.m */,
+				88276FAD1BADA81C002886B4 /* DMLOnboardingViewController.xib */,
 				9396BA111BAD34D70088AA93 /* DMLOnboardingNameViewController.h */,
 				9396BA121BAD34D70088AA93 /* DMLOnboardingNameViewController.m */,
+				88276FAF1BADA831002886B4 /* DMLOnboardingNameViewController.xib */,
 			);
 			path = "Onboarding View Controller";
 			sourceTree = "<group>";
@@ -307,9 +313,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9367006F1BADAE6A00E7C515 /* DMLHomeViewController.xib in Resources */,
 				930687481BAD336100B8F3AC /* LaunchScreen.storyboard in Resources */,
+				88276FAE1BADA81C002886B4 /* DMLOnboardingViewController.xib in Resources */,
 				93022CCA1BAD202A0032D284 /* Assets.xcassets in Resources */,
-				930687491BAD336100B8F3AC /* Main.storyboard in Resources */,
+				88276FB01BADA831002886B4 /* DMLOnboardingNameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

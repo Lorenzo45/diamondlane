@@ -30,7 +30,7 @@
     
     [super viewDidLoad];
     
-    
+    [[self navigationController] setNavigationBarHidden:YES];
     
 }
 

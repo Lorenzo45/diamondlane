@@ -8,16 +8,25 @@
 
 #import "AppDelegate.h"
 
+#import "DMLSplashViewController.h"
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    DMLSplashViewController *splashViewController = [[DMLSplashViewController alloc] initWithNibName:nil bundle:nil];
+    
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [window setRootViewController:splashViewController];
+    [window makeKeyAndVisible];
+    [self setWindow:window];
+    
     return YES;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
