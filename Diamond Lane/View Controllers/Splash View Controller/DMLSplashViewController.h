@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-NSString * const DMLSplashViewControllerDoneOnboardingNotificationName;
+extern NSString * const DMLSplashViewControllerDoneOnboardingNotificationName;
 
 @interface DMLSplashViewController : UIViewController
 
