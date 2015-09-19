@@ -16,7 +16,6 @@
 
 @property (nonatomic, assign) BOOL presentedOnboardingViewController;
 
-@property (nonatomic, weak) UIViewController *childViewController;
 @property (nonatomic, weak) DMLHomeViewController *homeViewController;
 
 @end
@@ -39,8 +38,6 @@
     
     [super viewDidLoad];
     
-    [[self view] setBackgroundColor:[UIColor redColor]];
-    
     if ([DMLUser me]) {
         
         [self showHomeViewController];
@@ -55,7 +52,7 @@
     
     if (![DMLUser me]) {
         
-        [self showOnboardingViewController];
+        [self showHomeViewController];
         
     }
     
@@ -65,7 +62,7 @@
     
     [super viewDidLayoutSubviews];
     
-    [[[self childViewController] view] setFrame:[[self view] bounds]];
+    [[[self homeViewController] view] setFrame:[[self view] bounds]];
     
 }
 
@@ -89,16 +86,13 @@
     
     [self initializeApplication];
     
-    DMLHomeViewController *homeViewController = [[DMLHomeViewController alloc] initWithNibName:@"DMLHomeViewController" bundle:nil];
+    DMLHomeViewController *homeViewController = [[DMLHomeViewController alloc] initWithNibName:nil bundle:nil];
     [self setHomeViewController:homeViewController];
     
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
-    [self setChildViewController:navigationController];
-    
-    [self addChildViewController:navigationController];
-    [[navigationController view] setFrame:[[self view] bounds]];
-    [[self view] addSubview:[navigationController view]];
-    [navigationController didMoveToParentViewController:self];
+    [self addChildViewController:homeViewController];
+    [[homeViewController view] setFrame:[[self view] bounds]];
+    [[self view] addSubview:[homeViewController view]];
+    [homeViewController didMoveToParentViewController:self];
     
 }
 
