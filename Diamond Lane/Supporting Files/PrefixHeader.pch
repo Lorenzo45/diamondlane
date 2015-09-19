@@ -1,0 +1,14 @@
+//
+//  PrefixHeader.pch
+//  Diamond Lane
+//
+//  Created by Aaron Wojnowski on 2015-09-19.
+//  Copyright © 2015 CS Boys. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "UIColor+DiamondLane.h"
+
+#endif /* PrefixHeader_pch */

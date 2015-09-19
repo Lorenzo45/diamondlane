@@ -10,6 +10,6 @@
 
 @interface UIColor (DiamondLane)
 
-+(UIColor *)tintColor;
++(UIColor *)dml_tintColor;
 
 @end
