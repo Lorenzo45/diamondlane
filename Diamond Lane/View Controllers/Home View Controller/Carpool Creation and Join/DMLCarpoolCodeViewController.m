@@ -16,17 +16,18 @@
 
 @implementation DMLCarpoolCodeViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (instancetype)initWithNibName:(nullable NSString *)nibNameOrNil bundle:(nullable NSBundle *)nibBundleOrNil {
     
-    self.title = @"Code";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed)];
-    [self.navigationItem setHidesBackButton:YES];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        
+        self.title = @"Code";
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed)];
+        [self.navigationItem setHidesBackButton:YES];
+        
+    }
+    return self;
+    
 }
 
 - (IBAction)copyButtonPressed {
