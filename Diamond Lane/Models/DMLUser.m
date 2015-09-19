@@ -16,6 +16,7 @@
 
 NSString * const DMLUserAuthenticationTokenKey = @"authentication_token";
 NSString * const DMLUserIdentifierKey = @"id";
+NSString * const DMLUserNameKey = @"name";
 NSString * const DMLUserLongitudeKey = @"longitude";
 NSString * const DMLUserLatitudeKey = @"latitude";
 
@@ -44,6 +45,12 @@ NSString * const DMLUserLatitudeKey = @"latitude";
     if ([self attributesKey:DMLUserIdentifierKey canBeUpdatedFromAttributes:attributes]) {
         
         _identifier = [[attributes valueForKeyPath:DMLUserIdentifierKey] integerValue];
+        
+    }
+    
+    if ([self attributesKey:DMLUserNameKey canBeUpdatedFromAttributes:attributes]) {
+        
+        _name = [attributes valueForKeyPath:DMLUserNameKey];
         
     }
     
