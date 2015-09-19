@@ -11,8 +11,13 @@
 
 @interface DMLKeychainManager : NSObject
 
--(void)setObject:(id)object forKey:(id)key;
--(id)objectForKey:(id)key;
+-(void)setString:(NSString *)string forKey:(NSString *)key;
+-(NSString *)stringForKey:(NSString *)key;
+
+-(void)setObject:(id <NSCoding>)object forKey:(NSString *)key;
+-(id)objectForKey:(NSString *)key;
+
+-(void)removeItemForKey:(NSString *)key;
 
 +(instancetype)sharedInstance;
 

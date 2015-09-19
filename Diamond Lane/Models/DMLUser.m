@@ -9,7 +9,7 @@
 #import "DMLUser.h"
 
 #import "DMLHTTPRequestOperationManager.h"
-#import "DMLKeychainWrapper.h"
+#import "DMLKeychainManager.h"
 #import "DMLObjectStore.h"
 
 #import "DMLModel+Updates.h"
@@ -49,8 +49,7 @@ NSString * const DMLUserIdentifierKey = @"id";
         DMLUser *user = [DMLUser userWithAttributes:attributes];
         _me = user;
         
-        DMLKeychainWrapper *keychainWrapper = [[DMLKeychainWrapper alloc] init];
-        [DMLUser saveAttributes:user toKeychain:keychainWrapper];
+        [DMLUser saveAttributes:user toKeychain:[DMLKeychainManager sharedInstance]];
         
         completionBlock ? completionBlock() : nil;
         
@@ -74,10 +73,10 @@ NSString * const DMLUserIdentifierKey = @"id";
 
 #pragma mark - Keychain
 
-+(NSDictionary *)attributesFromKeychain:(DMLKeychainWrapper *)keychain {
++(NSDictionary *)attributesFromKeychain:(DMLKeychainManager *)keychain {
     
-    id authenticationToken = [keychain myObjectForKey:DMLUserAuthenticationTokenKey];
-    id identifier = [keychain myObjectForKey:DMLUserIdentifierKey];
+    id authenticationToken = [keychain objectForKey:DMLUserAuthenticationTokenKey];
+    id identifier = [keychain objectForKey:DMLUserIdentifierKey];
     if (!authenticationToken || !identifier) {
         
         return nil;
@@ -87,7 +86,7 @@ NSString * const DMLUserIdentifierKey = @"id";
     
 }
 
-+(void)saveAttributes:(DMLUser *)user toKeychain:(DMLKeychainWrapper *)keychain {
++(void)saveAttributes:(DMLUser *)user toKeychain:(DMLKeychainManager *)keychain {
     
     id authenticationToken = [user authenticationToken];
     id identifier = [self perstentObjectIdentifierFromIdentifier:[user identifier]];
@@ -96,9 +95,8 @@ NSString * const DMLUserIdentifierKey = @"id";
         return;
         
     }
-    [keychain mySetObject:authenticationToken forKey:DMLUserAuthenticationTokenKey];
-    [keychain mySetObject:identifier forKey:DMLUserIdentifierKey];
-    [keychain writeToKeychain];
+    [keychain setObject:authenticationToken forKey:DMLUserAuthenticationTokenKey];
+    [keychain setObject:identifier forKey:DMLUserIdentifierKey];
     
 }
 
@@ -166,8 +164,7 @@ static DMLUser *_me = nil;
     
     if (!_me) {
         
-        DMLKeychainWrapper *keychainWrapper = [[DMLKeychainWrapper alloc] init];
-        NSDictionary *attributes = [self attributesFromKeychain:keychainWrapper];
+        NSDictionary *attributes = [self attributesFromKeychain:[DMLKeychainManager sharedInstance]];
         if (attributes) {
             
             _me = [DMLUser userWithAttributes:attributes];
