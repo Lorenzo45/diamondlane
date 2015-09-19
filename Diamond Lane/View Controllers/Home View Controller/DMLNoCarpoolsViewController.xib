@@ -14,14 +14,49 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No carpools" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZ3-UA-oOf">
-                    <rect key="frame" x="127" y="186" width="93" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8HL-sn-WXM" userLabel="Container View">
+                    <rect key="frame" x="186" y="230" width="228" height="140"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a carpool" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZ3-UA-oOf">
+                            <rect key="frame" x="61.5" y="8" width="106.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2w-ga-O9P">
+                            <rect key="frame" x="97" y="55" width="34" height="30"/>
+                            <state key="normal" title="JOIN"/>
+                            <connections>
+                                <action selector="joinButtonPressed" destination="-1" eventType="touchUpInside" id="yjZ-UB-vNu"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eI2-eL-SRC">
+                            <rect key="frame" x="86" y="102" width="56" height="30"/>
+                            <state key="normal" title="CREATE"/>
+                            <connections>
+                                <action selector="createButtonPressed" destination="-1" eventType="touchUpInside" id="iPc-vg-ue8"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="f2w-ga-O9P" firstAttribute="leading" secondItem="8HL-sn-WXM" secondAttribute="leading" constant="97" id="5Eb-a6-MuT"/>
+                        <constraint firstItem="LZ3-UA-oOf" firstAttribute="centerX" secondItem="8HL-sn-WXM" secondAttribute="centerX" id="Ucb-zQ-RSu"/>
+                        <constraint firstItem="f2w-ga-O9P" firstAttribute="centerX" secondItem="8HL-sn-WXM" secondAttribute="centerX" id="WaL-Sk-pdc"/>
+                        <constraint firstItem="eI2-eL-SRC" firstAttribute="centerX" secondItem="8HL-sn-WXM" secondAttribute="centerX" id="Z3o-bA-T9e"/>
+                        <constraint firstItem="f2w-ga-O9P" firstAttribute="centerY" secondItem="8HL-sn-WXM" secondAttribute="centerY" id="acf-Jj-OC1"/>
+                        <constraint firstAttribute="bottom" secondItem="eI2-eL-SRC" secondAttribute="bottom" constant="8" id="hmJ-fX-KjW"/>
+                        <constraint firstItem="LZ3-UA-oOf" firstAttribute="top" secondItem="8HL-sn-WXM" secondAttribute="top" constant="8" id="i8m-R9-2BY"/>
+                        <constraint firstAttribute="height" constant="140" id="zPc-Pd-JWq"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="8HL-sn-WXM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="DNu-9l-wZi"/>
+                <constraint firstItem="8HL-sn-WXM" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="KdN-h3-ZSj"/>
+            </constraints>
+            <point key="canvasLocation" x="380" y="337"/>
         </view>
     </objects>
 </document>

@@ -27,8 +27,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        self.carpools = [@[@""] mutableCopy]; // TODO: Fetch from server
-        self.enRoute = YES; // TODO: Fetch from server
+        self.carpools = [@[] mutableCopy]; // TODO: Fetch from server
+        self.enRoute = NO; // TODO: Fetch from server
         [self updateBaseViewController];
         
     }
