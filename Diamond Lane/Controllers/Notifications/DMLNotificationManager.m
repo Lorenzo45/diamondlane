@@ -17,9 +17,9 @@
     
     NSString *normalizedToken = [pushToken stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
     normalizedToken = [normalizedToken stringByReplacingOccurrencesOfString:@" " withString:@""];
-    _pushToken = pushToken;
+    _pushToken = normalizedToken;
     
-    [[DMLUser me] updatePushToken:pushToken completionBlock:^{
+    [[DMLUser me] updatePushToken:normalizedToken completionBlock:^{
         
         NSLog(@"Push token updated.");
         

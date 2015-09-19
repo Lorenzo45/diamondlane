@@ -68,6 +68,7 @@
     [DMLLocationManager requestLocationPermission];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:DMLSplashViewControllerDoneOnboardingNotificationName object:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 

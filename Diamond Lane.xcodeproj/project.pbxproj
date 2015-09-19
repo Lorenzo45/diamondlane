@@ -35,6 +35,8 @@
 		934EBEF71BADC3C800E0B56B /* DMLNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 934EBEF61BADC3C800E0B56B /* DMLNotificationManager.m */; settings = {ASSET_TAGS = (); }; };
 		934EBEFA1BADDE5800E0B56B /* DMLJSONResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 934EBEF91BADDE5800E0B56B /* DMLJSONResponseSerializer.m */; settings = {ASSET_TAGS = (); }; };
 		934EBEFC1BADEEF600E0B56B /* DMLKeychainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88276FAA1BAD9DCD002886B4 /* DMLKeychainManager.m */; };
+		934EBF001BADEFA200E0B56B /* DMLCarpoolTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 934EBEFF1BADEFA200E0B56B /* DMLCarpoolTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		934EBF031BADF05E00E0B56B /* DMLCarpool.m in Sources */ = {isa = PBXBuildFile; fileRef = 934EBF021BADF05E00E0B56B /* DMLCarpool.m */; settings = {ASSET_TAGS = (); }; };
 		935E7D5B1BAD2644008F5451 /* DMLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935E7D5A1BAD2644008F5451 /* DMLHomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		935E7D5F1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 935E7D5E1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m */; settings = {ASSET_TAGS = (); }; };
 		9396BA101BAD34CA0088AA93 /* DMLOnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9396BA0F1BAD34CA0088AA93 /* DMLOnboardingViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -93,6 +95,10 @@
 		934EBEF81BADDE5800E0B56B /* DMLJSONResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLJSONResponseSerializer.h; sourceTree = "<group>"; };
 		934EBEF91BADDE5800E0B56B /* DMLJSONResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLJSONResponseSerializer.m; sourceTree = "<group>"; };
 		934EBEFB1BADE0AF00E0B56B /* DMLDEBUG.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMLDEBUG.h; sourceTree = "<group>"; };
+		934EBEFE1BADEFA200E0B56B /* DMLCarpoolTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLCarpoolTableViewCell.h; sourceTree = "<group>"; };
+		934EBEFF1BADEFA200E0B56B /* DMLCarpoolTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLCarpoolTableViewCell.m; sourceTree = "<group>"; };
+		934EBF011BADF05E00E0B56B /* DMLCarpool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMLCarpool.h; path = "../../../../../../../../../../Aaron/Documents/Work/Personal/Contests/Hack The North 2015/iOS/diamondlane/Diamond Lane/Models/DMLCarpool.h"; sourceTree = "<group>"; };
+		934EBF021BADF05E00E0B56B /* DMLCarpool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMLCarpool.m; path = "../../../../../../../../../../Aaron/Documents/Work/Personal/Contests/Hack The North 2015/iOS/diamondlane/Diamond Lane/Models/DMLCarpool.m"; sourceTree = "<group>"; };
 		935E7D591BAD2644008F5451 /* DMLHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLHomeViewController.h; sourceTree = "<group>"; };
 		935E7D5A1BAD2644008F5451 /* DMLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLHomeViewController.m; sourceTree = "<group>"; };
 		935E7D5D1BAD2739008F5451 /* DMLHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -203,6 +209,8 @@
 				934EBEEA1BADBD9700E0B56B /* DMLModel.h */,
 				934EBEF11BADC03900E0B56B /* DMLModel+Updates.h */,
 				934EBEF21BADC03900E0B56B /* DMLModel+Updates.m */,
+				934EBF011BADF05E00E0B56B /* DMLCarpool.h */,
+				934EBF021BADF05E00E0B56B /* DMLCarpool.m */,
 				93A3A0BA1BAD20D600391C98 /* DMLUser.h */,
 				93A3A0BB1BAD20D600391C98 /* DMLUser.m */,
 			);
@@ -290,9 +298,20 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
+		934EBEFD1BADEF8A00E0B56B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				934EBEFE1BADEFA200E0B56B /* DMLCarpoolTableViewCell.h */,
+				934EBEFF1BADEFA200E0B56B /* DMLCarpoolTableViewCell.m */,
+			);
+			name = Cells;
+			path = "../../../../../../../../../../../Aaron/Documents/Work/Personal/Contests/Hack The North 2015/iOS/diamondlane/Diamond Lane/View Controllers/Home View Controller/Cells";
+			sourceTree = "<group>";
+		};
 		935E7D581BAD2598008F5451 /* Home View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				934EBEFD1BADEF8A00E0B56B /* Cells */,
 				88276FC01BADD69B002886B4 /* Carpool Creation and Join */,
 				935E7D591BAD2644008F5451 /* DMLHomeViewController.h */,
 				935E7D5A1BAD2644008F5451 /* DMLHomeViewController.m */,
@@ -479,6 +498,8 @@
 				9396BA131BAD34D70088AA93 /* DMLOnboardingNameViewController.m in Sources */,
 				93A3A0BC1BAD20D600391C98 /* DMLUser.m in Sources */,
 				93022CC91BAD202A0032D284 /* AppDelegate.m in Sources */,
+				934EBF031BADF05E00E0B56B /* DMLCarpool.m in Sources */,
+				934EBF001BADEFA200E0B56B /* DMLCarpoolTableViewCell.m in Sources */,
 				934EBEFA1BADDE5800E0B56B /* DMLJSONResponseSerializer.m in Sources */,
 				741BEFCF1BADB69000D819FF /* DMLOnboardingEnablerViewController.m in Sources */,
 				934EBEF01BADBE0D00E0B56B /* DMLObjectStore.m in Sources */,

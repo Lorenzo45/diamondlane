@@ -8,30 +8,58 @@
 
 #import "DMLCarpoolListViewController.h"
 
-@interface DMLCarpoolListViewController ()
+#import "DMLCarpoolTableViewCell.h"
+
+@interface DMLCarpoolListViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, readonly, strong) UITableView *tableView;
 
 @end
 
 @implementation DMLCarpoolListViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+@synthesize tableView=_tableView;
+-(UITableView *)tableView {
+    
+    if (!_tableView) {
+        
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        [_tableView setDelegate:self];
+        [_tableView setDataSource:self];
+        [_tableView registerClass:[DMLCarpoolTableViewCell class] forCellReuseIdentifier:@"Cell"];
+        [[self view] addSubview:_tableView];
+        
+    }
+    return _tableView;
+   
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UITableViewDelegate
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return 0;
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    DMLCarpool *carpool = nil;
+    return [DMLCarpoolTableViewCell heightForCarpool:carpool];
+    
 }
-*/
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    DMLCarpoolTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    return cell;
+    
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    
+}
 
 @end
