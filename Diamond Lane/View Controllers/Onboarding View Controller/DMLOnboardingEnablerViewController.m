@@ -31,8 +31,7 @@
         
         UIAlertController* disabledLocationServiesAlert = [UIAlertController alertControllerWithTitle:@"Location services disabled" message:@"Please enable location services on your device" preferredStyle:UIAlertControllerStyleAlert];
         
-        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Settings" style:UIAlertActionStyleDefault
-                                                              handler:^(UIAlertAction * action) {
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Settings" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                                                                   
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
                                                               
@@ -40,13 +39,14 @@
         
         [disabledLocationServiesAlert addAction:defaultAction];
         [self presentViewController:disabledLocationServiesAlert animated:YES completion:nil];
+        
     }
     
     // to do enable push
     
     [DMLLocationManager requestLocationPermission];
     
-    if([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways) {
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways) {
         
         // push home view controller
         
