@@ -47,6 +47,8 @@
 
 -(void)textViewDidBeginEditing:(id)sender {
     
+    self.nameInputTextView.textColor = [UIColor blackColor];
+    
     if ([self.nameInputTextView.text isEqual:@"name"]) {
         
         self.nameInputTextView.text = @"";
@@ -84,17 +86,9 @@
 
 - (IBAction)continueButtonTapped:(id)sender {
     
-    // working on error display
-    
     if ([self.nameInputTextView.text isEqual:@"name"] || [self.nameInputTextView.text isEqual:@""]) {
         
-        [UIView animateWithDuration:0.5 animations:^{
-            
-            self.nameInputTextView.textColor = [UIColor redColor];
-        
-        } completion:^(BOOL finished) {
-            
-        }];
+        self.nameInputTextView.textColor = [UIColor redColor];
          
     }
 }
