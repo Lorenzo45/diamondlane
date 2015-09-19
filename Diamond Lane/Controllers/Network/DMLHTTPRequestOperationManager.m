@@ -10,7 +10,7 @@
 
 #import "DMLHTTPRequestOperationManager.h"
 
-NSString * const DMLRequestOperationManagerBaseURLString = @"http://diamondlaneapp.co/";
+NSString * const DMLRequestOperationManagerBaseURLString = @"http://52.11.211.211/";
 
 NSString * const DMLRequestOperationManagerAuthenticationHeaderName = @"X-dml_auth_token";
 
