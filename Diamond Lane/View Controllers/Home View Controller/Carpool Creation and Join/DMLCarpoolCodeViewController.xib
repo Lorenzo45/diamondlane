@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1K-5F-Cjx" userLabel="Container View">
-                    <rect key="frame" x="60" y="230" width="480" height="140"/>
+                    <rect key="frame" x="60" y="120" width="480" height="140"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbQ-lV-j9Q">
                             <rect key="frame" x="222" y="102" width="36" height="30"/>
@@ -54,9 +54,9 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="f1K-5F-Cjx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="120" id="3ol-ws-Wy6"/>
                 <constraint firstItem="f1K-5F-Cjx" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="7kn-V2-bnN"/>
                 <constraint firstItem="f1K-5F-Cjx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="REc-zI-6OZ"/>
-                <constraint firstItem="f1K-5F-Cjx" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="o2Y-ES-3mv"/>
             </constraints>
         </view>
     </objects>
