@@ -6,9 +6,24 @@
 //  Copyright © 2015 CS Boys. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "DMLModel.h"
+#import "DMLObjectStore.h"
 
-@interface DMLUser : NSObject
+@interface DMLUser : NSObject <DMLModel, DMLPersistentObject>
+
+@property (nonatomic, readonly, assign) NSInteger identifier;
+
++(void)createUserWithName:(NSString *)name completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock;
+
++(DMLUser *)userWithAttributes:(NSDictionary *)attributes;
+
+@end
+
+#pragma mark - Me
+@interface DMLUser ()
+
+@property (nonatomic, readonly, strong) NSString *authenticationToken;
+@property (nonatomic, readonly, assign) BOOL needsAttributesFetch;
 
 +(instancetype)me;
 

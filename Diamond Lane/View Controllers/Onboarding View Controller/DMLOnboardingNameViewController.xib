@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DMLOnboardingNameViewController">
             <connections>
+                <outlet property="nameInputTextView" destination="7A1-A8-Zcw" id="Pv4-aW-tl9"/>
                 <outlet property="view" destination="iN0-l3-epB" id="qTt-A0-aaW"/>
             </connections>
         </placeholder>
@@ -15,38 +16,40 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your name?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNl-nq-ujN">
-                    <rect key="frame" x="227" y="225" width="147" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="147" id="0sX-md-IQf"/>
-                        <constraint firstAttribute="height" constant="21" id="QFc-vs-kj8"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="131" y="206" width="338" height="48"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjK-qT-l5B">
-                    <rect key="frame" x="253" y="345" width="95" height="30"/>
-                    <state key="normal" title="Continue &gt;&gt;&gt;"/>
-                </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Username" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7A1-A8-Zcw">
-                    <rect key="frame" x="180" y="254" width="240" height="70"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="name" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7A1-A8-Zcw">
+                    <rect key="frame" x="131" y="262" width="338" height="63"/>
+                    <color key="backgroundColor" red="0.84424169579999997" green="0.84424169579999997" blue="0.82268902970000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="70" id="3ri-9J-8nQ"/>
-                        <constraint firstAttribute="width" constant="240" id="wcp-oA-5uW"/>
+                        <constraint firstAttribute="height" constant="63" id="DU7-Cj-gA7"/>
+                        <constraint firstAttribute="width" constant="338" id="bC0-1e-BYE"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="40"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjK-qT-l5B">
+                    <rect key="frame" x="178" y="333" width="244" height="60"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                    <state key="normal" title="Continue &gt;&gt;&gt;"/>
+                    <connections>
+                        <action selector="continueButtonTapped:" destination="-1" eventType="touchUpInside" id="6z3-M0-Hmi"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="sjK-qT-l5B" firstAttribute="top" secondItem="7A1-A8-Zcw" secondAttribute="bottom" constant="21" id="61g-u9-DSy"/>
-                <constraint firstItem="sjK-qT-l5B" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Lja-8H-5TO"/>
-                <constraint firstItem="7A1-A8-Zcw" firstAttribute="centerX" secondItem="sjK-qT-l5B" secondAttribute="centerX" id="Nnl-Ox-Pq3"/>
-                <constraint firstItem="7A1-A8-Zcw" firstAttribute="centerX" secondItem="yNl-nq-ujN" secondAttribute="centerX" id="Qog-VR-UaY"/>
-                <constraint firstItem="7A1-A8-Zcw" firstAttribute="top" secondItem="yNl-nq-ujN" secondAttribute="bottom" constant="8" symbolic="YES" id="VlW-BV-j2g"/>
-                <constraint firstItem="yNl-nq-ujN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="225" id="pWn-Gn-mi0"/>
+                <constraint firstItem="7A1-A8-Zcw" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-6.5" id="Ism-w2-nhJ"/>
+                <constraint firstItem="7A1-A8-Zcw" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="MmJ-3R-vyN"/>
+                <constraint firstItem="sjK-qT-l5B" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="63" id="SmQ-eu-WlO"/>
+                <constraint firstItem="sjK-qT-l5B" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Wzu-XJ-Ege"/>
+                <constraint firstItem="yNl-nq-ujN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="g0w-5G-a3h"/>
+                <constraint firstItem="yNl-nq-ujN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-70" id="nsQ-Gk-lpV"/>
             </constraints>
+            <point key="canvasLocation" x="452" y="367"/>
         </view>
     </objects>
 </document>
