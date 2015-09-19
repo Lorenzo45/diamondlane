@@ -97,8 +97,8 @@
 		934EBEFB1BADE0AF00E0B56B /* DMLDEBUG.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMLDEBUG.h; sourceTree = "<group>"; };
 		934EBEFE1BADEFA200E0B56B /* DMLCarpoolTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLCarpoolTableViewCell.h; sourceTree = "<group>"; };
 		934EBEFF1BADEFA200E0B56B /* DMLCarpoolTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLCarpoolTableViewCell.m; sourceTree = "<group>"; };
-		934EBF011BADF05E00E0B56B /* DMLCarpool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMLCarpool.h; path = "../../../../../../../../../../Aaron/Documents/Work/Personal/Contests/Hack The North 2015/iOS/diamondlane/Diamond Lane/Models/DMLCarpool.h"; sourceTree = "<group>"; };
-		934EBF021BADF05E00E0B56B /* DMLCarpool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMLCarpool.m; path = "../../../../../../../../../../Aaron/Documents/Work/Personal/Contests/Hack The North 2015/iOS/diamondlane/Diamond Lane/Models/DMLCarpool.m"; sourceTree = "<group>"; };
+		934EBF011BADF05E00E0B56B /* DMLCarpool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMLCarpool.h; path = "DMLCarpool.h"; sourceTree = "<group>"; };
+		934EBF021BADF05E00E0B56B /* DMLCarpool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMLCarpool.m; path = "DMLCarpool.m"; sourceTree = "<group>"; };
 		935E7D591BAD2644008F5451 /* DMLHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLHomeViewController.h; sourceTree = "<group>"; };
 		935E7D5A1BAD2644008F5451 /* DMLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLHomeViewController.m; sourceTree = "<group>"; };
 		935E7D5D1BAD2739008F5451 /* DMLHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -305,7 +305,7 @@
 				934EBEFF1BADEFA200E0B56B /* DMLCarpoolTableViewCell.m */,
 			);
 			name = Cells;
-			path = "../../../../../../../../../../../Aaron/Documents/Work/Personal/Contests/Hack The North 2015/iOS/diamondlane/Diamond Lane/View Controllers/Home View Controller/Cells";
+			path = "Cells";
 			sourceTree = "<group>";
 		};
 		935E7D581BAD2598008F5451 /* Home View Controller */ = {
