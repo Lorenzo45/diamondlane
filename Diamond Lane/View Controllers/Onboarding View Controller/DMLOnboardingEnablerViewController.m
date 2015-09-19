@@ -12,6 +12,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 #import "DMLLocationManager.h"
+#import "DMLNotificationManager.h"
 
 @interface DMLOnboardingEnablerViewController ()
 
@@ -39,22 +40,12 @@
         
         // location is enabled, registers for push
         
-        [self enablePushNotifications];
+        [[DMLNotificationManager sharedInstance] registerForPushNotifications];
         
         [self requestLocationPermission];
         
     }
 
-}
-
--(void)enablePushNotifications {
-    
-    UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
-    
-    UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
-    
-    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
-    
 }
 
 -(void)showDisabledLocationPopup {
