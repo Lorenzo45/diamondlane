@@ -44,7 +44,7 @@ NSString * const DMLUserIdentifierKey = @"id";
 +(void)createUserWithName:(NSString *)name completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock {
     
     NSDictionary *attributes = @{ @"name" : name ?: @"dank memer", @"device_id" : [self deviceID] };
-    [[DMLHTTPRequestOperationManager manager] GET:@"api/user/create.php" parameters:attributes success:^(AFHTTPRequestOperation *operation, NSDictionary *attributes) {
+    [[DMLHTTPRequestOperationManager manager] POST:@"api/user/create.php" parameters:attributes success:^(AFHTTPRequestOperation *operation, NSDictionary *attributes) {
         
         DMLUser *user = [DMLUser userWithAttributes:attributes];
         _me = user;
@@ -111,7 +111,7 @@ NSString * const DMLUserIdentifierKey = @"id";
     }
     
     NSDictionary *attributes = @{ @"longitude" : @(longitude), @"latitude" : @(latitude) };
-    [[DMLHTTPRequestOperationManager manager] GET:@"api/locations/update.php" parameters:attributes success:^(AFHTTPRequestOperation *operation, NSDictionary *attributes) {
+    [[DMLHTTPRequestOperationManager manager] POST:@"api/locations/update.php" parameters:attributes success:^(AFHTTPRequestOperation *operation, NSDictionary *attributes) {
         
         completionBlock ? completionBlock() : nil;
         
@@ -162,7 +162,7 @@ NSString * const DMLUserIdentifierKey = @"id";
     }
     
     NSDictionary *attributes = @{ @"push_token" : pushToken ?: @""};
-    [[DMLHTTPRequestOperationManager manager] GET:@"api/push/create.php" parameters:attributes success:^(AFHTTPRequestOperation *operation, NSDictionary *attributes) {
+    [[DMLHTTPRequestOperationManager manager] POST:@"api/push/create.php" parameters:attributes success:^(AFHTTPRequestOperation *operation, NSDictionary *attributes) {
         
         completionBlock ? completionBlock() : nil;
         
