@@ -38,8 +38,4 @@ static int defaultRadius = 30; // in meters
     [geofenceRegions addObject:[[CLCircularRegion alloc] initWithCenter:location radius:defaultRadius identifier:identifier]];
 }
 
-#pragma mark - API
-
-
-
 @end

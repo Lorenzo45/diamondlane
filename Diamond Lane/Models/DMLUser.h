@@ -13,8 +13,6 @@
 
 @property (nonatomic, readonly, assign) NSInteger identifier;
 
-+(void)createUserWithName:(NSString *)name completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock;
-
 +(DMLUser *)userWithAttributes:(NSDictionary *)attributes;
 
 @end
@@ -24,6 +22,10 @@
 
 @property (nonatomic, readonly, strong) NSString *authenticationToken;
 @property (nonatomic, readonly, assign) BOOL needsAttributesFetch;
+
++(void)updateLocationWithLongitude:(CGFloat)longitude latitude:(CGFloat)latitude completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock;
+
++(void)createUserWithName:(NSString *)name completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock;
 
 +(instancetype)me;
 
