@@ -7,6 +7,7 @@
 //
 
 #import "DMLOnboardingNameViewController.h"
+#import "DMLOnboardingEnablerViewController.h"
 
 @interface DMLOnboardingNameViewController ()
 
@@ -90,6 +91,11 @@
         
         self.nameInputTextView.textColor = [UIColor redColor];
          
+    } else {
+        
+        DMLOnboardingEnablerViewController *enablerViewController = [[DMLOnboardingEnablerViewController alloc] initWithNibName:@"DMLOnboardingEnablerViewController" bundle:nil];
+        [[self navigationController] pushViewController:enablerViewController animated:YES];
+        
     }
 }
 
