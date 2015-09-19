@@ -13,7 +13,7 @@
 
 @interface DMLOnboardingNameViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextView *nameInputTextView;
+@property (weak, nonatomic) IBOutlet UITextField *nameInputTextView;
 
 @end
 
@@ -48,50 +48,30 @@
     
 }
 
--(void)textViewDidBeginEditing:(id)sender {
-    
-    self.nameInputTextView.textColor = [UIColor blackColor];
-    
-    if ([self.nameInputTextView.text isEqual:@"name"]) {
-        
-        self.nameInputTextView.text = @"";
-        
-    }
-    
-}
-
-- (void)textViewDidChange:(id)sender {
-    
-    // Limits the textfield to the bounds of the rectangle
-    
-    NSUInteger maxNumberOfLines = 1;
-    NSUInteger numLines = self.nameInputTextView.contentSize.height / self.nameInputTextView.font.lineHeight;
-    
-    if (numLines > maxNumberOfLines) {
-        
-        self.nameInputTextView.text = [self.nameInputTextView.text substringToIndex:self.nameInputTextView.text.length - 1];
-        
-    }
-    
-}
-
 - (IBAction)continueButtonTapped:(id)sender {
     
     NSString *name = [[self nameInputTextView] text];
-    if ([name length] == 0) {
-        
-        self.nameInputTextView.textColor = [UIColor redColor];
-         
-    } else {
-        
+    if ([name length] != 0) {
+
         [DMLUser createUserWithName:name completionBlock:^{
+            
+            NSLog(@"oof");
             
             DMLOnboardingEnablerViewController *enablerViewController = [[DMLOnboardingEnablerViewController alloc] initWithNibName:@"DMLOnboardingEnablerViewController" bundle:nil];
             [[self navigationController] pushViewController:enablerViewController animated:YES];
             
         } failedBlock:^(NSError *error) {
             
-            [[[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show];
+            UIAlertController* errorAlert = [UIAlertController alertControllerWithTitle:@"Error" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Settings" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+                
+            }];
+            
+            [errorAlert addAction:defaultAction];
+            [self presentViewController:errorAlert animated:YES completion:nil];
             
         }];
         
