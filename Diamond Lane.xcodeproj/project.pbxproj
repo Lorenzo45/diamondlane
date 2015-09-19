@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		493415DF962F52BCBD604F0D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 667724B483AFC2DF1DFCB3D7 /* libPods.a */; };
+		88276FA81BAD9D35002886B4 /* DMLLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88276FA71BAD9D35002886B4 /* DMLLocationManager.m */; settings = {ASSET_TAGS = (); }; };
+		88276FAB1BAD9DCD002886B4 /* DMLKeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 88276FAA1BAD9DCD002886B4 /* DMLKeychainWrapper.m */; settings = {ASSET_TAGS = (); }; };
 		93022CC91BAD202A0032D284 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93022CC21BAD202A0032D284 /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		93022CCA1BAD202A0032D284 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93022CC31BAD202A0032D284 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		93022CCD1BAD202A0032D284 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93022CC61BAD202A0032D284 /* main.m */; settings = {ASSET_TAGS = (); }; };
@@ -26,6 +28,10 @@
 /* Begin PBXFileReference section */
 		667724B483AFC2DF1DFCB3D7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		87318828D118BB35F1F08B28 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		88276FA61BAD9D35002886B4 /* DMLLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMLLocationManager.h; path = Location/DMLLocationManager.h; sourceTree = "<group>"; };
+		88276FA71BAD9D35002886B4 /* DMLLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMLLocationManager.m; path = Location/DMLLocationManager.m; sourceTree = "<group>"; };
+		88276FA91BAD9DCD002886B4 /* DMLKeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMLKeychainWrapper.h; path = Keychain/DMLKeychainWrapper.h; sourceTree = "<group>"; };
+		88276FAA1BAD9DCD002886B4 /* DMLKeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMLKeychainWrapper.m; path = Keychain/DMLKeychainWrapper.m; sourceTree = "<group>"; };
 		93022CA01BAD1E7C0032D284 /* Diamond Lane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Diamond Lane.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93022CC11BAD202A0032D284 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		93022CC21BAD202A0032D284 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -73,6 +79,24 @@
 				87318828D118BB35F1F08B28 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		88276F9E1BAD5072002886B4 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				88276FA61BAD9D35002886B4 /* DMLLocationManager.h */,
+				88276FA71BAD9D35002886B4 /* DMLLocationManager.m */,
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
+		88276FA51BAD9D0E002886B4 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				88276FA91BAD9DCD002886B4 /* DMLKeychainWrapper.h */,
+				88276FAA1BAD9DCD002886B4 /* DMLKeychainWrapper.m */,
+			);
+			name = Keychain;
 			sourceTree = "<group>";
 		};
 		93022C971BAD1E7C0032D284 = {
@@ -125,6 +149,8 @@
 		93022CBC1BAD1FA80032D284 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				88276FA51BAD9D0E002886B4 /* Keychain */,
+				88276F9E1BAD5072002886B4 /* Location */,
 				935E7D5C1BAD26CC008F5451 /* Network */,
 			);
 			path = Controllers;
@@ -200,7 +226,6 @@
 				9396BA111BAD34D70088AA93 /* DMLOnboardingNameViewController.h */,
 				9396BA121BAD34D70088AA93 /* DMLOnboardingNameViewController.m */,
 			);
-			name = "Onboarding View Controller";
 			path = "Onboarding View Controller";
 			sourceTree = "<group>";
 		};
@@ -210,7 +235,6 @@
 				9396BA151BAD34F20088AA93 /* DMLSplashViewController.h */,
 				9396BA161BAD34F20088AA93 /* DMLSplashViewController.m */,
 			);
-			name = "Splash View Controller";
 			path = "Splash View Controller";
 			sourceTree = "<group>";
 		};
@@ -351,6 +375,8 @@
 				93A3A0BC1BAD20D600391C98 /* DMLUser.m in Sources */,
 				93022CC91BAD202A0032D284 /* AppDelegate.m in Sources */,
 				9396BA171BAD34F20088AA93 /* DMLSplashViewController.m in Sources */,
+				88276FA81BAD9D35002886B4 /* DMLLocationManager.m in Sources */,
+				88276FAB1BAD9DCD002886B4 /* DMLKeychainWrapper.m in Sources */,
 				935E7D5B1BAD2644008F5451 /* DMLHomeViewController.m in Sources */,
 				9396BA101BAD34CA0088AA93 /* DMLOnboardingViewController.m in Sources */,
 			);
