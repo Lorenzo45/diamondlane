@@ -12,9 +12,11 @@
 
 #import "DMLUser.h"
 
+#import "DMLLocationManager.h"
+
 NSString * const DMLSplashViewControllerDoneOnboardingNotificationName = @"DMLSplashViewControllerDoneOnboardingNotificationName";
 
-@interface DMLSplashViewController ()
+@interface DMLSplashViewController () <DMLLocationObserver>
 
 @property (nonatomic, assign) BOOL presentedOnboardingViewController;
 
@@ -26,6 +28,7 @@ NSString * const DMLSplashViewControllerDoneOnboardingNotificationName = @"DMLSp
 
 -(void)dealloc {
     
+    [[DMLLocationManager sharedInstance] removeObserver:self];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
 }
@@ -78,7 +81,7 @@ NSString * const DMLSplashViewControllerDoneOnboardingNotificationName = @"DMLSp
 
 -(void)initializeApplication {
     
-    ;
+    [[DMLLocationManager sharedInstance] addObserver:self];
     
 }
 
@@ -126,6 +129,26 @@ NSString * const DMLSplashViewControllerDoneOnboardingNotificationName = @"DMLSp
     DMLOnboardingViewController *onboardingViewController = [[DMLOnboardingViewController alloc] initWithNibName:@"DMLOnboardingViewController" bundle:nil];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:onboardingViewController];
     [self presentViewController:navigationController animated:NO completion:nil];
+    
+}
+
+#pragma mark - DMLLocationObserver
+
+-(void)locationManager:(DMLLocationManager *)locationManager didUpdateLocation:(CLLocation *)location {
+    
+    NSLog(@"Splash view controller received location: %@",location);
+    
+}
+
+-(void)locationManager:(DMLLocationManager *)locationManager didEnterRegion:(CLRegion *)region {
+    
+    
+    
+}
+
+-(void)locationManager:(DMLLocationManager *)locationManager didExitRegion:(CLRegion *)region {
+    
+    
     
 }
 
