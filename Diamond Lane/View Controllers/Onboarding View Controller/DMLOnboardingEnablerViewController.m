@@ -35,6 +35,11 @@
         
         [self showDisabledLocationPopup];
         
+    } else if (YES) {
+        
+            //[application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+            
+        
     } else {
         
         [self requestLocationPermission];
