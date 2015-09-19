@@ -10,6 +10,11 @@
 
 @interface DMLNotificationManager : NSObject
 
+@property (nonatomic, readonly, copy) NSString *pushToken;
+-(void)registerPushToken:(NSString *)pushToken;
+
+-(void)registerForPushNotifications;
+
 +(instancetype)sharedInstance;
 
 @end

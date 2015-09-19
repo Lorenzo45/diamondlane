@@ -102,7 +102,13 @@ NSString * const DMLUserIdentifierKey = @"id";
 
 #pragma mark - Location
 
-+(void)updateLocationWithLongitude:(CGFloat)longitude latitude:(CGFloat)latitude completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock {
+-(void)updateLocationWithLongitude:(CGFloat)longitude latitude:(CGFloat)latitude completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock {
+    
+    if (![self isMe]) {
+        
+        return;
+        
+    }
     
     NSDictionary *attributes = @{ @"longitude" : @(longitude), @"latitude" : @(latitude) };
     [[DMLHTTPRequestOperationManager manager] GET:@"api/locations/update.php" parameters:attributes success:^(AFHTTPRequestOperation *operation, NSDictionary *attributes) {
@@ -114,6 +120,14 @@ NSString * const DMLUserIdentifierKey = @"id";
         failedBlock ? failedBlock(error) : nil;
         
     }];
+    
+}
+
+#pragma mark - Me
+
+-(BOOL)isMe {
+    
+    return self == [DMLUser me];
     
 }
 
@@ -134,6 +148,29 @@ NSString * const DMLUserIdentifierKey = @"id";
 +(id)perstentObjectIdentifierFromIdentifier:(NSInteger)identifier {
     
     return @(identifier);
+    
+}
+
+#pragma mark - Push
+
+-(void)updatePushToken:(NSString *)pushToken completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock {
+    
+    if (![self isMe]) {
+        
+        return;
+        
+    }
+    
+    NSDictionary *attributes = @{ @"push_token" : pushToken ?: @""};
+    [[DMLHTTPRequestOperationManager manager] GET:@"api/push/create.php" parameters:attributes success:^(AFHTTPRequestOperation *operation, NSDictionary *attributes) {
+        
+        completionBlock ? completionBlock() : nil;
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        failedBlock ? failedBlock(error) : nil;
+        
+    }];
     
 }
 

@@ -7,10 +7,39 @@
 //
 
 #import "DMLNotificationManager.h"
+#import "DMLUser.h"
 
 @implementation DMLNotificationManager
 
+#pragma mark - Push Tokens
 
+-(void)registerPushToken:(NSString *)pushToken {
+    
+    NSString *normalizedToken = [pushToken stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    normalizedToken = [normalizedToken stringByReplacingOccurrencesOfString:@" " withString:@""];
+    _pushToken = pushToken;
+    
+    [[DMLUser me] updatePushToken:pushToken completionBlock:^{
+        
+        NSLog(@"Push token updated.");
+        
+    } failedBlock:^(NSError *error) {
+        
+        NSLog(@"Push token failed to update with error: %@",error);
+        
+    }];
+    
+}
+
+#pragma mark - Registration
+
+-(void)registerForPushNotifications {
+    
+    UIUserNotificationType notificationTypes = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:notificationTypes categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    
+}
 
 #pragma mark - Class Methods
 

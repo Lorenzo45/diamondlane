@@ -10,6 +10,8 @@
 
 #import "DMLSplashViewController.h"
 
+#import "DMLNotificationManager.h"
+
 @interface AppDelegate ()
 
 @end
@@ -26,6 +28,30 @@
     [self setWindow:window];
     
     return YES;
+    
+}
+
+-(void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
+    
+    [application registerForRemoteNotifications];
+    
+}
+
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    
+    [[DMLNotificationManager sharedInstance] registerPushToken:[deviceToken description]];
+    
+}
+
+-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    
+    NSLog(@"Couldn't register for push notifications with error: %@",error);
+    
+}
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    
+    NSLog(@"Registered with remote notification with userInfo: %@",userInfo);
     
 }
 
