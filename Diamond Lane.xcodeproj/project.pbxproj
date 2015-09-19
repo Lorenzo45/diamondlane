@@ -28,6 +28,7 @@
 		934EBEF01BADBE0D00E0B56B /* DMLObjectStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 934EBEEF1BADBE0D00E0B56B /* DMLObjectStore.m */; settings = {ASSET_TAGS = (); }; };
 		934EBEF31BADC03900E0B56B /* DMLModel+Updates.m in Sources */ = {isa = PBXBuildFile; fileRef = 934EBEF21BADC03900E0B56B /* DMLModel+Updates.m */; settings = {ASSET_TAGS = (); }; };
 		934EBEF71BADC3C800E0B56B /* DMLNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 934EBEF61BADC3C800E0B56B /* DMLNotificationManager.m */; settings = {ASSET_TAGS = (); }; };
+		934EBEFA1BADDE5800E0B56B /* DMLJSONResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 934EBEF91BADDE5800E0B56B /* DMLJSONResponseSerializer.m */; settings = {ASSET_TAGS = (); }; };
 		935E7D5B1BAD2644008F5451 /* DMLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935E7D5A1BAD2644008F5451 /* DMLHomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		935E7D5F1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 935E7D5E1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m */; settings = {ASSET_TAGS = (); }; };
 		9396BA101BAD34CA0088AA93 /* DMLOnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9396BA0F1BAD34CA0088AA93 /* DMLOnboardingViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -74,6 +75,8 @@
 		934EBEF21BADC03900E0B56B /* DMLModel+Updates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DMLModel+Updates.m"; sourceTree = "<group>"; };
 		934EBEF51BADC3C800E0B56B /* DMLNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLNotificationManager.h; sourceTree = "<group>"; };
 		934EBEF61BADC3C800E0B56B /* DMLNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLNotificationManager.m; sourceTree = "<group>"; };
+		934EBEF81BADDE5800E0B56B /* DMLJSONResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMLJSONResponseSerializer.h; path = "../../../../../../../../../../../Aaron/Documents/Work/Personal/Contests/Hack The North 2015/iOS/diamondlane/Diamond Lane/Controllers/Network/DMLJSONResponseSerializer.h"; sourceTree = "<group>"; };
+		934EBEF91BADDE5800E0B56B /* DMLJSONResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMLJSONResponseSerializer.m; path = "../../../../../../../../../../../Aaron/Documents/Work/Personal/Contests/Hack The North 2015/iOS/diamondlane/Diamond Lane/Controllers/Network/DMLJSONResponseSerializer.m"; sourceTree = "<group>"; };
 		935E7D591BAD2644008F5451 /* DMLHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLHomeViewController.h; sourceTree = "<group>"; };
 		935E7D5A1BAD2644008F5451 /* DMLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLHomeViewController.m; sourceTree = "<group>"; };
 		935E7D5D1BAD2739008F5451 /* DMLHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -277,6 +280,8 @@
 			children = (
 				935E7D5D1BAD2739008F5451 /* DMLHTTPRequestOperationManager.h */,
 				935E7D5E1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m */,
+				934EBEF81BADDE5800E0B56B /* DMLJSONResponseSerializer.h */,
+				934EBEF91BADDE5800E0B56B /* DMLJSONResponseSerializer.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -435,6 +440,7 @@
 				9396BA131BAD34D70088AA93 /* DMLOnboardingNameViewController.m in Sources */,
 				93A3A0BC1BAD20D600391C98 /* DMLUser.m in Sources */,
 				93022CC91BAD202A0032D284 /* AppDelegate.m in Sources */,
+				934EBEFA1BADDE5800E0B56B /* DMLJSONResponseSerializer.m in Sources */,
 				741BEFCF1BADB69000D819FF /* DMLOnboardingEnablerViewController.m in Sources */,
 				934EBEF01BADBE0D00E0B56B /* DMLObjectStore.m in Sources */,
 				9396BA171BAD34F20088AA93 /* DMLSplashViewController.m in Sources */,
