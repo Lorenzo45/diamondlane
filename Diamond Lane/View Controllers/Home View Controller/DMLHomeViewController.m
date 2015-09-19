@@ -29,10 +29,13 @@
     if (self) {
         
         [DMLCarpool fetchCarpoolsWithCompletionBlock:^(NSArray *carpools) {
-            NSLog(@"DONE");
+            
             self.carpools = [carpools mutableCopy];
+            
         } failedBlock:^(NSError *error) {
+            
             NSLog(@"%@", error);
+            
         }];
         
         self.enRoute = NO; // TODO: Fetch from server
@@ -43,8 +46,11 @@
 }
 
 - (void)setCarpools:(NSMutableArray *)carpools {
+    
     _carpools = carpools;
+    
     [self updateBaseViewController];
+    
 }
 
 -(void)viewDidLoad {
