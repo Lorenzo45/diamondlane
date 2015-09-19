@@ -35,17 +35,26 @@
         
         [self showDisabledLocationPopup];
         
-    } else if (YES) {
-        
-            //[application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
-            
-        
     } else {
+        
+        // location is enabled, registers for push
+        
+        [self enablePushNotifications];
         
         [self requestLocationPermission];
         
     }
 
+}
+
+-(void)enablePushNotifications {
+    
+    UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+    
+    UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    
+    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
+    
 }
 
 -(void)showDisabledLocationPopup {
