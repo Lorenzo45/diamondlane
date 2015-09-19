@@ -42,4 +42,10 @@
     
 }
 
+- (IBAction)goButtonTapped:(id)sender {
+    
+    [self performSegueWithIdentifier:@"NameSegue" sender:sender];
+    
+}
+
 @end

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Onboarding View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="DMLHomeViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DMLOnboardingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -31,6 +31,9 @@
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="0.0" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="goButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WFI-WQ-YvU"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xe8-o2-I6I">
                                 <rect key="frame" x="23" y="191" width="227.5" height="186.5"/>
@@ -52,9 +55,59 @@ Seatbelts.</string>
                             <constraint firstItem="Xe8-o2-I6I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="3" id="ym1-FD-C6t"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="saY-JN-wD0" kind="show" identifier="NameSegue" id="bOi-bM-WJN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4sB-4X-UUK">
+            <objects>
+                <viewController id="saY-JN-wD0" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="B8r-G5-QAl"/>
+                        <viewControllerLayoutGuide type="bottom" id="hlf-V3-mEW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o7r-sE-tDt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your name?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oob-Pz-mZ5">
+                                <rect key="frame" x="233" y="222" width="147" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fy3-lf-cJB">
+                                <rect key="frame" x="259" y="342" width="95" height="30"/>
+                                <state key="normal" title="Continue &gt;&gt;&gt;"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Username" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bv3-go-ltm">
+                                <rect key="frame" x="186" y="251" width="240" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="GJU-YI-3me"/>
+                                    <constraint firstAttribute="height" constant="70" id="bUz-O0-71L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fy3-lf-cJB" firstAttribute="centerX" secondItem="o7r-sE-tDt" secondAttribute="centerX" constant="6.5" id="71P-wF-D1z"/>
+                            <constraint firstItem="oob-Pz-mZ5" firstAttribute="centerY" secondItem="o7r-sE-tDt" secondAttribute="centerY" constant="-67.5" id="FNd-N1-MIx"/>
+                            <constraint firstItem="Bv3-go-ltm" firstAttribute="centerY" secondItem="o7r-sE-tDt" secondAttribute="centerY" constant="-14" id="SW7-8r-9ZJ"/>
+                            <constraint firstItem="Bv3-go-ltm" firstAttribute="centerX" secondItem="o7r-sE-tDt" secondAttribute="centerX" constant="6" id="ULF-17-pi4"/>
+                            <constraint firstItem="oob-Pz-mZ5" firstAttribute="centerX" secondItem="o7r-sE-tDt" secondAttribute="centerX" constant="6.5" id="UPk-BI-oBC"/>
+                            <constraint firstItem="Fy3-lf-cJB" firstAttribute="centerY" secondItem="o7r-sE-tDt" secondAttribute="centerY" constant="57" id="xOn-g6-YQw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rSa-YG-WTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="324"/>
         </scene>
     </scenes>
 </document>
