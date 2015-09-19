@@ -9,7 +9,7 @@
 #import "DMLUser.h"
 
 #import "DMLHTTPRequestOperationManager.h"
-#import "DMLKeychainWrapper.h"
+#import "DMLKeychainManager.h"
 #import "DMLObjectStore.h"
 
 #import "DMLModel+Updates.h"
@@ -19,7 +19,15 @@ NSString * const DMLUserIdentifierKey = @"id";
 
 @implementation DMLUser
 
-
++(void)initialize {
+    
+#if DML_NO_PERSIST_SESSION == 1
+    DMLKeychainManager *keychain = [DMLKeychainManager sharedInstance];
+    [keychain removeItemForKey:DMLUserAuthenticationTokenKey];
+    [keychain removeItemForKey:DMLUserIdentifierKey];
+#endif
+    
+}
 
 #pragma mark - Attributes
 
@@ -44,13 +52,12 @@ NSString * const DMLUserIdentifierKey = @"id";
 +(void)createUserWithName:(NSString *)name completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock {
     
     NSDictionary *attributes = @{ @"name" : name ?: @"dank memer", @"device_id" : [self deviceID] };
-    [[DMLHTTPRequestOperationManager manager] GET:@"api/user/create.php" parameters:attributes success:^(AFHTTPRequestOperation *operation, NSDictionary *attributes) {
+    [[DMLHTTPRequestOperationManager manager] POST:@"api/user/create.php" parameters:attributes success:^(AFHTTPRequestOperation *operation, NSDictionary *attributes) {
         
         DMLUser *user = [DMLUser userWithAttributes:attributes];
         _me = user;
         
-        DMLKeychainWrapper *keychainWrapper = [[DMLKeychainWrapper alloc] init];
-        [DMLUser saveAttributes:user toKeychain:keychainWrapper];
+        [DMLUser saveAttributes:user toKeychain:[DMLKeychainManager sharedInstance]];
         
         completionBlock ? completionBlock() : nil;
         
@@ -74,10 +81,10 @@ NSString * const DMLUserIdentifierKey = @"id";
 
 #pragma mark - Keychain
 
-+(NSDictionary *)attributesFromKeychain:(DMLKeychainWrapper *)keychain {
++(NSDictionary *)attributesFromKeychain:(DMLKeychainManager *)keychain {
     
-    id authenticationToken = [keychain myObjectForKey:DMLUserAuthenticationTokenKey];
-    id identifier = [keychain myObjectForKey:DMLUserIdentifierKey];
+    id authenticationToken = [keychain objectForKey:DMLUserAuthenticationTokenKey];
+    id identifier = [keychain objectForKey:DMLUserIdentifierKey];
     if (!authenticationToken || !identifier) {
         
         return nil;
@@ -87,7 +94,7 @@ NSString * const DMLUserIdentifierKey = @"id";
     
 }
 
-+(void)saveAttributes:(DMLUser *)user toKeychain:(DMLKeychainWrapper *)keychain {
++(void)saveAttributes:(DMLUser *)user toKeychain:(DMLKeychainManager *)keychain {
     
     id authenticationToken = [user authenticationToken];
     id identifier = [self perstentObjectIdentifierFromIdentifier:[user identifier]];
@@ -96,18 +103,23 @@ NSString * const DMLUserIdentifierKey = @"id";
         return;
         
     }
-    [keychain mySetObject:authenticationToken forKey:DMLUserAuthenticationTokenKey];
-    [keychain mySetObject:identifier forKey:DMLUserIdentifierKey];
-    [keychain writeToKeychain];
+    [keychain setObject:authenticationToken forKey:DMLUserAuthenticationTokenKey];
+    [keychain setObject:identifier forKey:DMLUserIdentifierKey];
     
 }
 
 #pragma mark - Location
 
-+(void)updateLocationWithLongitude:(CGFloat)longitude latitude:(CGFloat)latitude completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock {
+-(void)updateLocationWithLongitude:(CGFloat)longitude latitude:(CGFloat)latitude completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock {
+    
+    if (![self isMe]) {
+        
+        return;
+        
+    }
     
     NSDictionary *attributes = @{ @"longitude" : @(longitude), @"latitude" : @(latitude) };
-    [[DMLHTTPRequestOperationManager manager] GET:@"api/locations/update.php" parameters:attributes success:^(AFHTTPRequestOperation *operation, NSDictionary *attributes) {
+    [[DMLHTTPRequestOperationManager manager] POST:@"api/locations/update.php" parameters:attributes success:^(AFHTTPRequestOperation *operation, NSDictionary *attributes) {
         
         completionBlock ? completionBlock() : nil;
         
@@ -116,6 +128,14 @@ NSString * const DMLUserIdentifierKey = @"id";
         failedBlock ? failedBlock(error) : nil;
         
     }];
+    
+}
+
+#pragma mark - Me
+
+-(BOOL)isMe {
+    
+    return self == [DMLUser me];
     
 }
 
@@ -136,6 +156,29 @@ NSString * const DMLUserIdentifierKey = @"id";
 +(id)perstentObjectIdentifierFromIdentifier:(NSInteger)identifier {
     
     return @(identifier);
+    
+}
+
+#pragma mark - Push
+
+-(void)updatePushToken:(NSString *)pushToken completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock {
+    
+    if (![self isMe]) {
+        
+        return;
+        
+    }
+    
+    NSDictionary *attributes = @{ @"push_token" : pushToken ?: @""};
+    [[DMLHTTPRequestOperationManager manager] POST:@"api/push/create.php" parameters:attributes success:^(AFHTTPRequestOperation *operation, NSDictionary *attributes) {
+        
+        completionBlock ? completionBlock() : nil;
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        failedBlock ? failedBlock(error) : nil;
+        
+    }];
     
 }
 
@@ -166,10 +209,10 @@ static DMLUser *_me = nil;
     
     if (!_me) {
         
-        DMLKeychainWrapper *keychainWrapper = [[DMLKeychainWrapper alloc] init];
-        NSDictionary *attributes = [self attributesFromKeychain:keychainWrapper];
+        NSDictionary *attributes = [self attributesFromKeychain:[DMLKeychainManager sharedInstance]];
         if (attributes) {
             
+            NSLog(@"Generated me with attributes: %@",attributes);
             _me = [DMLUser userWithAttributes:attributes];
             
         }

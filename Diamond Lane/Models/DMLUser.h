@@ -21,12 +21,13 @@
 @interface DMLUser ()
 
 @property (nonatomic, readonly, strong) NSString *authenticationToken;
-@property (nonatomic, readonly, assign) BOOL needsAttributesFetch;
 
-+(void)updateLocationWithLongitude:(CGFloat)longitude latitude:(CGFloat)latitude completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock;
+-(void)updateLocationWithLongitude:(CGFloat)longitude latitude:(CGFloat)latitude completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock;
+-(void)updatePushToken:(NSString *)pushToken completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock;
 
 +(void)createUserWithName:(NSString *)name completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock;
 
 +(instancetype)me;
+-(BOOL)isMe;
 
 @end

@@ -12,6 +12,8 @@
 
 #import "DMLUser.h"
 
+NSString * const DMLSplashViewControllerDoneOnboardingNotificationName = @"DMLSplashViewControllerDoneOnboardingNotificationName";
+
 @interface DMLSplashViewController ()
 
 @property (nonatomic, assign) BOOL presentedOnboardingViewController;
@@ -21,6 +23,12 @@
 @end
 
 @implementation DMLSplashViewController
+
+-(void)dealloc {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+}
 
 -(instancetype)initWithNibName:(nullable NSString *)nibNameOrNil bundle:(nullable NSBundle *)nibBundleOrNil {
     
@@ -52,7 +60,7 @@
     
     if (![DMLUser me]) {
         
-        [self showHomeViewController];
+        [self showOnboardingViewController];
         
     }
     
@@ -71,6 +79,14 @@
 -(void)initializeApplication {
     
     ;
+    
+}
+
+#pragma mark - Notifications
+
+-(void)doneOnboardingNotification:(id)sender {
+    
+    [self showHomeViewController];
     
 }
 
@@ -104,6 +120,8 @@
         
     }
     [self setPresentedOnboardingViewController:YES];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doneOnboardingNotification:) name:DMLSplashViewControllerDoneOnboardingNotificationName object:nil];
     
     DMLOnboardingViewController *onboardingViewController = [[DMLOnboardingViewController alloc] initWithNibName:@"DMLOnboardingViewController" bundle:nil];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:onboardingViewController];
