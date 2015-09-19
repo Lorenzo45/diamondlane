@@ -9,6 +9,8 @@
 #import "DMLOnboardingNameViewController.h"
 #import "DMLOnboardingEnablerViewController.h"
 
+#import "DMLUser.h"
+
 @interface DMLOnboardingNameViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *nameInputTextView;
@@ -73,28 +75,25 @@
     
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    [self.view endEditing:YES];
-    
-    if ([self.nameInputTextView.text isEqual:@""]) {
-        
-        self.nameInputTextView.text = @"name";
-        
-    }
-    
-}
-
 - (IBAction)continueButtonTapped:(id)sender {
     
-    if ([self.nameInputTextView.text isEqual:@"name"] || [self.nameInputTextView.text isEqual:@""]) {
+    NSString *name = [[self nameInputTextView] text];
+    if ([name length] == 0) {
         
         self.nameInputTextView.textColor = [UIColor redColor];
          
     } else {
         
-        DMLOnboardingEnablerViewController *enablerViewController = [[DMLOnboardingEnablerViewController alloc] initWithNibName:@"DMLOnboardingEnablerViewController" bundle:nil];
-        [[self navigationController] pushViewController:enablerViewController animated:YES];
+        [DMLUser createUserWithName:name completionBlock:^{
+            
+            DMLOnboardingEnablerViewController *enablerViewController = [[DMLOnboardingEnablerViewController alloc] initWithNibName:@"DMLOnboardingEnablerViewController" bundle:nil];
+            [[self navigationController] pushViewController:enablerViewController animated:YES];
+            
+        } failedBlock:^(NSError *error) {
+            
+            [[[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show];
+            
+        }];
         
     }
 }
