@@ -18,38 +18,41 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZJ-9r-FLK" userLabel="Container View">
-                    <rect key="frame" x="60" y="230" width="480" height="140"/>
+                    <rect key="frame" x="122" y="184" width="357" height="198"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="76H-bM-lIz">
-                            <rect key="frame" x="16" y="55" width="448" height="30"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a carpool code below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpM-GM-puq">
-                            <rect key="frame" x="83.5" y="8" width="314" height="31.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FbO-IE-QL3">
-                            <rect key="frame" x="188" y="96" width="105" height="44"/>
+                            <rect key="frame" x="126" y="142" width="105" height="44"/>
                             <fontDescription key="fontDescription" type="system" pointSize="26"/>
                             <state key="normal" title="Continue"/>
                             <connections>
                                 <action selector="continueButtonPressed" destination="-1" eventType="touchUpInside" id="cUT-Xh-HCq"/>
                             </connections>
                         </button>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="76H-bM-lIz">
+                            <rect key="frame" x="26" y="68" width="304" height="66"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="66" id="Mym-gp-ICh"/>
+                                <constraint firstAttribute="width" constant="304" id="qCH-Vq-ebj"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a carpool code below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpM-GM-puq">
+                            <rect key="frame" x="27" y="2" width="302" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="FbO-IE-QL3" secondAttribute="bottom" id="2KV-Wy-XWj"/>
-                        <constraint firstAttribute="height" constant="140" id="6Z5-iQ-VJh"/>
+                        <constraint firstAttribute="bottom" secondItem="FbO-IE-QL3" secondAttribute="bottom" constant="12" id="2KV-Wy-XWj"/>
+                        <constraint firstItem="76H-bM-lIz" firstAttribute="centerX" secondItem="mZJ-9r-FLK" secondAttribute="centerX" id="2g5-m7-9jK"/>
+                        <constraint firstAttribute="height" constant="198" id="6Z5-iQ-VJh"/>
                         <constraint firstItem="FbO-IE-QL3" firstAttribute="centerX" secondItem="mZJ-9r-FLK" secondAttribute="centerX" id="B7K-3q-APT"/>
-                        <constraint firstItem="76H-bM-lIz" firstAttribute="centerY" secondItem="mZJ-9r-FLK" secondAttribute="centerY" id="KWh-cV-3Ar"/>
-                        <constraint firstItem="76H-bM-lIz" firstAttribute="leading" secondItem="mZJ-9r-FLK" secondAttribute="leading" constant="16" id="O8v-PW-Dpd"/>
-                        <constraint firstAttribute="trailing" secondItem="76H-bM-lIz" secondAttribute="trailing" constant="16" id="R0m-Ru-fjL"/>
+                        <constraint firstItem="76H-bM-lIz" firstAttribute="centerY" secondItem="mZJ-9r-FLK" secondAttribute="centerY" constant="2" id="KWh-cV-3Ar"/>
                         <constraint firstItem="OpM-GM-puq" firstAttribute="centerX" secondItem="mZJ-9r-FLK" secondAttribute="centerX" id="nTG-7L-QLG"/>
-                        <constraint firstItem="OpM-GM-puq" firstAttribute="top" secondItem="mZJ-9r-FLK" secondAttribute="top" constant="8" id="srY-yq-CMc"/>
+                        <constraint firstItem="OpM-GM-puq" firstAttribute="top" secondItem="mZJ-9r-FLK" secondAttribute="top" constant="2" id="srY-yq-CMc"/>
                         <constraint firstItem="FbO-IE-QL3" firstAttribute="centerX" secondItem="mZJ-9r-FLK" secondAttribute="centerX" id="upA-iK-aW1"/>
                     </constraints>
                 </view>
@@ -57,8 +60,8 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="mZJ-9r-FLK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="71b-kt-1W9"/>
-                <constraint firstItem="mZJ-9r-FLK" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="KqH-Yj-LT5"/>
-                <constraint firstItem="mZJ-9r-FLK" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="qeE-Am-B9C"/>
+                <constraint firstItem="mZJ-9r-FLK" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" constant="-123" id="KqH-Yj-LT5"/>
+                <constraint firstItem="mZJ-9r-FLK" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-17" id="qeE-Am-B9C"/>
             </constraints>
         </view>
     </objects>
