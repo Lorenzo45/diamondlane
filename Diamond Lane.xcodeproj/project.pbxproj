@@ -16,6 +16,9 @@
 		930687491BAD336100B8F3AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 930687471BAD336100B8F3AC /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		935E7D5B1BAD2644008F5451 /* DMLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935E7D5A1BAD2644008F5451 /* DMLHomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		935E7D5F1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 935E7D5E1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m */; settings = {ASSET_TAGS = (); }; };
+		9396BA101BAD34CA0088AA93 /* DMLOnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9396BA0F1BAD34CA0088AA93 /* DMLOnboardingViewController.m */; settings = {ASSET_TAGS = (); }; };
+		9396BA131BAD34D70088AA93 /* DMLOnboardingNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9396BA121BAD34D70088AA93 /* DMLOnboardingNameViewController.m */; settings = {ASSET_TAGS = (); }; };
+		9396BA171BAD34F20088AA93 /* DMLSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9396BA161BAD34F20088AA93 /* DMLSplashViewController.m */; settings = {ASSET_TAGS = (); }; };
 		93A3A0B91BAD20A400391C98 /* UIColor+DiamondLane.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A3A0B81BAD20A400391C98 /* UIColor+DiamondLane.m */; settings = {ASSET_TAGS = (); }; };
 		93A3A0BC1BAD20D600391C98 /* DMLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A3A0BB1BAD20D600391C98 /* DMLUser.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -38,6 +41,12 @@
 		935E7D5D1BAD2739008F5451 /* DMLHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLHTTPRequestOperationManager.h; sourceTree = "<group>"; };
 		935E7D5E1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		935E7D601BAD27D7008F5451 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		9396BA0E1BAD34CA0088AA93 /* DMLOnboardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLOnboardingViewController.h; sourceTree = "<group>"; };
+		9396BA0F1BAD34CA0088AA93 /* DMLOnboardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLOnboardingViewController.m; sourceTree = "<group>"; };
+		9396BA111BAD34D70088AA93 /* DMLOnboardingNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLOnboardingNameViewController.h; sourceTree = "<group>"; };
+		9396BA121BAD34D70088AA93 /* DMLOnboardingNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLOnboardingNameViewController.m; sourceTree = "<group>"; };
+		9396BA151BAD34F20088AA93 /* DMLSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLSplashViewController.h; sourceTree = "<group>"; };
+		9396BA161BAD34F20088AA93 /* DMLSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLSplashViewController.m; sourceTree = "<group>"; };
 		93A3A0B71BAD20A400391C98 /* UIColor+DiamondLane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+DiamondLane.h"; sourceTree = "<group>"; };
 		93A3A0B81BAD20A400391C98 /* UIColor+DiamondLane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+DiamondLane.m"; sourceTree = "<group>"; };
 		93A3A0BA1BAD20D600391C98 /* DMLUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLUser.h; sourceTree = "<group>"; };
@@ -125,6 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				935E7D581BAD2598008F5451 /* Home View Controller */,
+				9396BA0D1BAD34A90088AA93 /* Onboarding View Controller */,
+				9396BA141BAD34DA0088AA93 /* Splash View Controller */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -179,6 +190,28 @@
 				935E7D5E1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		9396BA0D1BAD34A90088AA93 /* Onboarding View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9396BA0E1BAD34CA0088AA93 /* DMLOnboardingViewController.h */,
+				9396BA0F1BAD34CA0088AA93 /* DMLOnboardingViewController.m */,
+				9396BA111BAD34D70088AA93 /* DMLOnboardingNameViewController.h */,
+				9396BA121BAD34D70088AA93 /* DMLOnboardingNameViewController.m */,
+			);
+			name = "Onboarding View Controller";
+			path = "Onboarding View Controller";
+			sourceTree = "<group>";
+		};
+		9396BA141BAD34DA0088AA93 /* Splash View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9396BA151BAD34F20088AA93 /* DMLSplashViewController.h */,
+				9396BA161BAD34F20088AA93 /* DMLSplashViewController.m */,
+			);
+			name = "Splash View Controller";
+			path = "Splash View Controller";
 			sourceTree = "<group>";
 		};
 		B7C811707FCBD465D0C3629C /* Frameworks */ = {
@@ -314,9 +347,12 @@
 				93A3A0B91BAD20A400391C98 /* UIColor+DiamondLane.m in Sources */,
 				93022CCE1BAD202A0032D284 /* ViewController.m in Sources */,
 				93022CCD1BAD202A0032D284 /* main.m in Sources */,
+				9396BA131BAD34D70088AA93 /* DMLOnboardingNameViewController.m in Sources */,
 				93A3A0BC1BAD20D600391C98 /* DMLUser.m in Sources */,
 				93022CC91BAD202A0032D284 /* AppDelegate.m in Sources */,
+				9396BA171BAD34F20088AA93 /* DMLSplashViewController.m in Sources */,
 				935E7D5B1BAD2644008F5451 /* DMLHomeViewController.m in Sources */,
+				9396BA101BAD34CA0088AA93 /* DMLOnboardingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
