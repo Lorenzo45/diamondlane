@@ -18,6 +18,7 @@
 
 -(void)refreshMembersWithCompletionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock;
 
++(void)createCarpoolWithName:(NSString *)name completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock;
 +(void)fetchCarpoolsWithCompletionBlock:(void (^)(NSArray *carpools))completionBlock failedBlock:(void (^)(NSError *error))failedBlock;
 
 +(instancetype)carpoolWithAttributes:(NSDictionary *)attributes;

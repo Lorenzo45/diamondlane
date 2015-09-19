@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 @import CoreLocation;
 
-@protocol DMLocationObserver;
+@protocol DMLLocationObserver;
 
 @class CLLocation;
 
@@ -17,8 +17,8 @@
 
 @property (nonatomic, readonly, strong) CLLocation *currentLocation;
 
--(void)addObserver:(id <DMLocationObserver>)observer;
--(void)removeObserver:(id <DMLocationObserver>)observer;
+-(void)addObserver:(id <DMLLocationObserver>)observer;
+-(void)removeObserver:(id <DMLLocationObserver>)observer;
 
 +(void)requestAuthorization;
 
@@ -26,7 +26,7 @@
 
 @end
 
-@protocol DMLocationObserver <NSObject>
+@protocol DMLLocationObserver <NSObject>
 
 @optional
 -(void)locationManager:(DMLLocationManager *)locationManager didUpdateLocation:(CLLocation *)location;

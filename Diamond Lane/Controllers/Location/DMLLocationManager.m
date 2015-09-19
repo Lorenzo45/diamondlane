@@ -73,7 +73,7 @@
     
 }
 
--(void)addObserver:(id<DMLocationObserver>)observer {
+-(void)addObserver:(id<DMLLocationObserver>)observer {
     
     if ([[self observers] containsObject:[NSValue valueWithNonretainedObject:observer]]) {
         
@@ -85,13 +85,13 @@
     
 }
 
--(void)removeObserver:(id<DMLocationObserver>)observer {
+-(void)removeObserver:(id<DMLLocationObserver>)observer {
     
     [[self observers] removeObject:[NSValue valueWithNonretainedObject:observer]];
     
 }
 
--(void)dispatchToObservers:(void (^)(id <DMLocationObserver>))dispatchBlock {
+-(void)dispatchToObservers:(void (^)(id <DMLLocationObserver>))dispatchBlock {
     
     [[self observers] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         
@@ -105,7 +105,7 @@
 
 -(void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
     
-    [self dispatchToObservers:^(id<DMLocationObserver> observer) {
+    [self dispatchToObservers:^(id<DMLLocationObserver> observer) {
         
         if ([observer respondsToSelector:@selector(locationManager:didEnterRegion:)]) {
             
@@ -119,7 +119,7 @@
 
 -(void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
     
-    [self dispatchToObservers:^(id<DMLocationObserver> observer) {
+    [self dispatchToObservers:^(id<DMLLocationObserver> observer) {
         
         if ([observer respondsToSelector:@selector(locationManager:didExitRegion:)]) {
             
@@ -143,7 +143,7 @@
     
     NSLog(@"Updated to location: %@",location);
     
-    [self dispatchToObservers:^(id<DMLocationObserver> observer) {
+    [self dispatchToObservers:^(id<DMLLocationObserver> observer) {
         
         if ([observer respondsToSelector:@selector(locationManager:didUpdateLocation:)]) {
             
