@@ -20,6 +20,7 @@
 @interface DMLCarpoolListViewController () <UITableViewDataSource, UITableViewDelegate, DMLCreateCarpoolViewControllerDelegate, DMLJoinCarpoolViewControllerDelegate>
 
 @property (nonatomic, readonly, strong) UITableView *tableView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -36,6 +37,10 @@
         [_tableView registerNib:[UINib nibWithNibName:CELL_ID bundle:nil] forCellReuseIdentifier:CELL_ID];
         [_tableView setEstimatedRowHeight:44.0];
         [[self view] addSubview:_tableView];
+        
+        self.refreshControl = [[UIRefreshControl alloc] init];
+        [self.refreshControl addTarget:self action:@selector(refreshList) forControlEvents:UIControlEventValueChanged];
+        [self.tableView addSubview:self.refreshControl];
         
     }
     return _tableView;
@@ -121,10 +126,13 @@
         if ([[self delegate] respondsToSelector:@selector(carpoolListViewController:didUpdateCarpools:)]) {
             
             [[self delegate] carpoolListViewController:self didUpdateCarpools:carpools];
+            [self.refreshControl endRefreshing];
             
         }
         
     } failedBlock:^(NSError *error) {
+        
+        [self.refreshControl endRefreshing];
         
     }];
     
