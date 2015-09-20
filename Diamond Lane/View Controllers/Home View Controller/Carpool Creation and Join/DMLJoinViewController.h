@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol DMLJoinCarpoolViewControllerDelegate;
+
 @interface DMLJoinViewController : UIViewController
 
+@property (nonatomic, weak) id <DMLJoinCarpoolViewControllerDelegate> delegate;
+
 @end
+
+@protocol DMLJoinCarpoolViewControllerDelegate <NSObject>
+
+@required
+-(void)joinCarpoolViewControllerDidCreateCarpool:(DMLJoinViewController *)joinCarpoolViewController;
+
+@end
+

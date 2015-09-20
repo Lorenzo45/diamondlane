@@ -8,6 +8,8 @@
 
 #import "DMLJoinViewController.h"
 
+#import "DMLcarpool.h"
+
 @interface DMLJoinViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *codeTextField;
@@ -50,7 +52,14 @@
 
 - (IBAction)continueButtonPressed {
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [DMLCarpool joinCarpoolWithCode:self.codeTextField.text completionBlock:^{
+        [self.delegate joinCarpoolViewControllerDidCreateCarpool:self];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } failedBlock:^(NSError *error) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:error.localizedDescription message:@"" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+    }];
     
 }
 
