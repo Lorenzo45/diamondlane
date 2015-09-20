@@ -11,6 +11,7 @@
 #import "DMLPassengerTableViewCell.h"
 #import "DMLOpenTableViewCell.h"
 #import "DMLCodeTableViewCell.h"
+#import "DMLUser.h"
 
 #define PASSENGER_CELL @"DMLPassengerTableViewCell"
 #define OPEN_CELL @"DMLOpenTableViewCell"
@@ -20,7 +21,6 @@
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSArray *sectionTitles;
-@property (strong, nonatomic) NSArray *passengers;
 @property (strong, nonatomic) NSArray *infoCellIds;
 
 @end
@@ -33,10 +33,7 @@
     if (self) {
         
         self.sectionTitles = @[@"Members", @"Info"];
-        self.passengers = @[@"Bob", @"Joe", @"Moe", @"Rob", @"Tom", @"Bill"];
         self.infoCellIds = @[OPEN_CELL, CODE_CELL];
-        
-        // self.title = carpool.title;
         
         self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
         self.tableView.dataSource = self;
@@ -53,6 +50,15 @@
     
 }
 
+- (void)setCarpool:(DMLCarpool *)carpool {
+    
+    _carpool = carpool;
+    
+    self.title = [NSString stringWithFormat:@"%ld", (long)carpool.identifier];
+    [self.tableView reloadData];
+    
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -65,7 +71,7 @@
     
     switch (section) {
         case 0:
-            return self.passengers.count;
+            return self.carpool.members.count;
             break;
             
         case 1:
@@ -95,7 +101,7 @@
         if ([cell isKindOfClass:[DMLPassengerTableViewCell class]]) {
             
             DMLPassengerTableViewCell *passengerCell = (DMLPassengerTableViewCell *)cell;
-            passengerCell.nameLabel.text = self.passengers[indexPath.row];
+            passengerCell.nameLabel.text = self.carpool.members[indexPath.row].name;
             
         }
         

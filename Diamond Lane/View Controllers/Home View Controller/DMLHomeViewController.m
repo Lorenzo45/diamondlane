@@ -9,7 +9,7 @@
 #import "DMLHomeViewController.h"
 
 #import "DMLNoCarpoolsViewController.h"
-#import "DMLCarpoolDetailViewController.h"
+#import "DMLCarpoolListViewController.h"
 #import "DMLEnRouteViewController.h"
 #import "DMLCarpool.h"
 
@@ -73,9 +73,11 @@
         
         self.baseVC = [[DMLNoCarpoolsViewController alloc] initWithNibName:@"DMLNoCarpoolsViewController" bundle:nil];
     
-    } else if (!self.enRoute && ![self.baseVC isKindOfClass:[DMLCarpoolDetailViewController class]]) {
+    } else if (!self.enRoute && ![self.baseVC isKindOfClass:[DMLCarpoolListViewController class]]) {
         
-        self.baseVC = [[DMLCarpoolDetailViewController alloc] init];
+        DMLCarpoolListViewController *listController = [[DMLCarpoolListViewController alloc] init];
+        listController.carpools = self.carpools;
+        self.baseVC = listController;
     
     } else if (![self.baseVC isKindOfClass:[DMLEnRouteViewController class]]) {
         

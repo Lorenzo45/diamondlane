@@ -10,4 +10,6 @@
 
 @interface DMLCarpoolListViewController : UIViewController
 
+@property (strong, nonatomic) NSArray *carpools;
+
 @end
