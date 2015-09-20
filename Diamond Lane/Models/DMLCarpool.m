@@ -79,7 +79,7 @@ NSString * const DMLCarpoolMembersKey = @"members";
 +(void)joinCarpoolWithCode:(NSString *)code completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock {
     
     NSDictionary *parameters = @{ @"code" : code ?: @"dank memes" };
-    [[DMLHTTPRequestOperationManager manager] POST:@"api/carpools/create.php" parameters:parameters success:^(AFHTTPRequestOperation *operation, NSArray *results) {
+    [[DMLHTTPRequestOperationManager manager] POST:@"api/carpools/join.php" parameters:parameters success:^(AFHTTPRequestOperation *operation, NSArray *results) {
         
         completionBlock ? completionBlock() : nil;
         
