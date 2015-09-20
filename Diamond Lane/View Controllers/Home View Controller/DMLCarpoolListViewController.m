@@ -23,6 +23,18 @@
 
 @implementation DMLCarpoolListViewController
 
+-(instancetype)initWithNibName:(nullable NSString *)nibNameOrNil bundle:(nullable NSBundle *)nibBundleOrNil {
+    
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        
+        ;
+        
+    }
+    return self;
+    
+}
+
 @synthesize tableView=_tableView;
 -(UITableView *)tableView {
     
@@ -56,13 +68,6 @@
     
 }
 
-//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    DMLCarpool *carpool = nil;
-//    return [DMLCarpoolTableViewCell heightForCarpool:carpool];
-//    
-//}
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     DMLCarpoolTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_ID forIndexPath:indexPath];
@@ -73,8 +78,8 @@
         DMLCarpoolTableViewCell *carpoolCell = (DMLCarpoolTableViewCell *)cell;
         DMLCarpool *carpool = (DMLCarpool *)carpoolObj;
         
-        carpoolCell.titleLabel.text = [NSString stringWithFormat:@"%ld", (long)carpool.identifier];
-        carpoolCell.passengersLabel.text = [NSString stringWithFormat:@"%lu %@", (unsigned long)carpool.members.count, carpool.members.firstObject.description];
+        carpoolCell.titleLabel.text = carpool.name;
+        carpoolCell.passengersLabel.text = [self namesOfCarpoolMemebers:carpool.members];
         
     }
     
@@ -88,6 +93,14 @@
     detailViewController.carpool = self.carpools[indexPath.row];
     [self.navigationController pushViewController:detailViewController animated:YES];
     
+}
+
+- (NSString *)namesOfCarpoolMemebers:(NSArray <DMLUser *> *)members {
+    NSMutableArray *names = [[NSMutableArray alloc] init];
+    for (DMLUser *member in members) {
+        [names addObject:member.name];
+    }
+    return [names componentsJoinedByString:@", "];
 }
 
 @end

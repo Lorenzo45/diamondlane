@@ -54,7 +54,7 @@
     
     _carpool = carpool;
     
-    self.title = [NSString stringWithFormat:@"%ld", (long)carpool.identifier];
+    self.title = carpool.name;
     [self.tableView reloadData];
     
 }
@@ -112,7 +112,7 @@
         if ([cell isKindOfClass:[DMLCodeTableViewCell class]]) {
             
             DMLCodeTableViewCell *codeCell = (DMLCodeTableViewCell *)cell;
-            codeCell.carpoolCodeLabel.text = @"P3N15";
+            codeCell.carpoolCodeLabel.text = self.carpool.code;
             
         }
         
