@@ -17,7 +17,7 @@
 
 #define CELL_ID @"DMLCarpoolTableViewCell"
 
-@interface DMLCarpoolListViewController () <UITableViewDataSource, UITableViewDelegate, DMLCreateCarpoolViewControllerDelegate>
+@interface DMLCarpoolListViewController () <UITableViewDataSource, UITableViewDelegate, DMLCreateCarpoolViewControllerDelegate, DMLJoinCarpoolViewControllerDelegate>
 
 @property (nonatomic, readonly, strong) UITableView *tableView;
 
@@ -77,8 +77,9 @@
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
     UIAlertAction *join = [UIAlertAction actionWithTitle:@"Join" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
-        UINavigationController *navController = [[UINavigationController alloc] init];
-        navController.viewControllers = @[[[DMLJoinViewController alloc] init]];
+        DMLJoinViewController *joinViewController = [[DMLJoinViewController alloc] init];
+        [joinViewController setDelegate:self];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:joinViewController];
         [self presentViewController:navController  animated:YES completion:nil];
         
     }];
@@ -102,6 +103,18 @@
 #pragma mark - DMLCreateCarpoolViewControllerDelegate
 
 -(void)createCarpoolViewControllerDidCreateCarpool:(DMLCreateCarpoolViewController *)createCarpoolViewController {
+    
+    [DMLCarpool fetchCarpoolsWithCompletionBlock:^(NSArray *carpools) {
+        self.carpools = carpools;
+    } failedBlock:^(NSError *error) {
+        
+    }];
+    
+}
+
+#pragma mark - DMLJoinCarpoolViewControllerDelegate
+
+-(void)joinCarpoolViewControllerDidCreateCarpool:(DMLJoinViewController *)joinCarpoolViewController {
     
     [DMLCarpool fetchCarpoolsWithCompletionBlock:^(NSArray *carpools) {
         self.carpools = carpools;

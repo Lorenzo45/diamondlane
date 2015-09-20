@@ -53,7 +53,7 @@
 - (IBAction)continueButtonPressed {
     
     [DMLCarpool joinCarpoolWithCode:self.codeTextField.text completionBlock:^{
-        [self.delegate createCarpoolViewControllerDidCreateCarpool:nil];
+        [self.delegate joinCarpoolViewControllerDidCreateCarpool:self];
         [self dismissViewControllerAnimated:YES completion:nil];
     } failedBlock:^(NSError *error) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:error.localizedDescription message:@"" preferredStyle:UIAlertControllerStyleAlert];

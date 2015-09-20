@@ -10,8 +10,9 @@
 
 #import "DMLJoinViewController.h"
 #import "DMLCreateCarpoolViewController.h"
+#import "DMLJoinViewController.h"
 
-@interface DMLNoCarpoolsViewController () <DMLCreateCarpoolViewControllerDelegate>
+@interface DMLNoCarpoolsViewController () <DMLCreateCarpoolViewControllerDelegate, DMLJoinCarpoolViewControllerDelegate>
 
 @end
 
@@ -29,8 +30,9 @@
 
 - (IBAction)joinButtonPressed {
     
-    UINavigationController *navController = [[UINavigationController alloc] init];
-    navController.viewControllers = @[[[DMLJoinViewController alloc] init]];
+    DMLJoinViewController *joinViewController = [[DMLJoinViewController alloc] init];
+    [joinViewController setDelegate:self];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:joinViewController];
     [self presentViewController:navController  animated:YES completion:nil];
     
 }
@@ -47,6 +49,18 @@
 #pragma mark - DMLCreateCarpoolViewControllerDelegate
 
 -(void)createCarpoolViewControllerDidCreateCarpool:(DMLCreateCarpoolViewController *)createCarpoolViewController {
+    
+    if ([[self delegate] respondsToSelector:@selector(noCarpoolsViewControllerDidCreateCarpool:)]) {
+        
+        [[self delegate] noCarpoolsViewControllerDidCreateCarpool:self];
+        
+    }
+    
+}
+
+#pragma mark - DMLJoinCarpoolViewControllerDelegate
+
+-(void)joinCarpoolViewControllerDidCreateCarpool:(DMLJoinViewController *)joinCarpoolViewController {
     
     if ([[self delegate] respondsToSelector:@selector(noCarpoolsViewControllerDidCreateCarpool:)]) {
         
