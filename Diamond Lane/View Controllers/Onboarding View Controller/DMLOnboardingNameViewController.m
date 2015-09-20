@@ -33,6 +33,8 @@
         [_nameField setTextAlignment:NSTextAlignmentCenter];
         [_nameField setPlaceholder:@"nickname"];
         [_nameField setFont:[UIFont systemFontOfSize:32.0 weight:UIFontWeightLight]];
+        [_nameField setAutocapitalizationType:UITextAutocapitalizationTypeNone];
+        [_nameField setAutocorrectionType:UITextAutocorrectionTypeNo];
         [[self view] addSubview:_nameField];
         
     }
