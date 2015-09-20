@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DMLCreateCarpoolViewController">
             <connections>
-                <outlet property="codeTextField" destination="bcB-jN-SEV" id="sEp-vS-vpp"/>
-                <outlet property="shiftView" destination="mlZ-79-vOb" id="HvX-ER-w6t"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="0Xv-6G-c9h"/>
             </connections>
         </placeholder>
@@ -15,58 +13,7 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlZ-79-vOb">
-                    <rect key="frame" x="56" y="191" width="488" height="173"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBx-Ga-jBF">
-                            <rect key="frame" x="205" y="132" width="77" height="44"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                            <state key="normal" title="Create"/>
-                            <connections>
-                                <action selector="createButtonPressed" destination="-1" eventType="touchUpInside" id="NpC-47-YBk"/>
-                            </connections>
-                        </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a name for your carpool" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XkQ-hj-ecj">
-                            <rect key="frame" x="100" y="2.5" width="288.5" height="26.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="carpool name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bcB-jN-SEV">
-                            <rect key="frame" x="98" y="56" width="292.5" height="68"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="292.5" id="9W8-JT-8DC"/>
-                                <constraint firstAttribute="height" constant="68" id="TB7-zH-YFz"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="aBx-Ga-jBF" firstAttribute="centerY" secondItem="mlZ-79-vOb" secondAttribute="centerY" constant="68" id="4qw-5w-4W4"/>
-                        <constraint firstItem="bcB-jN-SEV" firstAttribute="centerY" secondItem="mlZ-79-vOb" secondAttribute="centerY" constant="3.5" id="7Rk-ki-2Du"/>
-                        <constraint firstItem="XkQ-hj-ecj" firstAttribute="centerY" secondItem="mlZ-79-vOb" secondAttribute="centerY" constant="-70.75" id="DEE-2m-y7U"/>
-                        <constraint firstAttribute="width" constant="488" id="OZI-2s-Ta0"/>
-                        <constraint firstItem="XkQ-hj-ecj" firstAttribute="centerX" secondItem="mlZ-79-vOb" secondAttribute="centerX" id="dDq-zm-a89"/>
-                        <constraint firstItem="bcB-jN-SEV" firstAttribute="centerX" secondItem="mlZ-79-vOb" secondAttribute="centerX" constant="-0.25" id="mW6-JA-Gt9"/>
-                        <constraint firstAttribute="height" constant="173" id="mnX-J3-fuq"/>
-                        <constraint firstItem="XkQ-hj-ecj" firstAttribute="leading" secondItem="mlZ-79-vOb" secondAttribute="leading" constant="54" id="qgA-gW-aup"/>
-                        <constraint firstItem="aBx-Ga-jBF" firstAttribute="centerX" secondItem="mlZ-79-vOb" secondAttribute="centerX" id="yrR-wb-Zcy"/>
-                    </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="qgA-gW-aup"/>
-                        </mask>
-                    </variation>
-                </view>
-            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="mlZ-79-vOb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4f2-jn-Y8e"/>
-                <constraint firstItem="mlZ-79-vOb" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-22.5" id="qDZ-Rd-IM0"/>
-            </constraints>
         </view>
     </objects>
 </document>
