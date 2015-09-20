@@ -19,6 +19,14 @@ NSString * const DMLCarpoolCodeKey = @"code";
 NSString * const DMLCarpoolNameKey = @"name";
 NSString * const DMLCarpoolMembersKey = @"members";
 
+NSString * const DMLCarpoolMondayStartingTimeKey = @"mon_time";
+NSString * const DMLCarpoolTuesdayStartingTimeKey = @"tues_time";
+NSString * const DMLCarpoolWednesdayStartingTimeKey = @"wed_time";
+NSString * const DMLCarpoolThursdayStartingTimeKey = @"thurs_time";
+NSString * const DMLCarpoolFridayStartingTimeKey = @"fri_time";
+NSString * const DMLCarpoolSaturdayStartingTimeKey = @"sat_time";
+NSString * const DMLCarpoolSundayStartingTimeKey = @"sun_time";
+
 @implementation DMLCarpool
 
 #pragma mark - Attributes
@@ -54,6 +62,48 @@ NSString * const DMLCarpoolMembersKey = @"members";
             
         }
         _members = [NSArray arrayWithArray:members];
+        
+    }
+    
+    if ([self attributesKey:DMLCarpoolMondayStartingTimeKey canBeUpdatedFromAttributes:attributes]) {
+        
+        _mondayStartingTime = @([[attributes valueForKeyPath:DMLCarpoolMondayStartingTimeKey] integerValue]);
+        
+    }
+    
+    if ([self attributesKey:DMLCarpoolMondayStartingTimeKey canBeUpdatedFromAttributes:attributes]) {
+        
+        _tuesdayStartingTime = @([[attributes valueForKeyPath:DMLCarpoolTuesdayStartingTimeKey] integerValue]);
+        
+    }
+    
+    if ([self attributesKey:DMLCarpoolMondayStartingTimeKey canBeUpdatedFromAttributes:attributes]) {
+        
+        _wednesdayStartingTime = @([[attributes valueForKeyPath:DMLCarpoolWednesdayStartingTimeKey] integerValue]);
+        
+    }
+    
+    if ([self attributesKey:DMLCarpoolMondayStartingTimeKey canBeUpdatedFromAttributes:attributes]) {
+        
+        _thursdayStartingTime = @([[attributes valueForKeyPath:DMLCarpoolThursdayStartingTimeKey] integerValue]);
+        
+    }
+    
+    if ([self attributesKey:DMLCarpoolMondayStartingTimeKey canBeUpdatedFromAttributes:attributes]) {
+        
+        _fridayStartingTime = @([[attributes valueForKeyPath:DMLCarpoolFridayStartingTimeKey] integerValue]);
+        
+    }
+    
+    if ([self attributesKey:DMLCarpoolMondayStartingTimeKey canBeUpdatedFromAttributes:attributes]) {
+        
+        _saturdayStartingTime = @([[attributes valueForKeyPath:DMLCarpoolSaturdayStartingTimeKey] integerValue]);
+        
+    }
+    
+    if ([self attributesKey:DMLCarpoolMondayStartingTimeKey canBeUpdatedFromAttributes:attributes]) {
+        
+        _sundayStartingTime = @([[attributes valueForKeyPath:DMLCarpoolSundayStartingTimeKey] integerValue]);
         
     }
     
@@ -103,6 +153,33 @@ NSString * const DMLCarpoolMembersKey = @"members";
             
         }
         completionBlock ? completionBlock([NSArray arrayWithArray:carpools]) : nil;
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        failedBlock ? failedBlock(error) : nil;
+        
+    }];
+    
+}
+
+#pragma mark - Editing
+
+-(void)editWithName:(NSString *)name mondayStartingTime:(NSNumber *)mondayStartingTime tuesdayStartingTime:(NSNumber *)tuesdayStartingTime wednesdayStartingTime:(NSNumber *)wednesdayStartingTime thursdayStartingTime:(NSNumber *)thursdayStartingTime fridayStartingTime:(NSNumber *)fridayStartingTime saturdayStartingTime:(NSNumber *)saturdayStartingTime sundayStartingTime:(NSNumber *)sundayStartingTime completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock {
+    
+    NSDictionary *attributes = @{
+                                 @"carpool_id" : @([self identifier]),
+                                 DMLCarpoolNameKey : name ?: @"lol oof",
+                                 DMLCarpoolMondayStartingTimeKey : mondayStartingTime ?: @(0),
+                                 DMLCarpoolTuesdayStartingTimeKey : thursdayStartingTime ?: @(0),
+                                 DMLCarpoolWednesdayStartingTimeKey : wednesdayStartingTime ?: @(0),
+                                 DMLCarpoolThursdayStartingTimeKey : thursdayStartingTime ?: @(0),
+                                 DMLCarpoolFridayStartingTimeKey : fridayStartingTime ?: @(0),
+                                 DMLCarpoolSaturdayStartingTimeKey : saturdayStartingTime ?: @(0),
+                                 DMLCarpoolSundayStartingTimeKey : sundayStartingTime ?: @(0),
+    };
+    [[DMLHTTPRequestOperationManager manager] POST:@"api/carpools/edit.php" parameters:attributes success:^(AFHTTPRequestOperation *operation, NSArray *results) {
+        
+        completionBlock ? completionBlock() : nil;
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
