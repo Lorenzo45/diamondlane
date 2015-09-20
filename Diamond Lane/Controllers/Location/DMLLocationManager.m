@@ -103,9 +103,9 @@
 
 -(void)dispatchToObservers:(void (^)(id <DMLLocationObserver>))dispatchBlock {
     
-    [[self observers] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [[self observers] enumerateObjectsUsingBlock:^(NSValue *obj, NSUInteger idx, BOOL *stop) {
         
-        dispatchBlock ? dispatchBlock(obj) : nil;
+        dispatchBlock ? dispatchBlock([obj nonretainedObjectValue]) : nil;
         
     }];
     
