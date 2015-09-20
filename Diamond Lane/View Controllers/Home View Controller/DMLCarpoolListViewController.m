@@ -23,18 +23,6 @@
 
 @implementation DMLCarpoolListViewController
 
--(instancetype)initWithNibName:(nullable NSString *)nibNameOrNil bundle:(nullable NSBundle *)nibBundleOrNil {
-    
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        
-        ;
-        
-    }
-    return self;
-    
-}
-
 @synthesize tableView=_tableView;
 -(UITableView *)tableView {
     
@@ -57,6 +45,24 @@
     _carpools = carpools;
     
     [self.tableView reloadData];
+    
+}
+
+-(instancetype)initWithNibName:(nullable NSString *)nibNameOrNil bundle:(nullable NSBundle *)nibBundleOrNil {
+    
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createNewCarpool)];
+        
+    }
+    return self;
+    
+}
+
+- (void)createNewCarpool {
+    
+    
     
 }
 
