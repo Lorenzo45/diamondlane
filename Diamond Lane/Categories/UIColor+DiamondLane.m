@@ -12,7 +12,7 @@
 
 +(UIColor *)dml_tintColor {
     
-    return [UIColor blackColor];
+    return [UIColor colorWithRed:10/255.0 green:145/255.0 blue:171/255.0 alpha:1.0];
     
 }
 

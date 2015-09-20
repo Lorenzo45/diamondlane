@@ -54,7 +54,17 @@
 
 +(void)requestAuthorization {
     
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    static CLLocationManager *locationManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
+        if (!locationManager) {
+            
+            locationManager = [[CLLocationManager alloc] init];
+            
+        }
+        
+    });
     [locationManager requestAlwaysAuthorization];
     
 }
@@ -62,7 +72,7 @@
 #pragma mark - Observers
 
 @synthesize observers=_observers;
--(NSMutableArray *)observers {
+-(NSMutableArray <NSValue *> *)observers {
     
     if (!_observers) {
         
@@ -93,9 +103,9 @@
 
 -(void)dispatchToObservers:(void (^)(id <DMLLocationObserver>))dispatchBlock {
     
-    [[self observers] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [[self observers] enumerateObjectsUsingBlock:^(NSValue *obj, NSUInteger idx, BOOL *stop) {
         
-        dispatchBlock ? dispatchBlock(obj) : nil;
+        dispatchBlock ? dispatchBlock([obj nonretainedObjectValue]) : nil;
         
     }];
     

@@ -138,6 +138,17 @@ NSString * const DMLSplashViewControllerDoneOnboardingNotificationName = @"DMLSp
     
     NSLog(@"Splash view controller received location: %@",location);
     
+    CLLocationCoordinate2D coordinate = [location coordinate];
+    [[DMLUser me] updateLocationWithLongitude:coordinate.longitude latitude:coordinate.latitude completionBlock:^{
+        
+        NSLog(@"Sent location to the server successfully.");
+        
+    } failedBlock:^(NSError *error) {
+        
+        NSLog(@"Server failed to receive location with error: %@",error);
+        
+    }];
+    
 }
 
 -(void)locationManager:(DMLLocationManager *)locationManager didEnterRegion:(CLRegion *)region {
