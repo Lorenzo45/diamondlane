@@ -178,12 +178,12 @@
 			children = (
 				88276FC61BADD6FF002886B4 /* DMLJoinViewController.h */,
 				88276FC71BADD6FF002886B4 /* DMLJoinViewController.m */,
-				88276FC81BADD6FF002886B4 /* DMLJoinViewController.xib */,
 				88276FCB1BADD71A002886B4 /* DMLCreateCarpoolViewController.h */,
 				88276FCC1BADD71A002886B4 /* DMLCreateCarpoolViewController.m */,
 				88276FCD1BADD71A002886B4 /* DMLCreateCarpoolViewController.xib */,
 				88276FD01BADD72D002886B4 /* DMLCarpoolCodeViewController.h */,
 				88276FD11BADD72D002886B4 /* DMLCarpoolCodeViewController.m */,
+				88276FC81BADD6FF002886B4 /* DMLJoinViewController.xib */,
 				88276FD21BADD72D002886B4 /* DMLCarpoolCodeViewController.xib */,
 			);
 			name = "Carpool Creation and Join";

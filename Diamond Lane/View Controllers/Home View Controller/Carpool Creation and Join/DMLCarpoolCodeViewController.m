@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *codeTextField;
 
+
 @end
 
 @implementation DMLCarpoolCodeViewController
@@ -30,6 +31,13 @@
     
 }
 
+-(void)viewDidLoad {
+    
+    self.codeTextField.userInteractionEnabled = NO;
+    self.codeTextField.text = self.code;
+    
+}
+
 - (IBAction)copyButtonPressed {
     
     [UIPasteboard generalPasteboard].string = self.codeTextField.text;
@@ -39,12 +47,6 @@
 - (void)doneButtonPressed {
     
     [self dismissViewControllerAnimated:YES completion:nil];
-    
-}
-
-- (BOOL)textFieldShould:(UITextField *)textField{
-    
-    return NO;
     
 }
 

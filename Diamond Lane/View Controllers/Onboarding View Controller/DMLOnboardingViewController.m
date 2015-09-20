@@ -11,6 +11,9 @@
 
 @interface DMLOnboardingViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *beginButton;
+@property (weak, nonatomic) IBOutlet UIImageView *diamondImageView;
+
 @end
 
 @implementation DMLOnboardingViewController
@@ -33,6 +36,10 @@
     
     [[self navigationController] setNavigationBarHidden:YES];
     
+    self.beginButton.backgroundColor = [UIColor dml_tintColor];
+    self.beginButton.layer.cornerRadius = 6;
+    
+    self.diamondImageView.clipsToBounds = YES;
 }
 
 -(void)viewDidLayoutSubviews {
@@ -40,6 +47,12 @@
     [super viewDidLayoutSubviews];
     
     
+    
+}
+
+-(BOOL)prefersStatusBarHidden {
+    
+    return YES;
     
 }
 

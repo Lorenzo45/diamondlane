@@ -11,5 +11,7 @@
 @interface UIColor (DiamondLane)
 
 +(UIColor *)dml_tintColor;
++(UIColor *)dml_grayColor;
++(UIColor *)dml_lightGrayColor;
 
 @end
