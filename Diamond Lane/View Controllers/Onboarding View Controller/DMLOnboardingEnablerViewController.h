@@ -10,4 +10,6 @@
 
 @interface DMLOnboardingEnablerViewController : UIViewController
 
+@property (nonatomic, copy) NSString *name;
+
 @end

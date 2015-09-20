@@ -12,6 +12,7 @@
 @interface DMLOnboardingViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *beginButton;
+@property (weak, nonatomic) IBOutlet UILabel *subtitleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *diamondImageView;
 
 @end
@@ -38,6 +39,9 @@
     
     self.beginButton.backgroundColor = [UIColor dml_tintColor];
     self.beginButton.layer.cornerRadius = 6;
+    
+    self.subtitleLabel.textColor = [UIColor dml_grayColor];
+    self.subtitleLabel.font = [UIFont systemFontOfSize:24.0 weight:UIFontWeightLight];
     
     self.diamondImageView.clipsToBounds = YES;
 }
