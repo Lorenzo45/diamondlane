@@ -10,7 +10,8 @@
 
 @interface DMLCarpoolCodeViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *codeTextField;
+@property (weak, nonatomic) IBOutlet UIButton *codeButton;
+@property (weak, nonatomic) IBOutlet UILabel *tapPromptLabel;
 
 
 @end
@@ -33,14 +34,17 @@
 
 -(void)viewDidLoad {
     
-    self.codeTextField.userInteractionEnabled = NO;
-    self.codeTextField.text = self.code;
+    [self.codeButton setTitle:self.code forState:UIControlStateNormal];
+    
+    [self.codeButton setTitleColor:[UIColor dml_grayColor] forState:UIControlStateNormal];
+    
+    self.tapPromptLabel.textColor = [UIColor dml_grayColor];
     
 }
 
 - (IBAction)copyButtonPressed {
     
-    [UIPasteboard generalPasteboard].string = self.codeTextField.text;
+    [UIPasteboard generalPasteboard].string = self.codeButton.titleLabel.text;
     
 }
 

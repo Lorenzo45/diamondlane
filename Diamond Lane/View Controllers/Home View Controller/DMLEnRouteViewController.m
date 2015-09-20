@@ -8,30 +8,46 @@
 
 #import "DMLEnRouteViewController.h"
 
+@import MapKit;
+
 @interface DMLEnRouteViewController ()
+
+@property (nonatomic, readonly, strong) MKMapView *mapView;
 
 @end
 
 @implementation DMLEnRouteViewController
 
-- (void)viewDidLoad {
+@synthesize mapView=_mapView;
+-(MKMapView *)mapView {
+    
+    if (!_mapView) {
+        
+        _mapView = [[MKMapView alloc] init];
+        [_mapView setShowsUserLocation:YES];
+        [[self view] addSubview:_mapView];
+        
+    }
+    return _mapView;
+    
+}
+
+-(void)viewDidLoad {
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    // view heirarchy
+    
+    [self mapView];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewDidLayoutSubviews {
+    
+    [super viewDidLayoutSubviews];
+    
+    [[self mapView] setFrame:[[self view] bounds]];
+    
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

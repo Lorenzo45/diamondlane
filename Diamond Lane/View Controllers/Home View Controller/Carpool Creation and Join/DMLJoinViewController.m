@@ -10,16 +10,58 @@
 
 #import "DMLcarpool.h"
 
-@interface DMLJoinViewController ()
+@interface DMLJoinViewController () <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *codeTextField;
-@property (weak, nonatomic) IBOutlet UIView* shiftView;
+@property (nonatomic, readonly, strong) UILabel *codePromptLabel;
+@property (nonatomic, readonly, strong) UITextField *codeTextField;
+@property (nonatomic, readonly, strong) UIView* shiftView;
+@property (nonatomic, readonly, strong) UIActivityIndicatorView *activityIndicatorView;
 
 @property (nonatomic) BOOL keyboardIsVisible;
 
 @end
 
 @implementation DMLJoinViewController
+@synthesize codeTextField=_codeTextField;
+-(UITextField *)codeTextField {
+    
+    if (!_codeTextField) {
+        
+        _codeTextField = [[UITextField alloc] init];
+        [_codeTextField setBorderStyle:UITextBorderStyleNone];
+        [_codeTextField setDelegate:self];
+        [_codeTextField setReturnKeyType:UIReturnKeyGo];
+        [_codeTextField setTextColor:[UIColor dml_grayColor]];
+        [_codeTextField setTextAlignment:NSTextAlignmentCenter];
+        [_codeTextField setPlaceholder:@"code"];
+        [_codeTextField setFont:[UIFont systemFontOfSize:32.0 weight:UIFontWeightLight]];
+        [_codeTextField setAutocapitalizationType:UITextAutocapitalizationTypeNone];
+        [_codeTextField setAutocorrectionType:UITextAutocorrectionTypeNo];
+        [[self view] addSubview:_codeTextField];
+        
+    }
+    return _codeTextField;
+    
+}
+
+@synthesize codePromptLabel=_codePromptLabel;
+-(UILabel *)codePromptLabel {
+    
+    if (!_codePromptLabel) {
+        
+        _codePromptLabel = [[UILabel alloc] init];
+        [_codePromptLabel setTextAlignment:NSTextAlignmentCenter];
+        [_codePromptLabel setTextColor:[UIColor dml_grayColor]];
+        [_codePromptLabel setBackgroundColor:[UIColor clearColor]];
+        [_codePromptLabel setFont:[UIFont systemFontOfSize:32.0 weight:UIFontWeightThin]];
+        [_codePromptLabel setNumberOfLines:0];
+        [_codePromptLabel setText:@"Enter the code for a carpool you wish to join."];
+        [[self view] addSubview:_codePromptLabel];
+        
+    }
+    return _codePromptLabel;
+    
+}
 
 - (instancetype)initWithNibName:(nullable NSString *)nibNameOrNil bundle:(nullable NSBundle *)nibBundleOrNil {
     
@@ -36,11 +78,52 @@
 
 - (void)viewDidLoad {
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardBegan:) name:UIKeyboardWillShowNotification object:nil];
+    // setup view heirarchy
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardEnded:) name:UIKeyboardWillHideNotification object:nil];
+    [self codePromptLabel];
+    [self codeTextField];
+    [self shiftView];
     
-    self.keyboardIsVisible = NO;
+    // begin
+    
+    [[self codeTextField] becomeFirstResponder];
+    
+}
+
+@synthesize activityIndicatorView=_activityIndicatorView;
+-(UIActivityIndicatorView *)activityIndicatorView {
+    
+    if (!_activityIndicatorView) {
+        
+        _activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        [[self view] addSubview:_activityIndicatorView];
+        
+    }
+    return _activityIndicatorView;
+    
+}
+
+-(void)dealloc {
+    
+    ;
+    
+}
+
+-(void)viewDidLayoutSubviews {
+    
+    [super viewDidLayoutSubviews];
+    
+    CGFloat const padding = 32.0;
+    
+    [[self codeTextField] setFrame:CGRectMake(0, (CGRectGetHeight([[self view] bounds]) - 64) / 2.0, CGRectGetWidth([[self view] bounds]), 64)];
+    [[self codePromptLabel] setFrame:CGRectMake(padding, padding, CGRectGetWidth([[self view] bounds]) - padding * 2, CGRectGetMinY([[self codeTextField] frame]) - padding * 2.0)];
+    [[self activityIndicatorView] setFrame:CGRectMake(0, CGRectGetMaxY([[self codeTextField] frame]) + 16.0, CGRectGetWidth([[self view] bounds]), 20)];
+    
+}
+
+-(BOOL)prefersStatusBarHidden {
+    
+    return YES;
     
 }
 
@@ -69,44 +152,12 @@
     
 }
 
-- (void)keyboardBegan:(NSNotification *)notification
-{
-    if(!self.keyboardIsVisible) {
-        
-        NSDictionary* keyboardInfo = [notification userInfo];
-        NSValue* keyboardFrameBegin = [keyboardInfo valueForKey:UIKeyboardFrameBeginUserInfoKey];
-        CGRect keyboardFrameBeginRect = [keyboardFrameBegin CGRectValue];
-        
-        [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDuration:[[notification userInfo][UIKeyboardAnimationDurationUserInfoKey] floatValue]];
-        [UIView setAnimationCurve:[[notification userInfo][UIKeyboardAnimationCurveUserInfoKey] integerValue]];
-        [UIView setAnimationBeginsFromCurrentState:YES];
-        [UIView commitAnimations];
-        
-        float shiftConstant = ((keyboardFrameBeginRect.size.height) / 2) - self.navigationController.navigationBar.frame.size.height;
-        
-        self.shiftView.transform = CGAffineTransformMakeTranslation(0, -shiftConstant);
-        
-        self.keyboardIsVisible = YES;
-        
-    }
-}
+#pragma mark - UITextFieldDelegate
 
-- (void)keyboardEnded:(NSNotification *)notification {
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    if(self.keyboardIsVisible) {
-        
-        [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDuration:[[notification userInfo][UIKeyboardAnimationDurationUserInfoKey] floatValue]];
-        [UIView setAnimationCurve:[[notification userInfo][UIKeyboardAnimationCurveUserInfoKey] integerValue]];
-        [UIView setAnimationBeginsFromCurrentState:YES];
-        [UIView commitAnimations];
-        
-        self.shiftView.transform = CGAffineTransformIdentity;
-        
-        self.keyboardIsVisible = NO;
-        
-    }
+    [self continueButtonPressed];
+    return NO;
     
 }
 
