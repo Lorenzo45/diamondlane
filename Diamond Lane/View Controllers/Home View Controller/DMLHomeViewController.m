@@ -98,6 +98,7 @@
     }
     
     DMLNoCarpoolsViewController *noCarpoolsViewController = [[DMLNoCarpoolsViewController alloc] initWithNibName:@"DMLNoCarpoolsViewController" bundle:nil];
+    [noCarpoolsViewController setDelegate:self];
     [noCarpoolsViewController setTitle:@"♦️ LANE"];
     [self setViewControllers:@[noCarpoolsViewController]];
     [self setBaseViewController:noCarpoolsViewController];

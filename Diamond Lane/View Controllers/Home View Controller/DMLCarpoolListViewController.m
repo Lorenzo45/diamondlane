@@ -42,7 +42,7 @@
    
 }
 
-- (void)setCarpools:(NSArray *)carpools {
+-(void)setCarpools:(NSArray *)carpools {
     
     _carpools = carpools;
     
@@ -59,6 +59,14 @@
         
     }
     return self;
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    
+    [[self tableView] deselectRowAtIndexPath:[[self tableView] indexPathForSelectedRow] animated:animated];
     
 }
 
