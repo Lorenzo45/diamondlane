@@ -11,18 +11,59 @@
 
 #import "DMLUser.h"
 
-@interface DMLOnboardingNameViewController ()
+@interface DMLOnboardingNameViewController () <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *nameInputTextView;
-@property (weak, nonatomic) IBOutlet UIButton *continueButton;
-@property (weak, nonatomic) IBOutlet UILabel *namePromptLabel;
-@property (weak, nonatomic) IBOutlet UIView* shiftView;
-
-@property (nonatomic) BOOL keyboardIsVisible;
+@property (nonatomic, readonly, strong) UITextField *nameField;
+@property (nonatomic, readonly, strong) UILabel *namePromptLabel;
 
 @end
 
 @implementation DMLOnboardingNameViewController
+
+@synthesize nameField=_nameField;
+-(UITextField *)nameField {
+    
+    if (!_nameField) {
+        
+        _nameField = [[UITextField alloc] init];
+        [_nameField setBorderStyle:UITextBorderStyleNone];
+        [_nameField setDelegate:self];
+        [_nameField setReturnKeyType:UIReturnKeyGo];
+        [_nameField setTextColor:[UIColor dml_grayColor]];
+        [_nameField setTextAlignment:NSTextAlignmentCenter];
+        [_nameField setPlaceholder:@"nickname"];
+        [_nameField setFont:[UIFont systemFontOfSize:32.0 weight:UIFontWeightLight]];
+        [[self view] addSubview:_nameField];
+        
+    }
+    return _nameField;
+    
+}
+
+@synthesize namePromptLabel=_namePromptLabel;
+-(UILabel *)namePromptLabel {
+    
+    if (!_namePromptLabel) {
+        
+        _namePromptLabel = [[UILabel alloc] init];
+        [_namePromptLabel setTextAlignment:NSTextAlignmentCenter];
+        [_namePromptLabel setTextColor:[UIColor dml_grayColor]];
+        [_namePromptLabel setBackgroundColor:[UIColor clearColor]];
+        [_namePromptLabel setFont:[UIFont systemFontOfSize:32.0 weight:UIFontWeightThin]];
+        [_namePromptLabel setNumberOfLines:0];
+        [_namePromptLabel setText:@"Before you throw your car in a pool, we need your name."];
+        [[self view] addSubview:_namePromptLabel];
+        
+    }
+    return _namePromptLabel;
+    
+}
+
+-(void)dealloc {
+    
+    ;
+    
+}
 
 -(instancetype)initWithNibName:(nullable NSString *)nibNameOrNil bundle:(nullable NSBundle *)nibBundleOrNil {
     
@@ -40,21 +81,22 @@
     
     [super viewDidLoad];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textViewDidBeginEditing:) name:UITextViewTextDidBeginEditingNotification object:self.nameInputTextView];
+    // setup view heirarchy
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textViewDidChange:) name:UITextViewTextDidChangeNotification object:self.nameInputTextView];
+    [self namePromptLabel];
+    [self nameField];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardBegan:) name:UIKeyboardWillShowNotification object:nil];
+    // begin
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardEnded:) name:UIKeyboardWillHideNotification object:nil];
-    
-    self.keyboardIsVisible = NO;
+    [[self nameField] becomeFirstResponder];
     
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
+-(void)viewWillDisappear:(BOOL)animated {
     
-    [self.view endEditing:YES];
+    [super viewWillDisappear:animated];
+    
+    [[self view] endEditing:YES];
     
 }
 
@@ -62,30 +104,32 @@
     
     [super viewDidLayoutSubviews];
     
+    CGFloat const padding = 32.0;
     
+    [[self nameField] setFrame:CGRectMake(0, (CGRectGetHeight([[self view] bounds]) - 64) / 2.0, CGRectGetWidth([[self view] bounds]), 64)];
+    [[self namePromptLabel] setFrame:CGRectMake(padding, padding, CGRectGetWidth([[self view] bounds]) - padding * 2, CGRectGetMinY([[self nameField] frame]) - padding * 2.0)];
     
 }
 
-- (IBAction)continueButtonTapped:(id)sender {
+-(BOOL)prefersStatusBarHidden {
     
-    NSString *name = [[self nameInputTextView] text];
+    return YES;
+    
+}
+
+#pragma mark - Actions
+
+-(void)createUser:(id)sender {
+    
+    NSString *name = [[self nameField] text];
     if ([name length] != 0) {
         
-        [[self continueButton] setAlpha:0.5];
-        [[self continueButton] setUserInteractionEnabled:NO];
-
         [DMLUser createUserWithName:name completionBlock:^{
-            
-            [[self continueButton] setAlpha:1.0];
-            [[self continueButton] setUserInteractionEnabled:YES];
             
             DMLOnboardingEnablerViewController *enablerViewController = [[DMLOnboardingEnablerViewController alloc] initWithNibName:@"DMLOnboardingEnablerViewController" bundle:nil];
             [[self navigationController] pushViewController:enablerViewController animated:YES];
             
         } failedBlock:^(NSError *error) {
-            
-            [[self continueButton] setAlpha:1.0];
-            [[self continueButton] setUserInteractionEnabled:YES];
             
             UIAlertController* errorAlert = [UIAlertController alertControllerWithTitle:@"Error" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
             
@@ -99,46 +143,15 @@
         }];
         
     }
-}
-
-- (void)keyboardBegan:(NSNotification *)notification
-{
-    if(!self.keyboardIsVisible) {
-        
-        NSDictionary* keyboardInfo = [notification userInfo];
-        NSValue* keyboardFrameBegin = [keyboardInfo valueForKey:UIKeyboardFrameBeginUserInfoKey];
-        CGRect keyboardFrameBeginRect = [keyboardFrameBegin CGRectValue];
-        
-        [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDuration:[[notification userInfo][UIKeyboardAnimationDurationUserInfoKey] floatValue]];
-        [UIView setAnimationCurve:[[notification userInfo][UIKeyboardAnimationCurveUserInfoKey] integerValue]];
-        [UIView setAnimationBeginsFromCurrentState:YES];
-        [UIView commitAnimations];
-        
-        float shiftConstant = (keyboardFrameBeginRect.size.height) / 2;
-        
-        self.shiftView.transform = CGAffineTransformMakeTranslation(0, -shiftConstant);
-        
-        self.keyboardIsVisible = YES;
-        
-    }
-}
-
-- (void)keyboardEnded:(NSNotification *)notification {
     
-    if(self.keyboardIsVisible) {
-        
-        [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDuration:[[notification userInfo][UIKeyboardAnimationDurationUserInfoKey] floatValue]];
-        [UIView setAnimationCurve:[[notification userInfo][UIKeyboardAnimationCurveUserInfoKey] integerValue]];
-        [UIView setAnimationBeginsFromCurrentState:YES];
-        [UIView commitAnimations];
-        
-        self.shiftView.transform = CGAffineTransformIdentity;
-        
-        self.keyboardIsVisible = NO;
-        
-    }
+}
+
+#pragma mark - UITextFieldDelegate
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [self createUser:textField];
+    return NO;
     
 }
 

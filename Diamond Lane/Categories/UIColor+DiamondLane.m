@@ -16,4 +16,16 @@
     
 }
 
++(UIColor *)dml_grayColor {
+    
+    return [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:1.0];
+    
+}
+
++(UIColor *)dml_lightGrayColor {
+    
+    return [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1.0];
+    
+}
+
 @end
