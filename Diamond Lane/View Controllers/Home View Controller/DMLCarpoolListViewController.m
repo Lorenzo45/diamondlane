@@ -43,14 +43,6 @@
    
 }
 
--(void)setCarpools:(NSArray *)carpools {
-    
-    _carpools = carpools;
-    
-    [self.tableView reloadData];
-    
-}
-
 -(instancetype)initWithNibName:(nullable NSString *)nibNameOrNil bundle:(nullable NSBundle *)nibBundleOrNil {
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -63,13 +55,31 @@
     
 }
 
--(void)viewDidAppear:(BOOL)animated {
+-(void)viewDidLoad {
     
-    [super viewDidAppear:animated];
+    [super viewDidLoad];
+    
+    [self tableView];
+    
+}
+
+-(void)viewDidLayoutSubviews {
+    
+    [super viewDidLayoutSubviews];
+    
+    [[self tableView] setFrame:[[self view] bounds]];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
     
     [[self tableView] deselectRowAtIndexPath:[[self tableView] indexPathForSelectedRow] animated:animated];
     
 }
+
+#pragma mark - Menu
 
 - (void)showAddMenu {
     
@@ -101,15 +111,31 @@
     
 }
 
+#pragma mark - Refreshing
+
+-(void)refreshList {
+    
+    [DMLCarpool fetchCarpoolsWithCompletionBlock:^(NSArray *carpools) {
+        self.carpools = carpools;
+        [[self tableView] reloadData];
+        
+        if ([[self delegate] respondsToSelector:@selector(carpoolListViewController:didUpdateCarpools:)]) {
+            
+            [[self delegate] carpoolListViewController:self didUpdateCarpools:carpools];
+            
+        }
+        
+    } failedBlock:^(NSError *error) {
+        
+    }];
+    
+}
+
 #pragma mark - DMLCreateCarpoolViewControllerDelegate
 
 -(void)createCarpoolViewControllerDidCreateCarpool:(DMLCreateCarpoolViewController *)createCarpoolViewController {
     
-    [DMLCarpool fetchCarpoolsWithCompletionBlock:^(NSArray *carpools) {
-        self.carpools = carpools;
-    } failedBlock:^(NSError *error) {
-        
-    }];
+    [self refreshList];
     
 }
 
@@ -117,11 +143,7 @@
 
 -(void)joinCarpoolViewControllerDidCreateCarpool:(DMLJoinViewController *)joinCarpoolViewController {
     
-    [DMLCarpool fetchCarpoolsWithCompletionBlock:^(NSArray *carpools) {
-        self.carpools = carpools;
-    } failedBlock:^(NSError *error) {
-        
-    }];
+    [self refreshList];
     
 }
 

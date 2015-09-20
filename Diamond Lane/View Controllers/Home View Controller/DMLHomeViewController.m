@@ -14,7 +14,7 @@
 #import "DMLEnRouteViewController.h"
 #import "DMLCarpool.h"
 
-@interface DMLHomeViewController () <DMLNoCarpoolsViewControllerDelegate>
+@interface DMLHomeViewController () <DMLCarpoolListViewControllerDelegate, DMLNoCarpoolsViewControllerDelegate>
 
 @property (nonatomic, assign, getter=isEnRoute) BOOL enRoute;
 
@@ -128,11 +128,21 @@
         
     }
     
-    DMLCarpoolListViewController *listViewController = [[DMLCarpoolListViewController alloc] initWithNibName:nil bundle:nil];
+    DMLCarpoolListViewController *listViewController = [[DMLCarpoolListViewController alloc] initWithNibName:@"DMLCarpoolListViewController" bundle:nil];
+    [listViewController setDelegate:self];
     listViewController.carpools = self.carpools;
     [listViewController setTitle:@"♦️ LANE"];
     [self setViewControllers:@[listViewController]];
     [self setBaseViewController:listViewController];
+    
+}
+
+#pragma mark - DMLCarpoolListViewControllerDelegate
+
+-(void)carpoolListViewController:(DMLCarpoolListViewController *)carpoolListViewController didUpdateCarpools:(NSArray *)carpools {
+    
+    _carpools = carpools;
+    [self refreshBaseViewController];
     
 }
 
