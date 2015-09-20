@@ -10,4 +10,6 @@
 
 @interface DMLCarpoolCodeViewController : UIViewController
 
+@property (nonatomic, copy) NSString* code;
+
 @end
