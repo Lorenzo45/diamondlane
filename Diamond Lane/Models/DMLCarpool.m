@@ -15,6 +15,7 @@
 #import "DMLModel+Updates.h"
 
 NSString * const DMLCarpoolIdentifierKey = @"id";
+NSString * const DMLCarpoolCodeKey = @"code";
 NSString * const DMLCarpoolNameKey = @"name";
 NSString * const DMLCarpoolMembersKey = @"members";
 
@@ -27,6 +28,12 @@ NSString * const DMLCarpoolMembersKey = @"members";
     if ([self attributesKey:DMLCarpoolIdentifierKey canBeUpdatedFromAttributes:attributes]) {
         
         _identifier = [[attributes valueForKeyPath:DMLCarpoolIdentifierKey] integerValue];
+        
+    }
+    
+    if ([self attributesKey:DMLCarpoolCodeKey canBeUpdatedFromAttributes:attributes]) {
+        
+        _code = [attributes valueForKeyPath:DMLCarpoolCodeKey];
         
     }
     

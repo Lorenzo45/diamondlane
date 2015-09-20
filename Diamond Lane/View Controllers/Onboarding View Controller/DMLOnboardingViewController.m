@@ -43,6 +43,12 @@
     
 }
 
+-(BOOL)prefersStatusBarHidden {
+    
+    return YES;
+    
+}
+
 - (IBAction)goButtonTapped:(id)sender {
     
     DMLOnboardingNameViewController *nameViewController = [[DMLOnboardingNameViewController alloc] initWithNibName:@"DMLOnboardingNameViewController" bundle:nil];
