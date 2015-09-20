@@ -72,7 +72,7 @@
 #pragma mark - Observers
 
 @synthesize observers=_observers;
--(NSMutableArray *)observers {
+-(NSMutableArray <NSValue *> *)observers {
     
     if (!_observers) {
         
