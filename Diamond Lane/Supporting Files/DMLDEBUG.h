@@ -12,7 +12,7 @@
 #ifdef DEBUG
 
 // whether we SHOULDN'T persist the user across sessions
-#define DML_NO_PERSIST_SESSION 1
+#define DML_NO_PERSIST_SESSION 0
 
 #endif
 

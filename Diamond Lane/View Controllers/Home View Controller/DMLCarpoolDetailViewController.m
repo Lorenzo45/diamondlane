@@ -36,7 +36,7 @@
         self.passengers = @[@"Bob", @"Joe", @"Moe", @"Rob", @"Tom", @"Bill"];
         self.infoCellIds = @[OPEN_CELL, CODE_CELL];
         
-        // self.title = carpool.title;
+        //self.title = carpool.title;
         
         self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
         self.tableView.dataSource = self;

@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *codeTextField;
 
+
 @end
 
 @implementation DMLCarpoolCodeViewController
@@ -33,6 +34,7 @@
 -(void)viewDidLoad {
     
     self.codeTextField.userInteractionEnabled = NO;
+    self.codeTextField.text = self.code;
     
 }
 

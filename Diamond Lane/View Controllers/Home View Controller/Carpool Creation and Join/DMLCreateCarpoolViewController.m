@@ -57,7 +57,10 @@
         
         [DMLCarpool createCarpoolWithName:self.codeTextField.text completionBlock:^(NSString *code){
             
-            [self.navigationController pushViewController:[[DMLCarpoolCodeViewController alloc] init] animated:YES];
+            DMLCarpoolCodeViewController* carpoolCodeViewController = [[DMLCarpoolCodeViewController alloc] init];
+            [carpoolCodeViewController setCode:code];
+            
+            [self.navigationController pushViewController:carpoolCodeViewController animated:YES];
             
         } failedBlock:^(NSError *error) {
             
