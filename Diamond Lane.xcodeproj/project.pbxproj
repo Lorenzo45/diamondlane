@@ -34,6 +34,10 @@
 		88276FF51BADF5E4002886B4 /* DMLPassengerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88276FF11BADF5E4002886B4 /* DMLPassengerTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		88276FFC1BAE32E7002886B4 /* DMLCarpoolTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88276FFA1BAE32E7002886B4 /* DMLCarpoolTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		88276FFD1BAE32E7002886B4 /* DMLCarpoolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88276FFB1BAE32E7002886B4 /* DMLCarpoolTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		882770041BAE693D002886B4 /* DMLScheduleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 882770021BAE693D002886B4 /* DMLScheduleTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		882770051BAE693D002886B4 /* DMLScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 882770031BAE693D002886B4 /* DMLScheduleTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		882770091BAE6C54002886B4 /* DMLSetTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 882770071BAE6C54002886B4 /* DMLSetTimeViewController.m */; settings = {ASSET_TAGS = (); }; };
+		8827700A1BAE6C54002886B4 /* DMLSetTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 882770081BAE6C54002886B4 /* DMLSetTimeViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		93022CC91BAD202A0032D284 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93022CC21BAD202A0032D284 /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		93022CCA1BAD202A0032D284 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93022CC31BAD202A0032D284 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		93022CCD1BAD202A0032D284 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93022CC61BAD202A0032D284 /* main.m */; settings = {ASSET_TAGS = (); }; };
@@ -97,6 +101,12 @@
 		88276FF91BAE32E7002886B4 /* DMLCarpoolTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLCarpoolTableViewCell.h; sourceTree = "<group>"; };
 		88276FFA1BAE32E7002886B4 /* DMLCarpoolTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLCarpoolTableViewCell.m; sourceTree = "<group>"; };
 		88276FFB1BAE32E7002886B4 /* DMLCarpoolTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMLCarpoolTableViewCell.xib; sourceTree = "<group>"; };
+		882770011BAE693D002886B4 /* DMLScheduleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMLScheduleTableViewCell.h; path = "Carpool Cells/DMLScheduleTableViewCell.h"; sourceTree = "<group>"; };
+		882770021BAE693D002886B4 /* DMLScheduleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMLScheduleTableViewCell.m; path = "Carpool Cells/DMLScheduleTableViewCell.m"; sourceTree = "<group>"; };
+		882770031BAE693D002886B4 /* DMLScheduleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMLScheduleTableViewCell.xib; path = "Carpool Cells/DMLScheduleTableViewCell.xib"; sourceTree = "<group>"; };
+		882770061BAE6C54002886B4 /* DMLSetTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLSetTimeViewController.h; sourceTree = "<group>"; };
+		882770071BAE6C54002886B4 /* DMLSetTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLSetTimeViewController.m; sourceTree = "<group>"; };
+		882770081BAE6C54002886B4 /* DMLSetTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMLSetTimeViewController.xib; sourceTree = "<group>"; };
 		93022CA01BAD1E7C0032D284 /* Diamond Lane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Diamond Lane.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93022CC11BAD202A0032D284 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		93022CC21BAD202A0032D284 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -201,6 +211,9 @@
 				88276FE71BADF5C7002886B4 /* DMLCodeTableViewCell.h */,
 				88276FE81BADF5C7002886B4 /* DMLCodeTableViewCell.m */,
 				88276FE91BADF5C7002886B4 /* DMLCodeTableViewCell.xib */,
+				882770011BAE693D002886B4 /* DMLScheduleTableViewCell.h */,
+				882770021BAE693D002886B4 /* DMLScheduleTableViewCell.m */,
+				882770031BAE693D002886B4 /* DMLScheduleTableViewCell.xib */,
 			);
 			name = "Carpool Cells";
 			sourceTree = "<group>";
@@ -355,6 +368,9 @@
 				88276FB81BADBB79002886B4 /* DMLCarpoolListViewController.xib */,
 				88276FD51BADF11B002886B4 /* DMLCarpoolDetailViewController.h */,
 				88276FD61BADF11B002886B4 /* DMLCarpoolDetailViewController.m */,
+				882770061BAE6C54002886B4 /* DMLSetTimeViewController.h */,
+				882770071BAE6C54002886B4 /* DMLSetTimeViewController.m */,
+				882770081BAE6C54002886B4 /* DMLSetTimeViewController.xib */,
 				88276FBB1BADBBB5002886B4 /* DMLEnRouteViewController.h */,
 				88276FBC1BADBBB5002886B4 /* DMLEnRouteViewController.m */,
 				88276FBD1BADBBB5002886B4 /* DMLEnRouteViewController.xib */,
@@ -468,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88276FEB1BADF5C7002886B4 /* DMLCodeTableViewCell.xib in Resources */,
+				8827700A1BAE6C54002886B4 /* DMLSetTimeViewController.xib in Resources */,
 				88276FBA1BADBB79002886B4 /* DMLCarpoolListViewController.xib in Resources */,
 				88276FCF1BADD71A002886B4 /* DMLCreateCarpoolViewController.xib in Resources */,
 				930687481BAD336100B8F3AC /* LaunchScreen.storyboard in Resources */,
@@ -477,6 +494,7 @@
 				93022CCA1BAD202A0032D284 /* Assets.xcassets in Resources */,
 				88276FF51BADF5E4002886B4 /* DMLPassengerTableViewCell.xib in Resources */,
 				88276FB01BADA831002886B4 /* DMLOnboardingNameViewController.xib in Resources */,
+				882770051BAE693D002886B4 /* DMLScheduleTableViewCell.xib in Resources */,
 				88276FD41BADD72D002886B4 /* DMLCarpoolCodeViewController.xib in Resources */,
 				88276FF31BADF5E4002886B4 /* DMLOpenTableViewCell.xib in Resources */,
 				88276FBF1BADBBB5002886B4 /* DMLEnRouteViewController.xib in Resources */,
@@ -529,6 +547,7 @@
 				934EBEFC1BADEEF600E0B56B /* DMLKeychainManager.m in Sources */,
 				88276FCE1BADD71A002886B4 /* DMLCreateCarpoolViewController.m in Sources */,
 				935E7D5F1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m in Sources */,
+				882770091BAE6C54002886B4 /* DMLSetTimeViewController.m in Sources */,
 				93A3A0B91BAD20A400391C98 /* UIColor+DiamondLane.m in Sources */,
 				934EBEF71BADC3C800E0B56B /* DMLNotificationManager.m in Sources */,
 				93022CCD1BAD202A0032D284 /* main.m in Sources */,
@@ -537,6 +556,7 @@
 				9396BA131BAD34D70088AA93 /* DMLOnboardingNameViewController.m in Sources */,
 				93A3A0BC1BAD20D600391C98 /* DMLUser.m in Sources */,
 				93022CC91BAD202A0032D284 /* AppDelegate.m in Sources */,
+				882770041BAE693D002886B4 /* DMLScheduleTableViewCell.m in Sources */,
 				88276FEA1BADF5C7002886B4 /* DMLCodeTableViewCell.m in Sources */,
 				934EBF031BADF05E00E0B56B /* DMLCarpool.m in Sources */,
 				934EBEFA1BADDE5800E0B56B /* DMLJSONResponseSerializer.m in Sources */,

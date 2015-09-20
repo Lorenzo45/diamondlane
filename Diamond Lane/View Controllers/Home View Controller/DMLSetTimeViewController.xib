@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DMLSetTimeViewController">
+            <connections>
+                <outlet property="datePicker" destination="Fd1-0P-5ck" id="3b3-Vx-I66"/>
+                <outlet property="promptLabel" destination="j7n-T1-qCQ" id="UG7-IM-kQ1"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="Fd1-0P-5ck">
+                    <rect key="frame" x="0.0" y="176" width="600" height="216"/>
+                    <date key="date" timeIntervalSinceReferenceDate="464415862.91418499">
+                        <!--2015-09-20 04:24:22 +0000-->
+                    </date>
+                </datePicker>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7n-T1-qCQ">
+                    <rect key="frame" x="16" y="120" width="568" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Fd1-0P-5ck" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="NWB-sS-nsM"/>
+                <constraint firstItem="j7n-T1-qCQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="O3S-ho-iQr"/>
+                <constraint firstAttribute="trailing" secondItem="Fd1-0P-5ck" secondAttribute="trailing" id="ToP-aB-BZG"/>
+                <constraint firstItem="Fd1-0P-5ck" firstAttribute="top" secondItem="j7n-T1-qCQ" secondAttribute="bottom" constant="32" id="V7p-hM-Z99"/>
+                <constraint firstAttribute="trailing" secondItem="j7n-T1-qCQ" secondAttribute="trailing" constant="16" id="i7x-zR-hgd"/>
+                <constraint firstItem="j7n-T1-qCQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="120" id="sMi-ki-og1"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

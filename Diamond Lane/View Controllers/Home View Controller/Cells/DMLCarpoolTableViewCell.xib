@@ -15,25 +15,25 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ram-i7-3V6">
-                        <rect key="frame" x="16" y="8" width="259" height="24"/>
+                        <rect key="frame" x="16" y="8" width="291" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="T22-ZN-v6z"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G68-zs-gsV">
-                        <rect key="frame" x="16" y="40" width="259" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="Wou-Lw-5VO"/>
-                        </constraints>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G68-zs-gsV">
+                        <rect key="frame" x="16" y="40" width="291" height="36.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="G68-zs-gsV" secondAttribute="bottom" id="5JH-RM-KgD"/>
-                    <constraint firstItem="ram-i7-3V6" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="-40" id="6Vl-95-BGU"/>
-                    <constraint firstItem="G68-zs-gsV" firstAttribute="trailing" secondItem="ram-i7-3V6" secondAttribute="trailing" id="7VV-Sf-8UI"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="G68-zs-gsV" secondAttribute="bottom" id="5JH-RM-KgD"/>
+                    <constraint firstItem="ram-i7-3V6" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="-8" id="6Vl-95-BGU"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="G68-zs-gsV" secondAttribute="trailing" constant="8" id="9Tq-Qv-Uma"/>
                     <constraint firstItem="ram-i7-3V6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="dYZ-hw-qCb"/>
                     <constraint firstItem="G68-zs-gsV" firstAttribute="leading" secondItem="ram-i7-3V6" secondAttribute="leading" id="eMo-WG-Mg9"/>
                     <constraint firstItem="G68-zs-gsV" firstAttribute="top" secondItem="ram-i7-3V6" secondAttribute="bottom" constant="8" symbolic="YES" id="lSs-DJ-qmB"/>
