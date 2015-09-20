@@ -8,9 +8,9 @@
 
 #import "DMLJoinViewController.h"
 
-@interface DMLJoinViewController () <UITextFieldDelegate>
-
 #import "DMLcarpool.h"
+
+@interface DMLJoinViewController () <UITextFieldDelegate>
 
 @property (nonatomic, readonly, strong) UILabel *codePromptLabel;
 @property (nonatomic, readonly, strong) UITextField *codeTextField;
@@ -55,7 +55,7 @@
         [_codePromptLabel setBackgroundColor:[UIColor clearColor]];
         [_codePromptLabel setFont:[UIFont systemFontOfSize:32.0 weight:UIFontWeightThin]];
         [_codePromptLabel setNumberOfLines:0];
-        [_codePromptLabel setText:@"Aight rat, enter a code to join some shit carpool."];
+        [_codePromptLabel setText:@"Enter the code for a carpool you wish to join."];
         [[self view] addSubview:_codePromptLabel];
         
     }

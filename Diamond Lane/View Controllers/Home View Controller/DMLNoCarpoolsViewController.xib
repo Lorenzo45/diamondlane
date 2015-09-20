@@ -6,6 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DMLNoCarpoolsViewController">
             <connections>
+                <outlet property="addCarpoolLabel" destination="LZ3-UA-oOf" id="ZUR-Rx-pDa"/>
+                <outlet property="createButton" destination="eI2-eL-SRC" id="pz4-Vf-sBl"/>
+                <outlet property="joinButton" destination="f2w-ga-O9P" id="VSu-xN-XXQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,49 +17,65 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8HL-sn-WXM" userLabel="Container View">
-                    <rect key="frame" x="139" y="160" width="322" height="301"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xa5-Ez-o8W">
+                    <rect key="frame" x="48" y="166" width="504" height="300"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2w-ga-O9P">
-                            <rect key="frame" x="109" y="133" width="105" height="70"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                            <state key="normal" title="JOIN"/>
-                            <connections>
-                                <action selector="joinButtonPressed" destination="-1" eventType="touchUpInside" id="yjZ-UB-vNu"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eI2-eL-SRC">
-                            <rect key="frame" x="76" y="231" width="171" height="70"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                            <state key="normal" title="CREATE"/>
+                            <rect key="frame" x="0.0" y="228" width="504" height="64"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="64" id="Ceu-s2-BCl"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <state key="normal" title="Create">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
                             <connections>
                                 <action selector="createButtonPressed" destination="-1" eventType="touchUpInside" id="iPc-vg-ue8"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a carpool" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZ3-UA-oOf">
-                            <rect key="frame" x="39" y="0.0" width="245" height="48"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2w-ga-O9P">
+                            <rect key="frame" x="0.0" y="118" width="504" height="64"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="64" id="XFS-Ln-tRC"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <state key="normal" title="Join">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="joinButtonPressed" destination="-1" eventType="touchUpInside" id="yjZ-UB-vNu"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZ3-UA-oOf">
+                            <rect key="frame" x="92" y="2.5" width="321.5" height="76.5"/>
+                            <string key="text">You don't have any
+carpools, add one now</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="32"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="f2w-ga-O9P" firstAttribute="leading" secondItem="8HL-sn-WXM" secondAttribute="leading" constant="109" id="5Eb-a6-MuT"/>
-                        <constraint firstItem="LZ3-UA-oOf" firstAttribute="centerX" secondItem="8HL-sn-WXM" secondAttribute="centerX" id="Ucb-zQ-RSu"/>
-                        <constraint firstItem="f2w-ga-O9P" firstAttribute="centerX" secondItem="8HL-sn-WXM" secondAttribute="centerX" id="WaL-Sk-pdc"/>
-                        <constraint firstItem="eI2-eL-SRC" firstAttribute="centerX" secondItem="8HL-sn-WXM" secondAttribute="centerX" id="Z3o-bA-T9e"/>
-                        <constraint firstItem="f2w-ga-O9P" firstAttribute="centerY" secondItem="8HL-sn-WXM" secondAttribute="centerY" constant="17.5" id="acf-Jj-OC1"/>
-                        <constraint firstAttribute="bottom" secondItem="eI2-eL-SRC" secondAttribute="bottom" id="hmJ-fX-KjW"/>
-                        <constraint firstItem="LZ3-UA-oOf" firstAttribute="top" secondItem="8HL-sn-WXM" secondAttribute="top" id="i8m-R9-2BY"/>
-                        <constraint firstAttribute="height" constant="301" id="zPc-Pd-JWq"/>
+                        <constraint firstAttribute="trailing" secondItem="eI2-eL-SRC" secondAttribute="trailing" id="4ox-QB-tZW"/>
+                        <constraint firstAttribute="width" constant="504" id="9rY-Xy-cg3"/>
+                        <constraint firstAttribute="bottom" secondItem="LZ3-UA-oOf" secondAttribute="bottom" constant="221" id="ASu-gh-fQC"/>
+                        <constraint firstItem="LZ3-UA-oOf" firstAttribute="centerX" secondItem="xa5-Ez-o8W" secondAttribute="centerX" id="Cj9-kn-Rem"/>
+                        <constraint firstAttribute="bottom" secondItem="f2w-ga-O9P" secondAttribute="bottom" constant="118" id="OL0-o4-uxX"/>
+                        <constraint firstAttribute="height" constant="300" id="PZe-wB-rz9"/>
+                        <constraint firstItem="eI2-eL-SRC" firstAttribute="leading" secondItem="xa5-Ez-o8W" secondAttribute="leading" id="koj-OG-m3B"/>
+                        <constraint firstAttribute="bottom" secondItem="eI2-eL-SRC" secondAttribute="bottom" constant="8" id="ogh-ol-K2b"/>
+                        <constraint firstAttribute="trailing" secondItem="f2w-ga-O9P" secondAttribute="trailing" id="ozM-hq-fdb"/>
+                        <constraint firstItem="f2w-ga-O9P" firstAttribute="leading" secondItem="xa5-Ez-o8W" secondAttribute="leading" id="xDu-tk-cqj"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="8HL-sn-WXM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="DNu-9l-wZi"/>
-                <constraint firstItem="8HL-sn-WXM" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="10.5" id="KdN-h3-ZSj"/>
+                <constraint firstItem="xa5-Ez-o8W" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1t7-Xh-FNG"/>
+                <constraint firstItem="xa5-Ez-o8W" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="15.75" id="K18-sc-oj1"/>
+                <constraint firstItem="xa5-Ez-o8W" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="48" id="RcL-06-bYy"/>
+                <constraint firstAttribute="trailing" secondItem="xa5-Ez-o8W" secondAttribute="trailing" constant="48" id="ViM-JP-Bmw"/>
             </constraints>
             <point key="canvasLocation" x="380" y="337"/>
         </view>

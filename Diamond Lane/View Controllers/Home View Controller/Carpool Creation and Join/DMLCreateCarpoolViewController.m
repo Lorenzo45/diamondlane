@@ -56,7 +56,7 @@
         [_namePromptLabel setBackgroundColor:[UIColor clearColor]];
         [_namePromptLabel setFont:[UIFont systemFontOfSize:32.0 weight:UIFontWeightThin]];
         [_namePromptLabel setNumberOfLines:0];
-        [_namePromptLabel setText:@"Ayyyy fam, you need to make a carpool name."];
+        [_namePromptLabel setText:@"Please create a carpool name."];
         [[self view] addSubview:_namePromptLabel];
         
     }

@@ -14,13 +14,26 @@
 
 @interface DMLNoCarpoolsViewController () <DMLCreateCarpoolViewControllerDelegate, DMLJoinCarpoolViewControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIButton *createButton;
+@property (weak, nonatomic) IBOutlet UIButton *joinButton;
+@property (weak, nonatomic) IBOutlet UILabel *addCarpoolLabel;
+
 @end
 
 @implementation DMLNoCarpoolsViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.joinButton.backgroundColor = [UIColor dml_tintColor];
+    self.joinButton.layer.cornerRadius = 6;
+    
+    self.createButton.backgroundColor = [UIColor dml_tintColor];
+    self.createButton.layer.cornerRadius = 6;
+    
+    self.addCarpoolLabel.textColor = [UIColor dml_grayColor];
+    self.addCarpoolLabel.font = [UIFont systemFontOfSize:30.0 weight:UIFontWeightLight];
 }
 
 - (void)didReceiveMemoryWarning {
