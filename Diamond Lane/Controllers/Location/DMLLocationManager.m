@@ -54,7 +54,17 @@
 
 +(void)requestAuthorization {
     
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    static CLLocationManager *locationManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
+        if (!locationManager) {
+            
+            locationManager = [[CLLocationManager alloc] init];
+            
+        }
+        
+    });
     [locationManager requestAlwaysAuthorization];
     
 }
