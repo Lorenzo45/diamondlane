@@ -55,7 +55,7 @@
     
     if (self.codeTextField.text.length > 0) {
         
-        [DMLCarpool createCarpoolWithName:self.codeTextField.text completionBlock:^{
+        [DMLCarpool createCarpoolWithName:self.codeTextField.text completionBlock:^(NSString *code){
             
             [self.navigationController pushViewController:[[DMLCarpoolCodeViewController alloc] init] animated:YES];
             

@@ -21,7 +21,8 @@
 -(void)reportLeavingAsDriverWithCompletionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock;
 -(void)reportArrivingAt:(DMLUser *)user completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock;
 
-+(void)createCarpoolWithName:(NSString *)name completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock;
++(void)createCarpoolWithName:(NSString *)name completionBlock:(void (^)(NSString *code))completionBlock failedBlock:(void (^)(NSError *error))failedBlock;
++(void)joinCarpoolWithCode:(NSString *)code completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock;
 +(void)fetchCarpoolsWithCompletionBlock:(void (^)(NSArray *carpools))completionBlock failedBlock:(void (^)(NSError *error))failedBlock;
 
 +(instancetype)carpoolWithAttributes:(NSDictionary *)attributes;
