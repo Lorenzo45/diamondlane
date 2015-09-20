@@ -59,8 +59,13 @@
             
             DMLCarpoolCodeViewController* carpoolCodeViewController = [[DMLCarpoolCodeViewController alloc] init];
             [carpoolCodeViewController setCode:code];
-            
             [self.navigationController pushViewController:carpoolCodeViewController animated:YES];
+
+            if ([[self delegate] respondsToSelector:@selector(createCarpoolViewControllerDidCreateCarpool:)]) {
+                
+                [[self delegate] createCarpoolViewControllerDidCreateCarpool:self];
+                
+            }
             
         } failedBlock:^(NSError *error) {
             

@@ -10,14 +10,16 @@
 
 #import "DMLNoCarpoolsViewController.h"
 #import "DMLCarpoolDetailViewController.h"
+#import "DMLCarpoolListViewController.h"
 #import "DMLEnRouteViewController.h"
 #import "DMLCarpool.h"
 
-@interface DMLHomeViewController ()
+@interface DMLHomeViewController () <DMLNoCarpoolsViewControllerDelegate>
 
-@property(strong, nonatomic) NSMutableArray *carpools;
-@property(nonatomic) BOOL enRoute;
-@property(strong, nonatomic) UIViewController *baseVC;
+@property (nonatomic, assign, getter=isEnRoute) BOOL enRoute;
+
+@property (strong, nonatomic) NSArray *carpools;
+@property (nonatomic, weak) UIViewController *baseViewController;
 
 @end
 
@@ -28,28 +30,10 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        [DMLCarpool fetchCarpoolsWithCompletionBlock:^(NSArray *carpools) {
-            
-            self.carpools = [carpools mutableCopy];
-            
-        } failedBlock:^(NSError *error) {
-            
-            NSLog(@"%@", error);
-            
-        }];
-        
-        self.enRoute = NO; // TODO: Fetch from server
+        ;
         
     }
     return self;
-    
-}
-
-- (void)setCarpools:(NSMutableArray *)carpools {
-    
-    _carpools = carpools;
-    
-    [self updateBaseViewController];
     
 }
 
@@ -57,34 +41,104 @@
     
     [super viewDidLoad];
     
+    [[self view] setBackgroundColor:[UIColor whiteColor]];
+    [self reloadCarpoolsInBackground:NO];
+    
 }
 
 -(void)viewDidLayoutSubviews {
     
     [super viewDidLayoutSubviews];
     
-    
+    ;
     
 }
 
--(void)updateBaseViewController {
+-(void)reloadCarpoolsInBackground:(BOOL)inBackground {
     
-    if (self.carpools.count == 0 && ![self.baseVC isKindOfClass:[DMLNoCarpoolsViewController class]]) {
+    [DMLCarpool fetchCarpoolsWithCompletionBlock:^(NSArray *carpools) {
         
-        self.baseVC = [[DMLNoCarpoolsViewController alloc] initWithNibName:@"DMLNoCarpoolsViewController" bundle:nil];
-    
-    } else if (!self.enRoute && ![self.baseVC isKindOfClass:[DMLCarpoolDetailViewController class]]) {
+        _carpools = carpools;
+        [self refreshBaseViewController];
         
-        self.baseVC = [[DMLCarpoolDetailViewController alloc] init];
-    
-    } else if (![self.baseVC isKindOfClass:[DMLEnRouteViewController class]]) {
+    } failedBlock:^(NSError *error) {
         
-        self.baseVC = [[DMLEnRouteViewController alloc] initWithNibName:@"DMLEnRouteViewController" bundle:nil];
+        NSLog(@"Failed to fetch carpools with completion block: %@",error);
+        
+    }];
     
+}
+
+-(void)refreshBaseViewController {
+    
+    if (![[self carpools] count]) {
+        
+        [self showNoCarpoolsViewController];
+        
+    } else if ([self isEnRoute]) {
+        
+        [self showEnRouteViewController];
+        
+    } else {
+        
+        [self showListViewController];
+        
     }
     
-    self.baseVC.title = @"♦️ LANE";
-    [self setViewControllers:@[self.baseVC]];
+}
+
+#pragma mark - Child View Controllers
+
+-(void)showNoCarpoolsViewController {
+    
+    if ([[self baseViewController] isKindOfClass:[DMLNoCarpoolsViewController class]]) {
+        
+        return;
+        
+    }
+    
+    DMLNoCarpoolsViewController *noCarpoolsViewController = [[DMLNoCarpoolsViewController alloc] initWithNibName:@"DMLNoCarpoolsViewController" bundle:nil];
+    [noCarpoolsViewController setTitle:@"♦️ LANE"];
+    [self setViewControllers:@[noCarpoolsViewController]];
+    [self setBaseViewController:noCarpoolsViewController];
+    
+}
+
+-(void)showEnRouteViewController {
+    
+    if ([[self baseViewController] isKindOfClass:[DMLEnRouteViewController class]]) {
+        
+        return;
+        
+    }
+    
+    DMLEnRouteViewController *detailViewController = [[DMLEnRouteViewController alloc] initWithNibName:@"DMLEnRouteViewController" bundle:nil];
+    [detailViewController setTitle:@"♦️ LANE"];
+    [self setViewControllers:@[detailViewController]];
+    [self setBaseViewController:detailViewController];
+    
+}
+
+-(void)showListViewController {
+    
+    if ([[self baseViewController] isKindOfClass:[DMLCarpoolListViewController class]]) {
+        
+        return;
+        
+    }
+    
+    DMLCarpoolListViewController *listViewController = [[DMLCarpoolListViewController alloc] initWithNibName:@"DMLCarpoolListViewController" bundle:nil];
+    [listViewController setTitle:@"♦️ LANE"];
+    [self setViewControllers:@[listViewController]];
+    [self setBaseViewController:listViewController];
+    
+}
+
+#pragma mark - DMLNoCarpoolsViewControllerDelegate
+
+-(void)noCarpoolsViewControllerDidCreateCarpool:(DMLNoCarpoolsViewController *)createCarpoolViewController {
+    
+    [self reloadCarpoolsInBackground:YES];
     
 }
 
