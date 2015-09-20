@@ -9,6 +9,7 @@
 #import "DMLCreateCarpoolViewController.h"
 
 #import "DMLCarpoolCodeViewController.h"
+#import "DMLCarpool.h"
 
 @interface DMLCreateCarpoolViewController ()
 
@@ -50,9 +51,36 @@
     
 }
 
-- (IBAction)continueButtonPressed {
+- (IBAction)createButtonPressed {
     
-    [self.navigationController pushViewController:[[DMLCarpoolCodeViewController alloc] init] animated:YES];
+    if (self.codeTextField.text.length > 0) {
+        
+        [DMLCarpool createCarpoolWithName:self.codeTextField.text completionBlock:^{
+            
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Carpool couldn't be created, please try again later." message:@"" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }]];
+            [self presentViewController:alert animated:YES completion:nil];
+            //[self.navigationController pushViewController:[[DMLCarpoolCodeViewController alloc] init] animated:YES];
+            
+        } failedBlock:^(NSError *error) {
+            
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Carpool couldn't be created, please try again later." message:@"" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }]];
+            [self presentViewController:alert animated:YES completion:nil];
+        
+        }];
+        
+    } else {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Carpool name cannot be empty!" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+    }
     
 }
 
@@ -62,8 +90,8 @@
     
 }
 
-- (void)keyboardBegan:(NSNotification *)notification
-{
+- (void)keyboardBegan:(NSNotification *)notification {
+    
     if(!self.keyboardIsVisible) {
         
         NSDictionary* keyboardInfo = [notification userInfo];
@@ -83,6 +111,7 @@
         self.keyboardIsVisible = YES;
         
     }
+    
 }
 
 - (void)keyboardEnded:(NSNotification *)notification {
