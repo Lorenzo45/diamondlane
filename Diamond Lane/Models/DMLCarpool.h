@@ -15,6 +15,7 @@
 
 @property (nonatomic, readonly, assign) NSInteger identifier;
 @property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly, copy) NSString *code;
 @property (nonatomic, readonly, strong) NSArray <DMLUser *> *members;
 
 -(void)refreshMembersWithCompletionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock;
