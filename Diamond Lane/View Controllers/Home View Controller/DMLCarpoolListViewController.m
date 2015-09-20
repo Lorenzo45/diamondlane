@@ -59,14 +59,6 @@
     
 }
 
--(void)viewDidLoad {
-    
-    [super viewDidLoad];
-    
-    [self tableView];
-    
-}
-
 -(void)viewDidLayoutSubviews {
     
     [super viewDidLayoutSubviews];

@@ -26,6 +26,7 @@
 @property (strong, nonatomic) NSArray *sectionTitles;
 @property (strong, nonatomic) NSArray *infoCellIds;
 @property (strong, nonatomic) NSArray *days;
+@property (strong, nonatomic) NSMutableArray *updatedTimes;
 @property (nonatomic) int selectedDayIndex;
 
 @end
@@ -52,6 +53,14 @@
         [self.tableView registerNib:[UINib nibWithNibName:CODE_CELL bundle:nil] forCellReuseIdentifier:CODE_CELL];
         [self.tableView registerNib:[UINib nibWithNibName:SCHEDULE_CELL bundle:nil] forCellReuseIdentifier:SCHEDULE_CELL];
         
+        self.updatedTimes = [[NSMutableArray alloc] initWithCapacity:7];
+        for (int i = 0; i < 7; i++) {
+            NSNumber *time = [self startingTimeForDayIndex:i];
+            if (time == nil || time < 0) {
+                time = @0;
+            }
+            self.updatedTimes[i] = time;
+        }
     }
     return self;
     
@@ -69,8 +78,40 @@
 #pragma mark - DMLTimeSetterProtocol
 
 - (void)didUpdateTime:(NSDate *)date {
+    NSLog(@"%d", self.selectedDayIndex);
+    NSNumber *minutes = [self timeInMinutesFromDate:date];
+    self.updatedTimes[self.selectedDayIndex] = minutes;
+    NSLog(@"%@", self.updatedTimes);
+    [self.tableView reloadData];
     
-    NSLog(@"%@", date); //TODO: UPDATE API
+}
+
+- (NSNumber *)timeInMinutesFromDate:(NSDate *)date {
+    
+    unsigned hourAndMinuteFlags = NSCalendarUnitHour | NSCalendarUnitMinute;
+    NSCalendar* calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    [calendar setTimeZone:[NSTimeZone localTimeZone]];
+    NSDateComponents* travelDateTimeComponents = [calendar components:hourAndMinuteFlags fromDate:date];
+    NSInteger hours = [travelDateTimeComponents hour];
+    NSInteger minutes = [travelDateTimeComponents minute];
+    return @(hours * 60 + minutes);
+    
+}
+
+- (NSString *)timeFromMinutes:(NSNumber *)minutes {
+    
+    if (minutes < 0) {
+        minutes = @0;
+    }
+    
+    int mins = (int)minutes % 60;
+    int hours = (int)minutes / 60;
+    
+    if (hours > 12) {
+        return [NSString stringWithFormat:@"%d:%02d PM", hours % 12, mins];
+    } else {
+        return [NSString stringWithFormat:@"%d:%02d AM", hours, mins];
+    }
     
 }
 
@@ -143,7 +184,7 @@
             
             DMLScheduleTableViewCell *scheduleCell = (DMLScheduleTableViewCell *)cell;
             scheduleCell.textLabel.text = self.days[indexPath.row];
-            scheduleCell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [self startingTimeForDayIndex:indexPath.row]];
+            scheduleCell.detailTextLabel.text = [self timeFromMinutes:self.updatedTimes[indexPath.row]];
             scheduleCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             
         }
@@ -168,7 +209,7 @@
         case 4: return self.carpool.thursdayStartingTime;
         case 5: return self.carpool.fridayStartingTime;
         case 6: return self.carpool.saturdayStartingTime;
-        default: return @0;
+        default: return @-1;
     }
     
 }
