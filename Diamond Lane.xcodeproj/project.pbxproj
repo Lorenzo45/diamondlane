@@ -35,7 +35,6 @@
 		93022CC91BAD202A0032D284 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93022CC21BAD202A0032D284 /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		93022CCA1BAD202A0032D284 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93022CC31BAD202A0032D284 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		93022CCD1BAD202A0032D284 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93022CC61BAD202A0032D284 /* main.m */; settings = {ASSET_TAGS = (); }; };
-		93022CCE1BAD202A0032D284 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93022CC81BAD202A0032D284 /* ViewController.m */; settings = {ASSET_TAGS = (); }; };
 		930687481BAD336100B8F3AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 930687461BAD336100B8F3AC /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		934EBEF01BADBE0D00E0B56B /* DMLObjectStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 934EBEEF1BADBE0D00E0B56B /* DMLObjectStore.m */; settings = {ASSET_TAGS = (); }; };
 		934EBEF31BADC03900E0B56B /* DMLModel+Updates.m in Sources */ = {isa = PBXBuildFile; fileRef = 934EBEF21BADC03900E0B56B /* DMLModel+Updates.m */; settings = {ASSET_TAGS = (); }; };
@@ -100,8 +99,6 @@
 		93022CC31BAD202A0032D284 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93022CC51BAD202A0032D284 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93022CC61BAD202A0032D284 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		93022CC71BAD202A0032D284 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		93022CC81BAD202A0032D284 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		930687461BAD336100B8F3AC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		934EBEEA1BADBD9700E0B56B /* DMLModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLModel.h; sourceTree = "<group>"; };
 		934EBEEE1BADBE0D00E0B56B /* DMLObjectStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLObjectStore.h; sourceTree = "<group>"; };
@@ -293,8 +290,6 @@
 			isa = PBXGroup;
 			children = (
 				930687451BAD334A00B8F3AC /* Storyboards */,
-				93022CC71BAD202A0032D284 /* ViewController.h */,
-				93022CC81BAD202A0032D284 /* ViewController.m */,
 				93022CC11BAD202A0032D284 /* AppDelegate.h */,
 				93022CC21BAD202A0032D284 /* AppDelegate.m */,
 				93022CC31BAD202A0032D284 /* Assets.xcassets */,
@@ -530,7 +525,6 @@
 				935E7D5F1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m in Sources */,
 				93A3A0B91BAD20A400391C98 /* UIColor+DiamondLane.m in Sources */,
 				934EBEF71BADC3C800E0B56B /* DMLNotificationManager.m in Sources */,
-				93022CCE1BAD202A0032D284 /* ViewController.m in Sources */,
 				93022CCD1BAD202A0032D284 /* main.m in Sources */,
 				88276FBE1BADBBB5002886B4 /* DMLEnRouteViewController.m in Sources */,
 				934EBEF31BADC03900E0B56B /* DMLModel+Updates.m in Sources */,
