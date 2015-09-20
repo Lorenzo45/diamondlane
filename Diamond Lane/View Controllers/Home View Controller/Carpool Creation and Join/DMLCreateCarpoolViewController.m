@@ -152,7 +152,7 @@
             
         } failedBlock:^(NSError *error) {
             
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Carpool couldn't be created, please try again later." message:@"" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:error.localizedDescription message:@"" preferredStyle:UIAlertControllerStyleAlert];
             [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
                 [self dismissViewControllerAnimated:YES completion:nil];
             }]];

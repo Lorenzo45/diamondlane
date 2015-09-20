@@ -10,6 +10,8 @@
 
 @interface DMLJoinViewController () <UITextFieldDelegate>
 
+#import "DMLcarpool.h"
+
 @property (nonatomic, readonly, strong) UILabel *codePromptLabel;
 @property (nonatomic, readonly, strong) UITextField *codeTextField;
 @property (nonatomic, readonly, strong) UIView* shiftView;
@@ -133,7 +135,14 @@
 
 - (IBAction)continueButtonPressed {
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [DMLCarpool joinCarpoolWithCode:self.codeTextField.text completionBlock:^{
+        [self.delegate joinCarpoolViewControllerDidCreateCarpool:self];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } failedBlock:^(NSError *error) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:error.localizedDescription message:@"" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+    }];
     
 }
 

@@ -18,6 +18,15 @@
 @property (nonatomic, readonly, copy) NSString *code;
 @property (nonatomic, readonly, strong) NSArray <DMLUser *> *members;
 
+@property (nonatomic, readonly, assign) NSNumber *mondayStartingTime;
+@property (nonatomic, readonly, assign) NSNumber *tuesdayStartingTime;
+@property (nonatomic, readonly, assign) NSNumber *wednesdayStartingTime;
+@property (nonatomic, readonly, assign) NSNumber *thursdayStartingTime;
+@property (nonatomic, readonly, assign) NSNumber *fridayStartingTime;
+@property (nonatomic, readonly, assign) NSNumber *saturdayStartingTime;
+@property (nonatomic, readonly, assign) NSNumber *sundayStartingTime;
+
+-(void)editWithName:(NSString *)name mondayStartingTime:(NSNumber *)mondayStartingTime tuesdayStartingTime:(NSNumber *)tuesdayStartingTime wednesdayStartingTime:(NSNumber *)wednesdayStartingTime thursdayStartingTime:(NSNumber *)thursdayStartingTime fridayStartingTime:(NSNumber *)fridayStartingTime saturdayStartingTime:(NSNumber *)saturdayStartingTime sundayStartingTime:(NSNumber *)sundayStartingTime completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock;
 -(void)refreshMembersWithCompletionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock;
 -(void)reportLeavingAsDriverWithCompletionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock;
 -(void)reportArrivingAt:(DMLUser *)user completionBlock:(void (^)(void))completionBlock failedBlock:(void (^)(NSError *error))failedBlock;

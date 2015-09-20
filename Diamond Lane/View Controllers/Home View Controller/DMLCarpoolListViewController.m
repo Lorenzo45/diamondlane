@@ -12,10 +12,12 @@
 #import "DMLCarpoolTableViewCell.h"
 #import "DMLCarpool.h"
 #import "DMLUser.h"
+#import "DMLJoinViewController.h"
+#import "DMLCreateCarpoolViewController.h"
 
 #define CELL_ID @"DMLCarpoolTableViewCell"
 
-@interface DMLCarpoolListViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface DMLCarpoolListViewController () <UITableViewDataSource, UITableViewDelegate, DMLCreateCarpoolViewControllerDelegate, DMLJoinCarpoolViewControllerDelegate>
 
 @property (nonatomic, readonly, strong) UITableView *tableView;
 
@@ -53,7 +55,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createNewCarpool)];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showAddMenu)];
         
     }
     return self;
@@ -68,9 +70,57 @@
     
 }
 
-- (void)createNewCarpool {
+- (void)showAddMenu {
     
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Add a Carpool" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
     
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *join = [UIAlertAction actionWithTitle:@"Join" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        DMLJoinViewController *joinViewController = [[DMLJoinViewController alloc] init];
+        [joinViewController setDelegate:self];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:joinViewController];
+        [self presentViewController:navController  animated:YES completion:nil];
+        
+    }];
+    UIAlertAction *create = [UIAlertAction actionWithTitle:@"Create" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        DMLCreateCarpoolViewController *createCarpoolViewController = [[DMLCreateCarpoolViewController alloc] init];
+        [createCarpoolViewController setDelegate:self];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:createCarpoolViewController];
+        [self presentViewController:navController  animated:YES completion:nil];
+        
+    }];
+    
+    [actionSheet addAction:cancel];
+    [actionSheet addAction:join];
+    [actionSheet addAction:create];
+    
+    [self presentViewController:actionSheet animated:YES completion:nil];
+    
+}
+
+#pragma mark - DMLCreateCarpoolViewControllerDelegate
+
+-(void)createCarpoolViewControllerDidCreateCarpool:(DMLCreateCarpoolViewController *)createCarpoolViewController {
+    
+    [DMLCarpool fetchCarpoolsWithCompletionBlock:^(NSArray *carpools) {
+        self.carpools = carpools;
+    } failedBlock:^(NSError *error) {
+        
+    }];
+    
+}
+
+#pragma mark - DMLJoinCarpoolViewControllerDelegate
+
+-(void)joinCarpoolViewControllerDidCreateCarpool:(DMLJoinViewController *)joinCarpoolViewController {
+    
+    [DMLCarpool fetchCarpoolsWithCompletionBlock:^(NSArray *carpools) {
+        self.carpools = carpools;
+    } failedBlock:^(NSError *error) {
+        
+    }];
     
 }
 
