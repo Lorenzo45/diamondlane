@@ -117,6 +117,13 @@
     [DMLCarpool fetchCarpoolsWithCompletionBlock:^(NSArray *carpools) {
         self.carpools = carpools;
         [[self tableView] reloadData];
+        
+        if ([[self delegate] respondsToSelector:@selector(carpoolListViewController:didUpdateCarpools:)]) {
+            
+            [[self delegate] carpoolListViewController:self didUpdateCarpools:carpools];
+            
+        }
+        
     } failedBlock:^(NSError *error) {
         
     }];

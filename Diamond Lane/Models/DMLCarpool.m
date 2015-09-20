@@ -71,37 +71,37 @@ NSString * const DMLCarpoolSundayStartingTimeKey = @"sun_time";
         
     }
     
-    if ([self attributesKey:DMLCarpoolMondayStartingTimeKey canBeUpdatedFromAttributes:attributes]) {
+    if ([self attributesKey:DMLCarpoolTuesdayStartingTimeKey canBeUpdatedFromAttributes:attributes]) {
         
         _tuesdayStartingTime = @([[attributes valueForKeyPath:DMLCarpoolTuesdayStartingTimeKey] integerValue]);
         
     }
     
-    if ([self attributesKey:DMLCarpoolMondayStartingTimeKey canBeUpdatedFromAttributes:attributes]) {
+    if ([self attributesKey:DMLCarpoolWednesdayStartingTimeKey canBeUpdatedFromAttributes:attributes]) {
         
         _wednesdayStartingTime = @([[attributes valueForKeyPath:DMLCarpoolWednesdayStartingTimeKey] integerValue]);
         
     }
     
-    if ([self attributesKey:DMLCarpoolMondayStartingTimeKey canBeUpdatedFromAttributes:attributes]) {
+    if ([self attributesKey:DMLCarpoolThursdayStartingTimeKey canBeUpdatedFromAttributes:attributes]) {
         
         _thursdayStartingTime = @([[attributes valueForKeyPath:DMLCarpoolThursdayStartingTimeKey] integerValue]);
         
     }
     
-    if ([self attributesKey:DMLCarpoolMondayStartingTimeKey canBeUpdatedFromAttributes:attributes]) {
+    if ([self attributesKey:DMLCarpoolFridayStartingTimeKey canBeUpdatedFromAttributes:attributes]) {
         
         _fridayStartingTime = @([[attributes valueForKeyPath:DMLCarpoolFridayStartingTimeKey] integerValue]);
         
     }
     
-    if ([self attributesKey:DMLCarpoolMondayStartingTimeKey canBeUpdatedFromAttributes:attributes]) {
+    if ([self attributesKey:DMLCarpoolSaturdayStartingTimeKey canBeUpdatedFromAttributes:attributes]) {
         
         _saturdayStartingTime = @([[attributes valueForKeyPath:DMLCarpoolSaturdayStartingTimeKey] integerValue]);
         
     }
     
-    if ([self attributesKey:DMLCarpoolMondayStartingTimeKey canBeUpdatedFromAttributes:attributes]) {
+    if ([self attributesKey:DMLCarpoolSundayStartingTimeKey canBeUpdatedFromAttributes:attributes]) {
         
         _sundayStartingTime = @([[attributes valueForKeyPath:DMLCarpoolSundayStartingTimeKey] integerValue]);
         

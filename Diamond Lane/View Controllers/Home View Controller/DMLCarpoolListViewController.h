@@ -8,8 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol DMLCarpoolListViewControllerDelegate;
+
 @interface DMLCarpoolListViewController : UIViewController
 
+@property (nonatomic, weak) id <DMLCarpoolListViewControllerDelegate> delegate;
+
 @property (strong, nonatomic) NSArray *carpools;
+
+@end
+
+@protocol DMLCarpoolListViewControllerDelegate <NSObject>
+
+@required
+-(void)carpoolListViewController:(DMLCarpoolListViewController *)carpoolListViewController didUpdateCarpools:(NSArray *)carpools;
 
 @end
