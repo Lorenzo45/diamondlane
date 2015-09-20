@@ -70,9 +70,9 @@
     
 }
 
--(void)viewDidAppear:(BOOL)animated {
+-(void)viewWillAppear:(BOOL)animated {
     
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
     
     [[self tableView] deselectRowAtIndexPath:[[self tableView] indexPathForSelectedRow] animated:animated];
     
