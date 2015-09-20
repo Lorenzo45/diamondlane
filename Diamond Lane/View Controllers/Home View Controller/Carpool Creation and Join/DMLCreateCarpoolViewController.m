@@ -57,12 +57,7 @@
         
         [DMLCarpool createCarpoolWithName:self.codeTextField.text completionBlock:^{
             
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Carpool couldn't be created, please try again later." message:@"" preferredStyle:UIAlertControllerStyleAlert];
-            [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-                [self dismissViewControllerAnimated:YES completion:nil];
-            }]];
-            [self presentViewController:alert animated:YES completion:nil];
-            //[self.navigationController pushViewController:[[DMLCarpoolCodeViewController alloc] init] animated:YES];
+            [self.navigationController pushViewController:[[DMLCarpoolCodeViewController alloc] init] animated:YES];
             
         } failedBlock:^(NSError *error) {
             
