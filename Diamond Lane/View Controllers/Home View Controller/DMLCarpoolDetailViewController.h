@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class DMLCarpool;
+#import "DMLCarpool.h"
 
 @interface DMLCarpoolDetailViewController : UIViewController
 

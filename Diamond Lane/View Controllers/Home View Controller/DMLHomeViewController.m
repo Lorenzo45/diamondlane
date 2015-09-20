@@ -127,7 +127,8 @@
         
     }
     
-    DMLCarpoolListViewController *listViewController = [[DMLCarpoolListViewController alloc] initWithNibName:@"DMLCarpoolListViewController" bundle:nil];
+    DMLCarpoolListViewController *listViewController = [[DMLCarpoolListViewController alloc] initWithNibName:nil bundle:nil];
+    listViewController.carpools = self.carpools;
     [listViewController setTitle:@"♦️ LANE"];
     [self setViewControllers:@[listViewController]];
     [self setBaseViewController:listViewController];

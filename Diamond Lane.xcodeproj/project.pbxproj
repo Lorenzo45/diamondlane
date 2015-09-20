@@ -32,6 +32,8 @@
 		88276FF31BADF5E4002886B4 /* DMLOpenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88276FEE1BADF5E4002886B4 /* DMLOpenTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		88276FF41BADF5E4002886B4 /* DMLPassengerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88276FF01BADF5E4002886B4 /* DMLPassengerTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		88276FF51BADF5E4002886B4 /* DMLPassengerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88276FF11BADF5E4002886B4 /* DMLPassengerTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		88276FFC1BAE32E7002886B4 /* DMLCarpoolTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88276FFA1BAE32E7002886B4 /* DMLCarpoolTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		88276FFD1BAE32E7002886B4 /* DMLCarpoolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88276FFB1BAE32E7002886B4 /* DMLCarpoolTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		93022CC91BAD202A0032D284 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93022CC21BAD202A0032D284 /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		93022CCA1BAD202A0032D284 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93022CC31BAD202A0032D284 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		93022CCD1BAD202A0032D284 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93022CC61BAD202A0032D284 /* main.m */; settings = {ASSET_TAGS = (); }; };
@@ -41,7 +43,6 @@
 		934EBEF71BADC3C800E0B56B /* DMLNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 934EBEF61BADC3C800E0B56B /* DMLNotificationManager.m */; settings = {ASSET_TAGS = (); }; };
 		934EBEFA1BADDE5800E0B56B /* DMLJSONResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 934EBEF91BADDE5800E0B56B /* DMLJSONResponseSerializer.m */; settings = {ASSET_TAGS = (); }; };
 		934EBEFC1BADEEF600E0B56B /* DMLKeychainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88276FAA1BAD9DCD002886B4 /* DMLKeychainManager.m */; };
-		934EBF001BADEFA200E0B56B /* DMLCarpoolTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 934EBEFF1BADEFA200E0B56B /* DMLCarpoolTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		934EBF031BADF05E00E0B56B /* DMLCarpool.m in Sources */ = {isa = PBXBuildFile; fileRef = 934EBF021BADF05E00E0B56B /* DMLCarpool.m */; settings = {ASSET_TAGS = (); }; };
 		935E7D5B1BAD2644008F5451 /* DMLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935E7D5A1BAD2644008F5451 /* DMLHomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		935E7D5F1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 935E7D5E1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m */; settings = {ASSET_TAGS = (); }; };
@@ -93,6 +94,9 @@
 		88276FEF1BADF5E4002886B4 /* DMLPassengerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMLPassengerTableViewCell.h; path = "Carpool Cells/DMLPassengerTableViewCell.h"; sourceTree = "<group>"; };
 		88276FF01BADF5E4002886B4 /* DMLPassengerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMLPassengerTableViewCell.m; path = "Carpool Cells/DMLPassengerTableViewCell.m"; sourceTree = "<group>"; };
 		88276FF11BADF5E4002886B4 /* DMLPassengerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMLPassengerTableViewCell.xib; path = "Carpool Cells/DMLPassengerTableViewCell.xib"; sourceTree = "<group>"; };
+		88276FF91BAE32E7002886B4 /* DMLCarpoolTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLCarpoolTableViewCell.h; sourceTree = "<group>"; };
+		88276FFA1BAE32E7002886B4 /* DMLCarpoolTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLCarpoolTableViewCell.m; sourceTree = "<group>"; };
+		88276FFB1BAE32E7002886B4 /* DMLCarpoolTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMLCarpoolTableViewCell.xib; sourceTree = "<group>"; };
 		93022CA01BAD1E7C0032D284 /* Diamond Lane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Diamond Lane.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93022CC11BAD202A0032D284 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		93022CC21BAD202A0032D284 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -110,8 +114,6 @@
 		934EBEF81BADDE5800E0B56B /* DMLJSONResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLJSONResponseSerializer.h; sourceTree = "<group>"; };
 		934EBEF91BADDE5800E0B56B /* DMLJSONResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLJSONResponseSerializer.m; sourceTree = "<group>"; };
 		934EBEFB1BADE0AF00E0B56B /* DMLDEBUG.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMLDEBUG.h; sourceTree = "<group>"; };
-		934EBEFE1BADEFA200E0B56B /* DMLCarpoolTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLCarpoolTableViewCell.h; sourceTree = "<group>"; };
-		934EBEFF1BADEFA200E0B56B /* DMLCarpoolTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLCarpoolTableViewCell.m; sourceTree = "<group>"; };
 		934EBF011BADF05E00E0B56B /* DMLCarpool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLCarpool.h; sourceTree = "<group>"; };
 		934EBF021BADF05E00E0B56B /* DMLCarpool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLCarpool.m; sourceTree = "<group>"; };
 		935E7D591BAD2644008F5451 /* DMLHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLHomeViewController.h; sourceTree = "<group>"; };
@@ -330,8 +332,9 @@
 		934EBEFD1BADEF8A00E0B56B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				934EBEFE1BADEFA200E0B56B /* DMLCarpoolTableViewCell.h */,
-				934EBEFF1BADEFA200E0B56B /* DMLCarpoolTableViewCell.m */,
+				88276FF91BAE32E7002886B4 /* DMLCarpoolTableViewCell.h */,
+				88276FFA1BAE32E7002886B4 /* DMLCarpoolTableViewCell.m */,
+				88276FFB1BAE32E7002886B4 /* DMLCarpoolTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				88276FBA1BADBB79002886B4 /* DMLCarpoolListViewController.xib in Resources */,
 				88276FCF1BADD71A002886B4 /* DMLCreateCarpoolViewController.xib in Resources */,
 				930687481BAD336100B8F3AC /* LaunchScreen.storyboard in Resources */,
+				88276FFD1BAE32E7002886B4 /* DMLCarpoolTableViewCell.xib in Resources */,
 				88276FAE1BADA81C002886B4 /* DMLOnboardingViewController.xib in Resources */,
 				741BEFD01BADB69000D819FF /* DMLOnboardingEnablerViewController.xib in Resources */,
 				93022CCA1BAD202A0032D284 /* Assets.xcassets in Resources */,
@@ -520,6 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88276FFC1BAE32E7002886B4 /* DMLCarpoolTableViewCell.m in Sources */,
 				934EBEFC1BADEEF600E0B56B /* DMLKeychainManager.m in Sources */,
 				88276FCE1BADD71A002886B4 /* DMLCreateCarpoolViewController.m in Sources */,
 				935E7D5F1BAD2739008F5451 /* DMLHTTPRequestOperationManager.m in Sources */,
@@ -533,7 +538,6 @@
 				93022CC91BAD202A0032D284 /* AppDelegate.m in Sources */,
 				88276FEA1BADF5C7002886B4 /* DMLCodeTableViewCell.m in Sources */,
 				934EBF031BADF05E00E0B56B /* DMLCarpool.m in Sources */,
-				934EBF001BADEFA200E0B56B /* DMLCarpoolTableViewCell.m in Sources */,
 				934EBEFA1BADDE5800E0B56B /* DMLJSONResponseSerializer.m in Sources */,
 				88276FF41BADF5E4002886B4 /* DMLPassengerTableViewCell.m in Sources */,
 				741BEFCF1BADB69000D819FF /* DMLOnboardingEnablerViewController.m in Sources */,
