@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class DMLCarpool;
+
 @interface DMLCarpoolDetailViewController : UIViewController
 
-//@property(strong, nonatomic) DMLCarpool *carpool;
+@property(strong, nonatomic) DMLCarpool *carpool;
 
 @end

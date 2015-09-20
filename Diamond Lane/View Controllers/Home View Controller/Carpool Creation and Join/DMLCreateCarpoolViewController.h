@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol DMLCreateCarpoolViewControllerDelegate;
+
 @interface DMLCreateCarpoolViewController : UIViewController
+
+@property (nonatomic, weak) id <DMLCreateCarpoolViewControllerDelegate> delegate;
+
+@end
+
+@protocol DMLCreateCarpoolViewControllerDelegate <NSObject>
+
+@required
+-(void)createCarpoolViewControllerDidCreateCarpool:(DMLCreateCarpoolViewController *)createCarpoolViewController;
 
 @end

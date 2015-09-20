@@ -344,6 +344,7 @@
 		935E7D581BAD2598008F5451 /* Home View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				88276FDA1BADF444002886B4 /* Carpool Cells */,
 				934EBEFD1BADEF8A00E0B56B /* Cells */,
 				88276FC01BADD69B002886B4 /* Carpool Creation and Join */,
 				935E7D591BAD2644008F5451 /* DMLHomeViewController.h */,
@@ -356,7 +357,6 @@
 				88276FB81BADBB79002886B4 /* DMLCarpoolListViewController.xib */,
 				88276FD51BADF11B002886B4 /* DMLCarpoolDetailViewController.h */,
 				88276FD61BADF11B002886B4 /* DMLCarpoolDetailViewController.m */,
-				88276FDA1BADF444002886B4 /* Carpool Cells */,
 				88276FBB1BADBBB5002886B4 /* DMLEnRouteViewController.h */,
 				88276FBC1BADBBB5002886B4 /* DMLEnRouteViewController.m */,
 				88276FBD1BADBBB5002886B4 /* DMLEnRouteViewController.xib */,
