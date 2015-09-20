@@ -15,6 +15,7 @@
 
 @property (nonatomic, readonly, strong) UITextField *nameField;
 @property (nonatomic, readonly, strong) UILabel *namePromptLabel;
+@property (nonatomic, readonly, strong) UIActivityIndicatorView *activityIndicatorView;
 
 @end
 
@@ -61,6 +62,19 @@
     
 }
 
+@synthesize activityIndicatorView=_activityIndicatorView;
+-(UIActivityIndicatorView *)activityIndicatorView {
+    
+    if (!_activityIndicatorView) {
+        
+        _activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        [[self view] addSubview:_activityIndicatorView];
+        
+    }
+    return _activityIndicatorView;
+    
+}
+
 -(void)dealloc {
     
     ;
@@ -94,14 +108,6 @@
     
 }
 
--(void)viewWillDisappear:(BOOL)animated {
-    
-    [super viewWillDisappear:animated];
-    
-    [[self view] endEditing:YES];
-    
-}
-
 -(void)viewDidLayoutSubviews {
     
     [super viewDidLayoutSubviews];
@@ -110,6 +116,7 @@
     
     [[self nameField] setFrame:CGRectMake(0, (CGRectGetHeight([[self view] bounds]) - 64) / 2.0, CGRectGetWidth([[self view] bounds]), 64)];
     [[self namePromptLabel] setFrame:CGRectMake(padding, padding, CGRectGetWidth([[self view] bounds]) - padding * 2, CGRectGetMinY([[self nameField] frame]) - padding * 2.0)];
+    [[self activityIndicatorView] setFrame:CGRectMake(0, CGRectGetMaxY([[self nameField] frame]) + 16.0, CGRectGetWidth([[self view] bounds]), 20)];
     
 }
 
@@ -124,27 +131,38 @@
 -(void)createUser:(id)sender {
     
     NSString *name = [[self nameField] text];
-    if ([name length] != 0) {
-        
-        [DMLUser createUserWithName:name completionBlock:^{
-            
-            DMLOnboardingEnablerViewController *enablerViewController = [[DMLOnboardingEnablerViewController alloc] initWithNibName:@"DMLOnboardingEnablerViewController" bundle:nil];
-            [[self navigationController] pushViewController:enablerViewController animated:YES];
-            
-        } failedBlock:^(NSError *error) {
-            
-            UIAlertController* errorAlert = [UIAlertController alertControllerWithTitle:@"Error" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
-            
-            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                ;
-            }];
-            
-            [errorAlert addAction:defaultAction];
-            [self presentViewController:errorAlert animated:YES completion:nil];
-            
-        }];
+    if ([name length] == 0) {
+     
+        return;
         
     }
+    
+    [[self activityIndicatorView] startAnimating];
+    [[self nameField] resignFirstResponder];
+    
+    [DMLUser createUserWithName:name completionBlock:^{
+        
+        [[self activityIndicatorView] stopAnimating];
+        
+        DMLOnboardingEnablerViewController *enablerViewController = [[DMLOnboardingEnablerViewController alloc] initWithNibName:@"DMLOnboardingEnablerViewController" bundle:nil];
+        [enablerViewController setName:name];
+        [[self navigationController] pushViewController:enablerViewController animated:YES];
+        
+    } failedBlock:^(NSError *error) {
+        
+        [[self activityIndicatorView] stopAnimating];
+        [[self nameField] becomeFirstResponder];
+        
+        UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:@"Error" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            ;
+        }];
+        
+        [errorAlert addAction:defaultAction];
+        [self presentViewController:errorAlert animated:YES completion:nil];
+        
+    }];
     
 }
 
