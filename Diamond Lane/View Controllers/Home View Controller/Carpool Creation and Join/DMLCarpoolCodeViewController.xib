@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -7,7 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DMLCarpoolCodeViewController">
             <connections>
-                <outlet property="codeTextField" destination="ocM-Sh-fib" id="3QP-kF-L8n"/>
+                <outlet property="codeButton" destination="HZ7-Hd-4fP" id="Drh-4a-wMe"/>
+                <outlet property="tapPromptLabel" destination="c8x-eM-1k1" id="5tQ-BL-k1Q"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,45 +18,32 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1K-5F-Cjx" userLabel="Container View">
-                    <rect key="frame" x="143" y="218" width="315" height="156"/>
+                    <rect key="frame" x="142.5" y="218" width="315" height="148"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbQ-lV-j9Q">
-                            <rect key="frame" x="126.5" y="112" width="61" height="44"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                            <state key="normal" title="Copy"/>
-                            <connections>
-                                <action selector="copyButtonPressed" destination="-1" eventType="touchUpInside" id="5U1-Z2-h4t"/>
-                            </connections>
-                        </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here is your carpool code:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8x-eM-1k1">
-                            <rect key="frame" x="6" y="8" width="302" height="31.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8x-eM-1k1">
+                            <rect key="frame" x="59" y="14" width="197.5" height="62.5"/>
+                            <string key="text">Tap the code to
+save to clipboard</string>
                             <fontDescription key="fontDescription" type="system" pointSize="26"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ocM-Sh-fib">
-                            <rect key="frame" x="0.0" y="47" width="315" height="69"/>
-                            <accessibility key="accessibilityConfiguration">
-                                <accessibilityTraits key="traits" notEnabled="YES"/>
-                            </accessibility>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="315" id="XJ6-ty-d7T"/>
-                                <constraint firstAttribute="height" constant="69" id="xoI-cb-E05"/>
-                            </constraints>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZ7-Hd-4fP">
+                            <rect key="frame" x="112.5" y="88" width="89" height="60"/>
                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
+                            <state key="normal" title="code"/>
+                            <connections>
+                                <action selector="copyButtonPressed" destination="-1" eventType="touchUpInside" id="li4-yt-7a0"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="qbQ-lV-j9Q" secondAttribute="bottom" id="0aE-Sa-yBZ"/>
-                        <constraint firstItem="qbQ-lV-j9Q" firstAttribute="centerX" secondItem="f1K-5F-Cjx" secondAttribute="centerX" id="LZj-Ga-ct4"/>
-                        <constraint firstAttribute="height" constant="156" id="X7i-yM-ANc"/>
-                        <constraint firstItem="c8x-eM-1k1" firstAttribute="top" secondItem="f1K-5F-Cjx" secondAttribute="top" constant="8" id="ctk-Uf-DbE"/>
-                        <constraint firstItem="qbQ-lV-j9Q" firstAttribute="centerX" secondItem="f1K-5F-Cjx" secondAttribute="centerX" id="fIb-Lb-Fca"/>
+                        <constraint firstItem="HZ7-Hd-4fP" firstAttribute="centerX" secondItem="f1K-5F-Cjx" secondAttribute="centerX" id="6xY-Fm-gAG"/>
+                        <constraint firstAttribute="height" constant="148" id="X7i-yM-ANc"/>
+                        <constraint firstItem="c8x-eM-1k1" firstAttribute="top" secondItem="f1K-5F-Cjx" secondAttribute="top" constant="14" id="ctk-Uf-DbE"/>
+                        <constraint firstItem="HZ7-Hd-4fP" firstAttribute="top" secondItem="c8x-eM-1k1" secondAttribute="bottom" constant="11.5" id="n2i-UC-uDQ"/>
                         <constraint firstItem="c8x-eM-1k1" firstAttribute="centerX" secondItem="f1K-5F-Cjx" secondAttribute="centerX" id="pYv-V6-tTx"/>
-                        <constraint firstItem="ocM-Sh-fib" firstAttribute="centerY" secondItem="f1K-5F-Cjx" secondAttribute="centerY" constant="3.5" id="vit-eA-Mhu"/>
-                        <constraint firstItem="ocM-Sh-fib" firstAttribute="centerX" secondItem="f1K-5F-Cjx" secondAttribute="centerX" id="yrW-FK-sck"/>
                     </constraints>
                 </view>
             </subviews>
@@ -63,7 +51,7 @@
             <constraints>
                 <constraint firstItem="f1K-5F-Cjx" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" constant="-165" id="7kn-V2-bnN"/>
                 <constraint firstItem="f1K-5F-Cjx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="REc-zI-6OZ"/>
-                <constraint firstItem="f1K-5F-Cjx" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-4" id="cAR-2t-qx5"/>
+                <constraint firstItem="f1K-5F-Cjx" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-8" id="cAR-2t-qx5"/>
             </constraints>
         </view>
     </objects>
